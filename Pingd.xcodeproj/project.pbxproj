@@ -3,19 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3166E15354AEF7EFE3138478 /* Pods_Pingd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C186E51211920017A893D995 /* Pods_Pingd.framework */; };
 		5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EDEC23CC03FA00043218 /* AppDelegate.swift */; };
 		5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */; };
 		5D39EDF123CC03FA00043218 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EDF023CC03FA00043218 /* ViewController.swift */; };
 		5D39EDF423CC03FA00043218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D39EDF223CC03FA00043218 /* Main.storyboard */; };
 		5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D39EDF523CC03FC00043218 /* Assets.xcassets */; };
 		5D39EDF923CC03FC00043218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D39EDF723CC03FC00043218 /* LaunchScreen.storyboard */; };
+		5D39EE0523CC144800043218 /* unicode.arialr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D39EE0423CC144800043218 /* unicode.arialr.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release.xcconfig"; sourceTree = "<group>"; };
 		5D39EDE923CC03FA00043218 /* Pingd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pingd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D39EDEC23CC03FA00043218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,10 @@
 		5D39EDF523CC03FC00043218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D39EDF823CC03FC00043218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D39EDFA23CC03FC00043218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D39EE0423CC144800043218 /* unicode.arialr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = unicode.arialr.ttf; sourceTree = "<group>"; };
+		5D39EE0623CD7B8D00043218 /* Pingd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pingd.entitlements; sourceTree = "<group>"; };
+		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
+		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +38,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3166E15354AEF7EFE3138478 /* Pods_Pingd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19944F0ABB2697E130FD9F7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */,
+				552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5D39EDE023CC03FA00043218 = {
 			isa = PBXGroup;
 			children = (
 				5D39EDEB23CC03FA00043218 /* Pingd */,
 				5D39EDEA23CC03FA00043218 /* Products */,
+				19944F0ABB2697E130FD9F7C /* Pods */,
+				E98E82D8A4B7B7F684E4DDEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,9 @@
 		5D39EDEB23CC03FA00043218 /* Pingd */ = {
 			isa = PBXGroup;
 			children = (
+				5D39EE0623CD7B8D00043218 /* Pingd.entitlements */,
+				5D39EE0323CC13BF00043218 /* Fonts */,
+				5D39EE0023CC053900043218 /* Controllers */,
 				5D39EDEC23CC03FA00043218 /* AppDelegate.swift */,
 				5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */,
 				5D39EDF023CC03FA00043218 /* ViewController.swift */,
@@ -67,6 +89,29 @@
 			path = Pingd;
 			sourceTree = "<group>";
 		};
+		5D39EE0023CC053900043218 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5D39EE0323CC13BF00043218 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5D39EE0423CC144800043218 /* unicode.arialr.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E98E82D8A4B7B7F684E4DDEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C186E51211920017A893D995 /* Pods_Pingd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D39EDFD23CC03FC00043218 /* Build configuration list for PBXNativeTarget "Pingd" */;
 			buildPhases = (
+				B719DE272B8370959D36B3A6 /* [CP] Check Pods Manifest.lock */,
 				5D39EDE523CC03FA00043218 /* Sources */,
 				5D39EDE623CC03FA00043218 /* Frameworks */,
 				5D39EDE723CC03FA00043218 /* Resources */,
+				53E50D32D317C6063792D242 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +174,54 @@
 			files = (
 				5D39EDF923CC03FC00043218 /* LaunchScreen.storyboard in Resources */,
 				5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */,
+				5D39EE0523CC144800043218 /* unicode.arialr.ttf in Resources */,
 				5D39EDF423CC03FA00043218 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53E50D32D317C6063792D242 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B719DE272B8370959D36B3A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pingd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D39EDE523CC03FA00043218 /* Sources */ = {
@@ -282,8 +372,10 @@
 		};
 		5D39EDFE23CC03FC00043218 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pingd/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
 				INFOPLIST_FILE = Pingd/Info.plist;
@@ -300,8 +392,10 @@
 		};
 		5D39EDFF23CC03FC00043218 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pingd/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
 				INFOPLIST_FILE = Pingd/Info.plist;
