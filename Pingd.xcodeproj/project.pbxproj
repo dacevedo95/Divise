@@ -80,7 +80,6 @@
 				5D39EE0023CC053900043218 /* Controllers */,
 				5D39EDEC23CC03FA00043218 /* AppDelegate.swift */,
 				5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */,
-				5D39EDF023CC03FA00043218 /* ViewController.swift */,
 				5D39EDF223CC03FA00043218 /* Main.storyboard */,
 				5D39EDF523CC03FC00043218 /* Assets.xcassets */,
 				5D39EDF723CC03FC00043218 /* LaunchScreen.storyboard */,
@@ -92,6 +91,7 @@
 		5D39EE0023CC053900043218 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5D39EDF023CC03FA00043218 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
