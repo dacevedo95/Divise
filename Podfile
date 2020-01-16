@@ -6,6 +6,5 @@ target 'Pingd' do
   use_frameworks!
 
   # Pods for Pingd
-  pod 'paper-onboarding'
 
 end
