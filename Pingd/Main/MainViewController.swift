@@ -16,13 +16,6 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        if let onboardingViewController = storyboard.instantiateViewController(identifier: "OnboardingViewController") as? OnboardingViewController {
-            present(onboardingViewController, animated: true, completion: nil)
-        }
-    }
-    
 
     /*
     // MARK: - Navigation
