@@ -50,6 +50,9 @@
                                                 <state key="normal" title="SIGN IN WITH EMAIL">
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="oZ4-l4-uZO" kind="presentation" identifier="LoginSeguw" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="bIw-Gs-L5c"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -92,6 +95,14 @@
             </objects>
             <point key="canvasLocation" x="-54" y="48"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="BJ9-ai-gOJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="oZ4-l4-uZO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSr-zH-Sxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="375"/>
+        </scene>
         <!--Onboarding Content View Controller-->
         <scene sceneID="yEE-a5-tFM">
             <objects>
@@ -121,19 +132,19 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k9z-q8-pSJ">
-                                <rect key="frame" x="67" y="69" width="280" height="280"/>
+                                <rect key="frame" x="75" y="76.5" width="265" height="265"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="k9z-q8-pSJ" secondAttribute="height" multiplier="1:1" id="ZjM-u2-va4"/>
+                                    <constraint firstAttribute="width" secondItem="k9z-q8-pSJ" secondAttribute="height" multiplier="1:1" id="7Ai-pI-Epw"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="obF-aN-m2T" firstAttribute="trailing" secondItem="k9z-q8-pSJ" secondAttribute="trailing" constant="67" id="548-hi-GAz"/>
-                            <constraint firstItem="k9z-q8-pSJ" firstAttribute="leading" secondItem="obF-aN-m2T" secondAttribute="leading" constant="67" id="NxL-do-FqF"/>
+                            <constraint firstItem="k9z-q8-pSJ" firstAttribute="centerY" secondItem="fHl-Ea-jIE" secondAttribute="centerY" constant="-60" id="0cW-km-Uic"/>
+                            <constraint firstItem="obF-aN-m2T" firstAttribute="trailing" secondItem="k9z-q8-pSJ" secondAttribute="trailing" constant="74" id="85E-qP-7hf"/>
+                            <constraint firstItem="k9z-q8-pSJ" firstAttribute="leading" secondItem="obF-aN-m2T" secondAttribute="leading" constant="75" id="OgH-4x-7dZ"/>
                             <constraint firstItem="d81-tF-IP0" firstAttribute="centerX" secondItem="fHl-Ea-jIE" secondAttribute="centerX" id="k3j-46-8Kz"/>
                             <constraint firstItem="obF-aN-m2T" firstAttribute="bottom" secondItem="d81-tF-IP0" secondAttribute="bottom" constant="20" id="udZ-ZT-wKc"/>
-                            <constraint firstItem="k9z-q8-pSJ" firstAttribute="centerY" secondItem="fHl-Ea-jIE" secondAttribute="centerY" constant="-60" id="z7N-x6-PPA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="obF-aN-m2T"/>
                     </view>

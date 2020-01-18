@@ -19,6 +19,10 @@
 		5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */; };
 		5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0E23D0123400043218 /* OnboardingViewController.swift */; };
 		5D39EE1123D0172000043218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* MainViewController.swift */; };
+		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
+		5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24B923D368100045E325 /* LoginViewController.swift */; };
+		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
+		5D9F24C223D381700045E325 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24C123D381700045E325 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5D39EE0E23D0123400043218 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		5D39EE1023D0172000043218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5D9F24B923D368100045E325 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		5D9F24C123D381700045E325 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
 		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +91,8 @@
 		5D39EDEB23CC03FA00043218 /* Pingd */ = {
 			isa = PBXGroup;
 			children = (
+				5D9F24BB23D36C340045E325 /* Extensions */,
+				5D9F24B623D359150045E325 /* Login */,
 				5D9F24AE23D1905F0045E325 /* Main */,
 				5D9F24AD23D1904F0045E325 /* Onboarding */,
 				5D9F24AC23D1904A0045E325 /* App */,
@@ -130,6 +140,24 @@
 				5D39EE1023D0172000043218 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5D9F24B623D359150045E325 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F24B723D3592E0045E325 /* Login.storyboard */,
+				5D9F24B923D368100045E325 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5D9F24BB23D36C340045E325 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F24BC23D36C460045E325 /* UITextField.swift */,
+				5D9F24C123D381700045E325 /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E98E82D8A4B7B7F684E4DDEF /* Frameworks */ = {
@@ -201,6 +229,7 @@
 			files = (
 				5D39EDF923CC03FC00043218 /* LaunchScreen.storyboard in Resources */,
 				5D39EE0923CFF48100043218 /* Onboarding.storyboard in Resources */,
+				5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */,
 				5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */,
 				5D39EE0523CC144800043218 /* unicode.arialr.ttf in Resources */,
 				5D39EDF423CC03FA00043218 /* Main.storyboard in Resources */,
@@ -239,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */,
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,
+				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
+				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
 				5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,

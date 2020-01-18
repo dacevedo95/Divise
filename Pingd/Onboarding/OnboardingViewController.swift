@@ -64,6 +64,7 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
         }
     }
     
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination
@@ -71,6 +72,7 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
             onboardingPageViewController = pageViewController
             onboardingPageViewController?.onboardingDelegate = self
         }
+        self.dismiss(animated: false, completion: nil)
     }
 }
 
