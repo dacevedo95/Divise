@@ -18,9 +18,17 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     
     weak var onboardingDelegate: OnboardingPageViewControllerDelegate?
     
-    var pageHeadings = ["Lorem Ipsum", "Ipsum Lorem", "Ipsum Ipsum"]
-    var pageImages = ["FirstOnboardingImage", "FirstOnboardingImage", "FirstOnboardingImage"]
-    var pageSubheadings = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"]
+    var pageHeadings = [
+        "Ping Your Friends",
+        "Pong Them Back",
+        "Check In Anywhere"
+    ]
+    var pageImages = ["FirstOnboardingImage", "SecondOnboardingImage", "ThirdOnboardingImage"]
+    var pageSubheadings = [
+        "Send Pings or requests to friends and family to check in on them.",
+        "Pong them back with your location or just with a simple check in with no content.",
+        "Check in on friends family, and custom groups in a simple and efficent way."
+    ]
     
     var currentIndex = 0
 
