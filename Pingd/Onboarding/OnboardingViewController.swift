@@ -37,6 +37,7 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
     
     // MARK: - Properties
     var onboardingPageViewController: OnboardingPageViewController?
+    var swipeGR: UISwipeGestureRecognizer!
     
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
