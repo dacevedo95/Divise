@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mkn-fX-dCK">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="mkn-fX-dCK" customClass="LoginViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XL4-rc-9Z5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="YIu-Gr-iir">
-                                <rect key="frame" x="20" y="60.5" width="280" height="447"/>
+                                <rect key="frame" x="67" y="199.5" width="280" height="497"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9HH-jG-l5X">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="62"/>
@@ -101,7 +101,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="G8P-ke-vkU">
-                                        <rect key="frame" x="0.0" y="276" width="280" height="171"/>
+                                        <rect key="frame" x="0.0" y="276" width="280" height="221"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-2a-MJK">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="88"/>
@@ -132,20 +132,37 @@
                                                     <constraint firstItem="JwU-NP-rkg" firstAttribute="width" secondItem="ZAf-2a-MJK" secondAttribute="width" id="aWt-NO-WZr"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtT-JU-OtV">
-                                                <rect key="frame" x="0.0" y="131" width="280" height="40"/>
-                                                <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="osL-4y-VU6">
+                                                <rect key="frame" x="0.0" y="131" width="280" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtT-JU-OtV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                                        <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Xdv-ed-v8w"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                        <state key="normal" title="Create Account">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-Bk-tmQ">
+                                                        <rect key="frame" x="75" y="50" width="130" height="40"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="13"/>
+                                                        <state key="normal" title="Back">
+                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Xdv-ed-v8w"/>
+                                                    <constraint firstItem="ZtT-JU-OtV" firstAttribute="width" secondItem="osL-4y-VU6" secondAttribute="width" id="6LW-zA-Haf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                                <state key="normal" title="Create Account">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="ZtT-JU-OtV" firstAttribute="width" secondItem="G8P-ke-vkU" secondAttribute="width" id="WpQ-Wg-JhG"/>
+                                            <constraint firstItem="nYh-Bk-tmQ" firstAttribute="width" secondItem="Kpi-fJ-cc6" secondAttribute="width" id="6QG-o9-BPr"/>
+                                            <constraint firstItem="osL-4y-VU6" firstAttribute="width" secondItem="G8P-ke-vkU" secondAttribute="width" id="YhN-ek-Y7d"/>
+                                            <constraint firstItem="nYh-Bk-tmQ" firstAttribute="height" secondItem="Kpi-fJ-cc6" secondAttribute="height" id="l2m-MS-VwB"/>
                                             <constraint firstItem="ZAf-2a-MJK" firstAttribute="width" secondItem="G8P-ke-vkU" secondAttribute="width" id="via-rX-2gO"/>
                                         </constraints>
                                     </stackView>
