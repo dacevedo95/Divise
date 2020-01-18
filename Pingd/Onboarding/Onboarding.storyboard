@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjk-Bw-rFD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="606"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="605.5"/>
                                 <connections>
                                     <segue destination="5Wy-HD-UH7" kind="embed" id="f96-fC-PBu"/>
                                 </connections>
@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0NL-gO-HvC">
-                                <rect key="frame" x="24" y="94" width="366" height="372"/>
+                                <rect key="frame" x="24" y="117" width="366" height="372"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k9z-q8-pSJ">
                                         <rect key="frame" x="43" y="0.0" width="280" height="265"/>
@@ -152,8 +152,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0NL-gO-HvC" firstAttribute="leading" secondItem="obF-aN-m2T" secondAttribute="leading" constant="24" id="4Qe-3Q-ilO"/>
-                            <constraint firstItem="0NL-gO-HvC" firstAttribute="top" secondItem="obF-aN-m2T" secondAttribute="top" constant="50" id="Pi6-wu-MVe"/>
-                            <constraint firstItem="obF-aN-m2T" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0NL-gO-HvC" secondAttribute="bottom" constant="10" id="YDB-JP-MiU"/>
+                            <constraint firstItem="0NL-gO-HvC" firstAttribute="centerY" secondItem="fHl-Ea-jIE" secondAttribute="centerY" id="Z6n-BT-aSZ"/>
                             <constraint firstItem="obF-aN-m2T" firstAttribute="trailing" secondItem="0NL-gO-HvC" secondAttribute="trailing" constant="24" id="kZz-Pd-zxh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="obF-aN-m2T"/>
