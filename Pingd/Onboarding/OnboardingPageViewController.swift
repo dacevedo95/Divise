@@ -36,8 +36,8 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
         super.viewDidLoad()
 
         // Set datasource and delegate to itself
-        dataSource = self
         delegate = self
+        dataSource = self
         
         // Create First Walkthrough screen
         if let startingViewController = contentViewController(at: 0) {

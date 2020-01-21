@@ -1,16 +1,20 @@
 PODS:
   - Hero (1.5.0)
+  - StepIndicator (1.0.8)
 
 DEPENDENCIES:
   - Hero
+  - StepIndicator (~> 1.0.8)
 
 SPEC REPOS:
   trunk:
     - Hero
+    - StepIndicator
 
 SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  StepIndicator: 748b293f671355b021253f82031ac002f153dc81
 
-PODFILE CHECKSUM: 74f9a7a3c81c9ba51cc695490d3423c5a90a2888
+PODFILE CHECKSUM: b6f91599936c5e321a263d376bae854a37dd4685
 
 COCOAPODS: 1.8.4

@@ -16,7 +16,11 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            self.passwordTextField.setUnderLine()
+        }
+    }
     
     @IBOutlet var signInButton: UIButton! {
         didSet {
@@ -38,7 +42,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.passwordTextField.setUnderLine()
+        
     }
     
 

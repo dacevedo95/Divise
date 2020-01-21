@@ -7,5 +7,6 @@ target 'Pingd' do
 
   # Pods for Pingd
   pod 'Hero'
+  pod 'StepIndicator', '~> 1.0.8'
 
 end

@@ -145,6 +145,9 @@
                                                         <state key="normal" title="Create Account">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="cBH-HY-OcC" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="O6d-1V-Evf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-Bk-tmQ">
                                                         <rect key="frame" x="75" y="50" width="130" height="40"/>
@@ -202,6 +205,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCv-az-QMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="795" y="222"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="izs-Zi-HKz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" id="cBH-HY-OcC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9H-lz-B2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="98"/>
         </scene>
     </scenes>
     <resources>
