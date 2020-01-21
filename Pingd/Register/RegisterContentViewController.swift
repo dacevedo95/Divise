@@ -16,6 +16,8 @@ class RegisterContentViewController: UIViewController {
     @IBOutlet weak var firstTextFieldLabel: UILabel!
     @IBOutlet weak var secondTextFieldLabel: UILabel!
     @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var firstImage: UIImageView!
+    @IBOutlet weak var secondImage: UIImageView!
     
     @IBOutlet weak var firstTextField: UITextField! {
         didSet {
@@ -34,8 +36,10 @@ class RegisterContentViewController: UIViewController {
     var header: String?
     var subheader: String?
     var firstFieldName: String?
+    var firstImageName: String?
     var firstFieldPlaceHolder: String?
     var secondFieldName: String?
+    var secondImageName: String?
     var secondFieldPlaceHolder: String?
     var isOnlyOneField: Bool?
     
@@ -49,6 +53,8 @@ class RegisterContentViewController: UIViewController {
         self.firstTextField.placeholder = firstFieldPlaceHolder!
         self.secondTextFieldLabel.text = secondFieldName!
         self.secondTextField.placeholder = secondFieldPlaceHolder!
+        self.firstImage.image = UIImage(named: firstImageName!)
+        self.secondImage.image = UIImage(named: secondImageName!)
         
         if !isOnlyOneField! {
             orLabel.alpha = 0.0

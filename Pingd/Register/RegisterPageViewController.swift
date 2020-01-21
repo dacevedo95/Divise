@@ -19,7 +19,7 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
     
     var headers = [
         "What's Your Name?",
-        "",
+        "Email and Phone?",
         "Set Your Password"
     ]
     var subheaders = [
@@ -32,16 +32,26 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         "EMAIL",
         "PASSWORD"
     ]
+    var firstImages = [
+        "FirstName",
+        "Email",
+        "Password"
+    ]
     var firstLabelPlaceHolders = [
         "John",
         "johndoe@email.com",
         "Password"
     ]
-    var twoFields = [false, true, false]
+    var twoFields = [false, false, false]
     var secondLabels = [
         "LAST NAME",
         "PHONE NUMBER",
         "CONFIRM PASSWORD"
+    ]
+    var secondImages = [
+        "LastName",
+        "Phone",
+        "ConfirmPassword"
     ]
     var secondLabelPlaceHolders = [
         "Doe",
@@ -91,8 +101,6 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         }
     }
     
-    
-    
     // MARK: - Helpers
     func contentViewController(at index: Int) -> RegisterContentViewController? {
         if index < 0 || index >= headers.count {
@@ -110,6 +118,9 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
             pageContentViewController.secondFieldName = secondLabels[index]
             pageContentViewController.secondFieldPlaceHolder = secondLabelPlaceHolders[index]
             pageContentViewController.isOnlyOneField = twoFields[index]
+            pageContentViewController.firstImageName = firstImages[index]
+            pageContentViewController.secondImageName = secondImages[index]
+            pageContentViewController.firstButton = (self.parent as? RegisterViewController)?.firstButton
             
             return pageContentViewController
         }
