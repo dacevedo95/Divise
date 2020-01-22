@@ -27,7 +27,7 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
     var subheaders = [
         "We only use your first and last name as the display name for your profile.",
         "We will only use this to contact you for security reasons, like resetting your password.",
-        "Your password should have at least one capital letter, one lowercase, and one number."
+        "Passwords need at least 8 characters with one capital and lowercase letter, and one digit"
     ]
     var firstLabels = [
         "FIRST NAME",
@@ -134,6 +134,8 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
             pageContentViewController.secondImageName = secondImages[index]
             pageContentViewController.firstButtonTitle = buttonLabels[index]
             pageContentViewController.viewParent = self
+            pageContentViewController.firstKeyboardType = firstTextFieldTypes[index]
+            pageContentViewController.secondKeyboardType = secondTextFieldTypes[index]
             
             return pageContentViewController
         }

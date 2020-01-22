@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
             signInButton.backgroundColor = .clear
             signInButton.layer.borderWidth = 1
             signInButton.layer.cornerRadius = 20
-            signInButton.layer.borderColor = UIColor.pingPurple.cgColor
+            signInButton.layer.borderColor = UIColor.lightGray.cgColor
             signInButton.layer.masksToBounds = true
         }
     }
@@ -38,11 +38,59 @@ class LoginViewController: UIViewController {
         }
     }
     
+    var fieldOneHasText = false
+    var fieldTwoHasText = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange), for: .editingChanged)
+    }
+    
+    @objc func emailTextFieldDidChange(_ textField: UITextField) {
+        if textField.text!.count == 0 {
+            fieldOneHasText = false
+        } else {
+            fieldOneHasText = true
+        }
         
+        if fieldOneHasText && fieldTwoHasText {
+            self.signInButton.isEnabled = true
+            UIView.animate(withDuration: 0.2) {
+                self.signInButton.setTitleColor(UIColor.pingPurple, for: .normal)
+                self.signInButton.layer.borderColor = UIColor.pingPurple.cgColor
+            }
+        } else {
+            self.signInButton.isEnabled = false
+            UIView.animate(withDuration: 0.2) {
+                self.signInButton.setTitleColor(UIColor.lightGray, for: .normal)
+                self.signInButton.layer.borderColor = UIColor.lightGray.cgColor
+            }
+        }
+    }
+    
+    @objc func passwordTextFieldDidChange(_ textField: UITextField) {
+        if textField.text!.count == 0 {
+            fieldTwoHasText = false
+        } else {
+            fieldTwoHasText = true
+        }
+        
+        if fieldOneHasText && fieldTwoHasText {
+            self.signInButton.isEnabled = true
+            UIView.animate(withDuration: 0.2) {
+                self.signInButton.setTitleColor(UIColor.pingPurple, for: .normal)
+                self.signInButton.layer.borderColor = UIColor.pingPurple.cgColor
+            }
+        } else {
+            self.signInButton.isEnabled = false
+            UIView.animate(withDuration: 0.2) {
+                self.signInButton.setTitleColor(UIColor.lightGray, for: .normal)
+                self.signInButton.layer.borderColor = UIColor.lightGray.cgColor
+            }
+        }
     }
     
 
