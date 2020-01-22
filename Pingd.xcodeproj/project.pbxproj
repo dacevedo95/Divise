@@ -27,6 +27,7 @@
 		5D9F24C723D617C10045E325 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24C623D617C10045E325 /* RegisterViewController.swift */; };
 		5D9F24C923D618810045E325 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24C823D618810045E325 /* RegisterPageViewController.swift */; };
 		5D9F24CF23D650070045E325 /* RegisterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */; };
+		5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24D023D6CCF70045E325 /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		5D9F24C623D617C10045E325 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5D9F24C823D618810045E325 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContentViewController.swift; sourceTree = "<group>"; };
+		5D9F24D023D6CCF70045E325 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
 		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			children = (
 				5D9F24BC23D36C460045E325 /* UITextField.swift */,
 				5D9F24C123D381700045E325 /* UIColor.swift */,
+				5D9F24D023D6CCF70045E325 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */,
+				5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */,
 				5D9F24C723D617C10045E325 /* RegisterViewController.swift in Sources */,
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,

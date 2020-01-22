@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StepIndicator
 
 protocol RegisterPageViewControllerDelegate: class {
     func didUpdatePageIndex(currentIndex: Int)
@@ -16,6 +17,7 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         
     // MARK: - Properties
     weak var registerDelegate: RegisterPageViewControllerDelegate?
+    var stepIndicator: StepIndicatorView!
     
     var headers = [
         "What's Your Name?",
@@ -41,6 +43,16 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         "John",
         "johndoe@email.com",
         "Password"
+    ]
+    var firstTextFieldTypes = [
+        UIKeyboardType.alphabet,
+        UIKeyboardType.emailAddress,
+        UIKeyboardType.asciiCapable
+    ]
+    var secondTextFieldTypes = [
+        UIKeyboardType.alphabet,
+        UIKeyboardType.numberPad,
+        UIKeyboardType.asciiCapable
     ]
     var twoFields = [false, false, false]
     var secondLabels = [
@@ -120,22 +132,38 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
             pageContentViewController.isOnlyOneField = twoFields[index]
             pageContentViewController.firstImageName = firstImages[index]
             pageContentViewController.secondImageName = secondImages[index]
-            pageContentViewController.firstButton = (self.parent as? RegisterViewController)?.firstButton
+            pageContentViewController.firstButtonTitle = buttonLabels[index]
+            pageContentViewController.viewParent = self
             
             return pageContentViewController
         }
         return nil
     }
     
-    func forwardPage() {
+    @objc func forwardPage() {
+        if currentIndex >= 2 {
+            currentIndex = 2
+            return
+        }
+        
         currentIndex += 1
+        stepIndicator.currentStep = currentIndex
+        
         if let nextViewController = contentViewController(at: currentIndex) {
             setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
         }
     }
     
-    func backwardPage() {
+    @objc func backwardPage() {
+        if currentIndex <= 0 {
+            currentIndex = 0
+            self.parent?.dismiss(animated: false, completion: nil)
+            return
+        }
+        
         currentIndex -= 1
+        stepIndicator.currentStep = currentIndex
+        
         if let nextViewController = contentViewController(at: currentIndex) {
             setViewControllers([nextViewController], direction: .reverse, animated: true, completion: nil)
         }
