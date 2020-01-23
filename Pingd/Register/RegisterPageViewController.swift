@@ -159,7 +159,7 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
     @objc func backwardPage() {
         if currentIndex <= 0 {
             currentIndex = 0
-            self.parent?.dismiss(animated: false, completion: nil)
+            self.parent?.dismiss(animated: true, completion: nil)
             return
         }
         

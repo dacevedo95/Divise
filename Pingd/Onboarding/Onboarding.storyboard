@@ -51,7 +51,7 @@
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="oZ4-l4-uZO" kind="presentation" identifier="LoginSeguw" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="bIw-Gs-L5c"/>
+                                                    <segue destination="oZ4-l4-uZO" kind="custom" customClass="SlideSegue" customModule="Pingd" customModuleProvider="target" id="BBe-OH-aFj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -98,8 +98,10 @@
         <!--Login-->
         <scene sceneID="BJ9-ai-gOJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="oZ4-l4-uZO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSr-zH-Sxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Login" id="oZ4-l4-uZO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cCN-Qa-mUs"/>
+                </viewControllerPlaceholder>
             </objects>
             <point key="canvasLocation" x="-82" y="375"/>
         </scene>

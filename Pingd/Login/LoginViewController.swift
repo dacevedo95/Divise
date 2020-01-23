@@ -49,6 +49,10 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange), for: .editingChanged)
     }
     
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func emailTextFieldDidChange(_ textField: UITextField) {
         if textField.text!.count == 0 {
             fieldOneHasText = false

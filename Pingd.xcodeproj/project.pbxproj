@@ -29,6 +29,8 @@
 		5D9F24CF23D650070045E325 /* RegisterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */; };
 		5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24D023D6CCF70045E325 /* UIButton.swift */; };
 		5D9F24D323D800050045E325 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24D223D800040045E325 /* String.swift */; };
+		5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24DD23D946D50045E325 /* SlideAnimator.swift */; };
+		5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContentViewController.swift; sourceTree = "<group>"; };
 		5D9F24D023D6CCF70045E325 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5D9F24D223D800040045E325 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5D9F24DD23D946D50045E325 /* SlideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimator.swift; sourceTree = "<group>"; };
+		5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSegue.swift; sourceTree = "<group>"; };
 		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
 		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,6 +107,7 @@
 		5D39EDEB23CC03FA00043218 /* Pingd */ = {
 			isa = PBXGroup;
 			children = (
+				5D9F24D423D9237D0045E325 /* Transitions */,
 				5D9F24C323D5F5630045E325 /* Register */,
 				5D9F24BB23D36C340045E325 /* Extensions */,
 				5D9F24B623D359150045E325 /* Login */,
@@ -142,6 +147,8 @@
 				5D39EE0A23D0075000043218 /* OnboardingContentViewController.swift */,
 				5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */,
 				5D39EE0E23D0123400043218 /* OnboardingViewController.swift */,
+				5D9F24DD23D946D50045E325 /* SlideAnimator.swift */,
+				5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -184,6 +191,13 @@
 				5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		5D9F24D423D9237D0045E325 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		E98E82D8A4B7B7F684E4DDEF /* Frameworks */ = {
@@ -326,7 +340,9 @@
 				5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
+				5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
+				5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

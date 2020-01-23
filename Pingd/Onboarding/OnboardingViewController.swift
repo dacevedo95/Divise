@@ -72,8 +72,9 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
             onboardingPageViewController = pageViewController
             onboardingPageViewController?.onboardingDelegate = self
         }
-        self.dismiss(animated: false, completion: nil)
     }
+    
+    
 }
 
 // MARK: - Extensions
