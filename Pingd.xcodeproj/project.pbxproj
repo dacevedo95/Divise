@@ -147,8 +147,6 @@
 				5D39EE0A23D0075000043218 /* OnboardingContentViewController.swift */,
 				5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */,
 				5D39EE0E23D0123400043218 /* OnboardingViewController.swift */,
-				5D9F24DD23D946D50045E325 /* SlideAnimator.swift */,
-				5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -196,6 +194,8 @@
 		5D9F24D423D9237D0045E325 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				5D9F24DD23D946D50045E325 /* SlideAnimator.swift */,
+				5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
