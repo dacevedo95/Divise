@@ -17,11 +17,10 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         
     // MARK: - Properties
     weak var registerDelegate: RegisterPageViewControllerDelegate?
-    var stepIndicator: StepIndicatorView!
     
     var headers = [
         "What's Your Name?",
-        "Email and Phone?",
+        "And Your Number?",
         "Set Your Password"
     ]
     var subheaders = [
@@ -31,22 +30,22 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
     ]
     var firstLabels = [
         "FIRST NAME",
-        "EMAIL",
+        "PHONE NUMBER",
         "PASSWORD"
     ]
     var firstImages = [
         "FirstName",
-        "Email",
+        "Phone",
         "Password"
     ]
     var firstLabelPlaceHolders = [
         "John",
-        "johndoe@email.com",
+        "555-555-5555",
         "Password"
     ]
     var firstTextFieldTypes = [
         UIKeyboardType.alphabet,
-        UIKeyboardType.emailAddress,
+        UIKeyboardType.numberPad,
         UIKeyboardType.asciiCapable
     ]
     var secondTextFieldTypes = [
@@ -71,6 +70,8 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         "Confirm Password"
     ]
     var buttonLabels = ["Next", "Next", "Create Account"]
+    
+    var viewSecondInput = [true, false, true]
     
     var currentIndex = 0
 
@@ -136,6 +137,7 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
             pageContentViewController.viewParent = self
             pageContentViewController.firstKeyboardType = firstTextFieldTypes[index]
             pageContentViewController.secondKeyboardType = secondTextFieldTypes[index]
+            pageContentViewController.viewSecondInput = viewSecondInput[index]
             
             return pageContentViewController
         }
@@ -149,7 +151,6 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         }
         
         currentIndex += 1
-        stepIndicator.currentStep = currentIndex
         
         if let nextViewController = contentViewController(at: currentIndex) {
             setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
@@ -164,7 +165,6 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         }
         
         currentIndex -= 1
-        stepIndicator.currentStep = currentIndex
         
         if let nextViewController = contentViewController(at: currentIndex) {
             setViewControllers([nextViewController], direction: .reverse, animated: true, completion: nil)

@@ -11,9 +11,6 @@ import StepIndicator
 
 class RegisterViewController: UIViewController, RegisterPageViewControllerDelegate {
     
-    // MARK: - Outlets
-    @IBOutlet weak var stepIndicator: StepIndicatorView!
-    
     // MARK: - Properties
     var registerPageViewController: RegisterPageViewController?
 
@@ -33,13 +30,12 @@ class RegisterViewController: UIViewController, RegisterPageViewControllerDelega
         if let pageViewController = destination as? RegisterPageViewController {
             registerPageViewController = pageViewController
             registerPageViewController?.registerDelegate = self
-            registerPageViewController?.stepIndicator = stepIndicator
         }
     }
     
     func updateUI() {
         if let index = registerPageViewController?.currentIndex {
-            stepIndicator.currentStep = index
+            // stepIndicator.currentStep = index
         }
     }
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     
@@ -54,6 +56,7 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     var isOnlyOneField: Bool?
     var firstButtonTitle: String?
     var viewParent: RegisterPageViewController?
+    var viewSecondInput: Bool?
     
     var firstKeyboardType: UIKeyboardType?
     var secondKeyboardType: UIKeyboardType?
@@ -93,11 +96,44 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         // Initializes the error label with nothing
         self.errorLabel.text = ""
         
+        if viewSecondInput == false {
+            fieldTwoHasText = true
+            secondTextField.isHidden = true
+            self.secondImage.isHidden = true
+            self.secondTextFieldLabel.isHidden = true
+        }
+        
         // Sets the password fields to secure entry
         if viewParent?.currentIndex == 2 {
             self.firstTextField.isSecureTextEntry = true
             self.secondTextField.isSecureTextEntry = true
         }
+        
+        switch viewParent?.currentIndex {
+        case 0:
+            let firstName = UserDefaults.standard.string(forKey: "firstName") ?? nil
+            let lastName = UserDefaults.standard.string(forKey: "lastName") ?? nil
+            if firstName != nil {
+                firstTextField.text = firstName
+                fieldOneHasText = true
+            }
+            if lastName != nil {
+                secondTextField.text = lastName
+                fieldTwoHasText = true
+            }
+            if firstName != nil && lastName != nil {
+                self.firstButton.enable()
+            }
+        case 1:
+            let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? nil
+            if phoneNumber != nil {
+                firstTextField.text = phoneNumber
+                fieldOneHasText = true
+            }
+        default:
+            break
+        }
+        
     }
     
     @objc func firstTextFieldDidChange(_ textField: UITextField) {
@@ -140,12 +176,17 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         
         // Handles the validation first
         switch viewParent?.currentIndex {
+        case 0:
+            UserDefaults.standard.set(firstTextField.text, forKey: "firstName")
+            UserDefaults.standard.set(secondTextField.text, forKey: "lastName")
+            viewParent?.forwardPage()
         case 1:
-            if !(firstTextField.text?.contains("@"))! || !(firstTextField.text?.contains("."))! {
+            if !(firstTextField.text?.contains("9738688573"))! {
                 showErrorMessage(message: "Invalid email. Email must contain \"@\" and a domain")
                 return
             }
             // Make call to see if email and phone are unused
+            viewParent?.forwardPage()
         case 2:
             if firstTextField.text != secondTextField.text {
                 showErrorMessage(message: "Password fields must match")
@@ -155,13 +196,10 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
                 showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
                 return
             }
-            return
+            viewParent?.forwardPage()
         default:
-            break
+            viewParent?.forwardPage()
         }
-        
-        // Goes forward page
-        viewParent?.forwardPage()
     }
     
     // MARK:: Private Functions

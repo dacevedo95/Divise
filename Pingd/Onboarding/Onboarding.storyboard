@@ -47,7 +47,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="bR8-Mu-Htj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                                <state key="normal" title="SIGN IN WITH EMAIL">
+                                                <state key="normal" title="SIGN IN WITH YOUR PHONE">
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
@@ -98,10 +98,10 @@
         <!--Login-->
         <scene sceneID="BJ9-ai-gOJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iSr-zH-Sxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Login" id="oZ4-l4-uZO" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cCN-Qa-mUs"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSr-zH-Sxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82" y="375"/>
         </scene>

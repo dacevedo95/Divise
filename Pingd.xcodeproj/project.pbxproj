@@ -19,6 +19,8 @@
 		5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */; };
 		5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0E23D0123400043218 /* OnboardingViewController.swift */; };
 		5D39EE1123D0172000043218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* MainViewController.swift */; };
+		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
+		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
 		5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24B923D368100045E325 /* LoginViewController.swift */; };
 		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
@@ -49,6 +51,8 @@
 		5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5D39EE0E23D0123400043218 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		5D39EE1023D0172000043218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
+		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9F24B923D368100045E325 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		5D39EDEB23CC03FA00043218 /* Pingd */ = {
 			isa = PBXGroup;
 			children = (
+				5D644B7B23E76728005F0720 /* Verify */,
 				5D9F24D423D9237D0045E325 /* Transitions */,
 				5D9F24C323D5F5630045E325 /* Register */,
 				5D9F24BB23D36C340045E325 /* Extensions */,
@@ -125,6 +130,15 @@
 				5D39EE0423CC144800043218 /* unicode.arialr.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5D644B7B23E76728005F0720 /* Verify */ = {
+			isa = PBXGroup;
+			children = (
+				5D644B7C23E76822005F0720 /* Verify.storyboard */,
+				5D644B7E23E770F2005F0720 /* VerifyViewController.swift */,
+			);
+			path = Verify;
 			sourceTree = "<group>";
 		};
 		5D9F24AC23D1904A0045E325 /* App */ = {
@@ -273,6 +287,7 @@
 				5D9F24C523D5F57D0045E325 /* Register.storyboard in Resources */,
 				5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */,
 				5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */,
+				5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */,
 				5D39EE0523CC144800043218 /* unicode.arialr.ttf in Resources */,
 				5D39EDF423CC03FA00043218 /* Main.storyboard in Resources */,
 			);
@@ -338,6 +353,7 @@
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
 				5D9F24CF23D650070045E325 /* RegisterContentViewController.swift in Sources */,
 				5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */,
+				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */,
