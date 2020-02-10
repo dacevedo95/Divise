@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         didSet {
             signInButton.backgroundColor = .clear
             signInButton.layer.borderWidth = 1
-            signInButton.layer.cornerRadius = 20
+            signInButton.layer.cornerRadius = 25
             signInButton.layer.borderColor = UIColor.lightGray.cgColor
             signInButton.layer.masksToBounds = true
         }
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var createAccountButton: UIButton! {
         didSet {
-            self.createAccountButton.layer.cornerRadius = 20
+            self.createAccountButton.layer.cornerRadius = 25
         }
     }
     

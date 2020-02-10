@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import StepIndicator
 
 protocol RegisterPageViewControllerDelegate: class {
     func didUpdatePageIndex(currentIndex: Int)
@@ -17,62 +16,48 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
         
     // MARK: - Properties
     weak var registerDelegate: RegisterPageViewControllerDelegate?
-    
     var headers = [
         "What's Your Name?",
-        "And Your Number?",
         "Set Your Password"
     ]
     var subheaders = [
         "We only use your first and last name as the display name for your profile.",
-        "We will only use this to contact you for security reasons, like resetting your password.",
         "Passwords need at least 8 characters with one capital and lowercase letter, and one digit"
     ]
     var firstLabels = [
         "FIRST NAME",
-        "PHONE NUMBER",
         "PASSWORD"
     ]
     var firstImages = [
         "FirstName",
-        "Phone",
         "Password"
     ]
     var firstLabelPlaceHolders = [
         "John",
-        "555-555-5555",
         "Password"
     ]
     var firstTextFieldTypes = [
         UIKeyboardType.alphabet,
-        UIKeyboardType.numberPad,
         UIKeyboardType.asciiCapable
     ]
     var secondTextFieldTypes = [
         UIKeyboardType.alphabet,
-        UIKeyboardType.numberPad,
         UIKeyboardType.asciiCapable
     ]
-    var twoFields = [false, false, false]
     var secondLabels = [
         "LAST NAME",
-        "PHONE NUMBER",
         "CONFIRM PASSWORD"
     ]
     var secondImages = [
         "LastName",
-        "Phone",
         "ConfirmPassword"
     ]
     var secondLabelPlaceHolders = [
         "Doe",
-        "555-555-5555",
         "Confirm Password"
     ]
-    var buttonLabels = ["Next", "Next", "Create Account"]
-    
-    var viewSecondInput = [true, false, true]
-    
+    var buttonLabels = ["Next", "Next"]
+    var viewSecondInput = [true, true]
     var currentIndex = 0
 
     // MARK: - View Lifecycle Methods
@@ -130,7 +115,6 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
             pageContentViewController.firstFieldPlaceHolder = firstLabelPlaceHolders[index]
             pageContentViewController.secondFieldName = secondLabels[index]
             pageContentViewController.secondFieldPlaceHolder = secondLabelPlaceHolders[index]
-            pageContentViewController.isOnlyOneField = twoFields[index]
             pageContentViewController.firstImageName = firstImages[index]
             pageContentViewController.secondImageName = secondImages[index]
             pageContentViewController.firstButtonTitle = buttonLabels[index]
@@ -145,8 +129,8 @@ class RegisterPageViewController: UIPageViewController, UIPageViewControllerDele
     }
     
     @objc func forwardPage() {
-        if currentIndex >= 2 {
-            currentIndex = 2
+        if currentIndex >= 1 {
+            currentIndex = 1
             return
         }
         

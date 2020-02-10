@@ -28,7 +28,7 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
     @IBOutlet var signInWithEmail: UIButton! {
         didSet {
             signInWithEmail.backgroundColor = .clear
-            signInWithEmail.layer.cornerRadius = 5
+            signInWithEmail.layer.cornerRadius = 25
             signInWithEmail.layer.borderWidth = 1
             signInWithEmail.layer.borderColor = UIColor.black.cgColor
             signInWithEmail.layer.masksToBounds = true

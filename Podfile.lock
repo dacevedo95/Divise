@@ -1,28 +1,3 @@
-PODS:
-  - Alamofire (5.0.0-rc.3)
-  - Hero (1.5.0)
-  - StepIndicator (1.0.8)
-  - SwiftyJSON (4.3.0)
-
-DEPENDENCIES:
-  - Alamofire (~> 5.0.0-rc.3)
-  - Hero
-  - StepIndicator (~> 1.0.8)
-  - SwiftyJSON (~> 4.0)
-
-SPEC REPOS:
-  trunk:
-    - Alamofire
-    - Hero
-    - StepIndicator
-    - SwiftyJSON
-
-SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
-  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
-  StepIndicator: 748b293f671355b021253f82031ac002f153dc81
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-
-PODFILE CHECKSUM: 774d2f82fcf31a0973194a9face931e35ce6bffe
+PODFILE CHECKSUM: b05d528cf864111f3f97c25769d5b04b488e9b3a
 
 COCOAPODS: 1.8.4

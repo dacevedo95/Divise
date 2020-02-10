@@ -10,13 +10,13 @@
         <!--Login View Controller-->
         <scene sceneID="9K8-vi-InV">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="mkn-fX-dCK" customClass="LoginViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="mkn-fX-dCK" customClass="LoginViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XL4-rc-9Z5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="YIu-Gr-iir">
-                                <rect key="frame" x="67" y="199.5" width="280" height="497"/>
+                                <rect key="frame" x="67" y="166" width="280" height="544"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9HH-jG-l5X">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="62"/>
@@ -63,7 +63,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0rM-8P-T60"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                     </textField>
                                                 </subviews>
@@ -86,7 +86,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="ydn-iV-hmz"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
@@ -100,16 +100,16 @@
                                             <constraint firstItem="168-J7-0DO" firstAttribute="width" secondItem="8Aw-8h-1bl" secondAttribute="width" id="fTE-Cf-LBn"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="G8P-ke-vkU">
-                                        <rect key="frame" x="0.0" y="276" width="280" height="221"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="G8P-ke-vkU">
+                                        <rect key="frame" x="0.0" y="276" width="280" height="268"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-2a-MJK">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="88"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="108"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwU-NP-rkg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="JP7-nb-zO1"/>
+                                                            <constraint firstAttribute="height" constant="50" id="JP7-nb-zO1"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <state key="normal" title="Sign In">
@@ -117,10 +117,10 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpi-fJ-cc6">
-                                                        <rect key="frame" x="75" y="48" width="130" height="40"/>
+                                                        <rect key="frame" x="75" y="58" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="QUD-GD-EVi"/>
-                                                            <constraint firstAttribute="height" constant="40" id="j4K-15-GXi"/>
+                                                            <constraint firstAttribute="height" constant="50" id="j4K-15-GXi"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                                         <state key="normal" title="Forgot Password">
@@ -133,24 +133,24 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="osL-4y-VU6">
-                                                <rect key="frame" x="0.0" y="131" width="280" height="90"/>
+                                                <rect key="frame" x="0.0" y="158" width="280" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtT-JU-OtV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                                         <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="Xdv-ed-v8w"/>
+                                                            <constraint firstAttribute="height" constant="50" id="Xdv-ed-v8w"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                         <state key="normal" title="Create Account">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="cBH-HY-OcC" kind="custom" customClass="SlideSegue" customModule="Pingd" customModuleProvider="target" animates="NO" id="O6d-1V-Evf"/>
+                                                            <segue destination="cBH-HY-OcC" kind="custom" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" animates="NO" id="O6d-1V-Evf"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-Bk-tmQ">
-                                                        <rect key="frame" x="75" y="50" width="130" height="40"/>
+                                                        <rect key="frame" x="75" y="60" width="130" height="50"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="13"/>
                                                         <state key="normal" title="Back">
                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,7 +183,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YIu-Gr-iir" firstAttribute="centerX" secondItem="XL4-rc-9Z5" secondAttribute="centerX" id="QV9-M4-nez"/>
-                            <constraint firstItem="YIu-Gr-iir" firstAttribute="centerY" secondItem="XL4-rc-9Z5" secondAttribute="centerY" id="xnK-ZH-teM"/>
+                            <constraint firstItem="YIu-Gr-iir" firstAttribute="centerY" secondItem="XL4-rc-9Z5" secondAttribute="centerY" constant="-10" id="xnK-ZH-teM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="df5-uU-421"/>
                     </view>

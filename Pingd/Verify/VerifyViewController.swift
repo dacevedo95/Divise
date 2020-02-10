@@ -10,8 +10,17 @@ import UIKit
 
 class VerifyViewController: UIViewController {
 
-    @IBOutlet weak var codeTextField: UITextField!
-    @IBOutlet weak var sendAgainButton: UIButton!
+    @IBOutlet weak var codeTextField: UITextField! {
+        didSet {
+            self.codeTextField.setUnderLine()
+        }
+    }
+    @IBOutlet weak var sendAgainButton: UIButton! {
+        didSet {
+            sendAgainButton.layer.cornerRadius = 25
+            sendAgainButton.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
     @IBOutlet weak var backButton: UIButton!
     
     

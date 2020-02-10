@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,7 +15,6 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var subheaaderLabel: UILabel!
     @IBOutlet weak var firstTextFieldLabel: UILabel!
     @IBOutlet weak var secondTextFieldLabel: UILabel!
-    @IBOutlet weak var orLabel: UILabel!
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var secondImage: UIImageView!
     
@@ -35,7 +32,7 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstButton: UIButton! {
         didSet {
-            self.firstButton.layer.cornerRadius = 20.0
+            self.firstButton.layer.cornerRadius = 25.0
         }
     }
     
@@ -53,7 +50,6 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     var secondFieldName: String?
     var secondImageName: String?
     var secondFieldPlaceHolder: String?
-    var isOnlyOneField: Bool?
     var firstButtonTitle: String?
     var viewParent: RegisterPageViewController?
     var viewSecondInput: Bool?
@@ -64,6 +60,7 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     var fieldOneHasText = false
     var fieldTwoHasText = false
     
+    // MARK: - App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,11 +77,6 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         self.firstButton.addTarget(self, action: #selector(firstButtonPressed), for: .touchUpInside)
         self.backButton.addTarget(viewParent, action: #selector(viewParent?.backwardPage), for: .touchUpInside)
         
-        // Blanks the field if both fields are required
-        if !isOnlyOneField! {
-            orLabel.alpha = 0.0
-        }
-        
         // Adds a textfield listener
         firstTextField.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
         secondTextField.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
@@ -96,23 +88,20 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         // Initializes the error label with nothing
         self.errorLabel.text = ""
         
-        if viewSecondInput == false {
-            fieldTwoHasText = true
-            secondTextField.isHidden = true
-            self.secondImage.isHidden = true
-            self.secondTextFieldLabel.isHidden = true
-        }
-        
         // Sets the password fields to secure entry
-        if viewParent?.currentIndex == 2 {
+        if viewParent?.currentIndex == 1 {
             self.firstTextField.isSecureTextEntry = true
             self.secondTextField.isSecureTextEntry = true
         }
         
+        // In this set of blocks, we pre-fill all text in the event the user goes back and forth
+        // between pages
         switch viewParent?.currentIndex {
         case 0:
+            // Captures the first name and last name from UserDefaults
             let firstName = UserDefaults.standard.string(forKey: "firstName") ?? nil
             let lastName = UserDefaults.standard.string(forKey: "lastName") ?? nil
+            // Pre-fills the fields
             if firstName != nil {
                 firstTextField.text = firstName
                 fieldOneHasText = true
@@ -121,21 +110,16 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
                 secondTextField.text = lastName
                 fieldTwoHasText = true
             }
+            // Enables the button when there is text in both
             if firstName != nil && lastName != nil {
                 self.firstButton.enable()
-            }
-        case 1:
-            let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? nil
-            if phoneNumber != nil {
-                firstTextField.text = phoneNumber
-                fieldOneHasText = true
             }
         default:
             break
         }
-        
     }
     
+    // MARK: - TextField Delegates
     @objc func firstTextFieldDidChange(_ textField: UITextField) {
         if textField.text!.count == 0 {
             fieldOneHasText = false
@@ -163,13 +147,14 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
             self.firstButton.disable()
         }
         
-        if viewParent?.currentIndex == 2 {
+        if viewParent?.currentIndex == 1 {
             if !fieldOneHasText {
                 showErrorMessage(message: "Password must have one capital, one lowercase, and one number")
             }
         }
     }
     
+    // MARK: - Button Handler
     @objc func firstButtonPressed(sender: UIButton!) {
         // Clears error label
         self.errorLabel.text = ""
@@ -177,17 +162,12 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         // Handles the validation first
         switch viewParent?.currentIndex {
         case 0:
+            // Captures the first and last name to be stored later
             UserDefaults.standard.set(firstTextField.text, forKey: "firstName")
             UserDefaults.standard.set(secondTextField.text, forKey: "lastName")
+            // Moves the page forward
             viewParent?.forwardPage()
         case 1:
-            if !(firstTextField.text?.contains("9738688573"))! {
-                showErrorMessage(message: "Invalid email. Email must contain \"@\" and a domain")
-                return
-            }
-            // Make call to see if email and phone are unused
-            viewParent?.forwardPage()
-        case 2:
             if firstTextField.text != secondTextField.text {
                 showErrorMessage(message: "Password fields must match")
                 return
@@ -196,7 +176,6 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
                 showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
                 return
             }
-            viewParent?.forwardPage()
         default:
             viewParent?.forwardPage()
         }

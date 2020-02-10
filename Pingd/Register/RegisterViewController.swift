@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import StepIndicator
 
 class RegisterViewController: UIViewController, RegisterPageViewControllerDelegate {
     
@@ -34,7 +33,7 @@ class RegisterViewController: UIViewController, RegisterPageViewControllerDelega
     }
     
     func updateUI() {
-        if let index = registerPageViewController?.currentIndex {
+        if let _ = registerPageViewController?.currentIndex {
             // stepIndicator.currentStep = index
         }
     }

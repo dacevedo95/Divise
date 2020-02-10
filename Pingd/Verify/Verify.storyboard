@@ -10,19 +10,19 @@
         <!--Verify View Controller-->
         <scene sceneID="MDe-Q4-IpR">
             <objects>
-                <viewController id="vY5-dr-pTd" customClass="VerifyViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyViewController" id="vY5-dr-pTd" customClass="VerifyViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cU0-C2-FcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-ai-Gwl">
-                                <rect key="frame" x="67" y="720" width="280" height="102"/>
+                                <rect key="frame" x="67" y="700" width="280" height="122"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-OL-RyN">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="hKJ-P9-XsB"/>
+                                            <constraint firstAttribute="height" constant="50" id="hKJ-P9-XsB"/>
                                             <constraint firstAttribute="width" constant="280" id="i2d-MO-k4d"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
@@ -31,10 +31,10 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-dd-VvU">
-                                        <rect key="frame" x="0.0" y="62" width="280" height="40"/>
+                                        <rect key="frame" x="0.0" y="72" width="280" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="8q0-rD-uUa"/>
-                                            <constraint firstAttribute="height" constant="40" id="rZn-H0-aKZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="rZn-H0-aKZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                         <state key="normal" title="Change Phone Number">
@@ -43,14 +43,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT">
                                 <rect key="frame" x="67" y="418" width="280" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="EnY-7V-5CN"/>
                                     <constraint firstAttribute="height" constant="60" id="Na1-EF-IhT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="swP-Xm-f8K">
                                 <rect key="frame" x="67" y="144" width="280" height="95"/>

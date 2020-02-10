@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="589.5" width="414" height="272.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-Jx-J8E">
-                                        <rect key="frame" x="67" y="52.5" width="280" height="167"/>
+                                        <rect key="frame" x="67" y="42.5" width="280" height="187"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jeH-s0-OVn">
                                                 <rect key="frame" x="120.5" y="0.0" width="39" height="37"/>
@@ -33,18 +33,18 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </pageControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WO1-u8-ad0">
-                                                <rect key="frame" x="0.0" y="62" width="280" height="40"/>
+                                                <rect key="frame" x="0.0" y="62" width="280" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="Uw4-Ir-7LM"/>
-                                                    <constraint firstAttribute="height" constant="40" id="uHf-lv-gj9"/>
+                                                    <constraint firstAttribute="height" constant="50" id="uHf-lv-gj9"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1I-Uh-1Mf">
-                                                <rect key="frame" x="0.0" y="127" width="280" height="40"/>
+                                                <rect key="frame" x="0.0" y="137" width="280" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="RdS-Uv-Wvb"/>
-                                                    <constraint firstAttribute="height" constant="40" id="bR8-Mu-Htj"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bR8-Mu-Htj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                 <state key="normal" title="SIGN IN WITH YOUR PHONE">
