@@ -1,3 +1,29 @@
-PODFILE CHECKSUM: b05d528cf864111f3f97c25769d5b04b488e9b3a
+PODS:
+  - Alamofire (5.0.0-rc.3)
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - PhoneNumberKit (~> 3.2)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - PhoneNumberKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 6b3a2fa671138372758e54f24f0ce134057f2b4b
 
 COCOAPODS: 1.8.4

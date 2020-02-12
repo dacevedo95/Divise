@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
-${BUILT_PRODUCTS_DIR}/StepIndicator/StepIndicator.framework
+${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

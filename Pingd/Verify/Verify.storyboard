@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yoh-15-S1C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -15,77 +15,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-ai-Gwl">
-                                <rect key="frame" x="67" y="700" width="280" height="122"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="DU9-ZE-UHW">
+                                <rect key="frame" x="67" y="104" width="280" height="425"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-OL-RyN">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
-                                        <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="hKJ-P9-XsB"/>
-                                            <constraint firstAttribute="width" constant="280" id="i2d-MO-k4d"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <state key="normal" title="Send Again">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-dd-VvU">
-                                        <rect key="frame" x="0.0" y="72" width="280" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="8q0-rD-uUa"/>
-                                            <constraint firstAttribute="height" constant="50" id="rZn-H0-aKZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                        <state key="normal" title="Change Phone Number">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT">
-                                <rect key="frame" x="67" y="418" width="280" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="EnY-7V-5CN"/>
-                                    <constraint firstAttribute="height" constant="60" id="Na1-EF-IhT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="swP-Xm-f8K">
-                                <rect key="frame" x="67" y="144" width="280" height="95"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Verification" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W95-sf-zNk">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="3ot-eR-nah"/>
-                                            <constraint firstAttribute="width" constant="280" id="A6c-OH-pEi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the 6 digit code that we have sent to your phone number at " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czs-nD-QNR">
-                                        <rect key="frame" x="0.0" y="41" width="280" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="1as-ZK-ETW"/>
-                                            <constraint firstAttribute="height" constant="54" id="wa6-N1-87n"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="swP-Xm-f8K">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="95"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Verification" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W95-sf-zNk">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="3ot-eR-nah"/>
+                                                    <constraint firstAttribute="width" constant="280" id="A6c-OH-pEi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the 6 digit code that we have sent to your phone number at " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czs-nD-QNR">
+                                                <rect key="frame" x="0.0" y="41" width="280" height="54"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="1as-ZK-ETW"/>
+                                                    <constraint firstAttribute="height" constant="54" id="wa6-N1-87n"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="m81-Kw-2Zx">
+                                        <rect key="frame" x="0.0" y="193" width="280" height="232"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="3Ck-n3-g4R"/>
+                                                    <constraint firstAttribute="width" constant="280" id="59R-MU-SaK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-ai-Gwl">
+                                                <rect key="frame" x="0.0" y="110" width="280" height="122"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-OL-RyN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                                        <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hKJ-P9-XsB"/>
+                                                            <constraint firstAttribute="width" constant="280" id="i2d-MO-k4d"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <state key="normal" title="Send Again">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-dd-VvU">
+                                                        <rect key="frame" x="0.0" y="72" width="280" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="280" id="8q0-rD-uUa"/>
+                                                            <constraint firstAttribute="height" constant="50" id="rZn-H0-aKZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                        <state key="normal" title="Change Phone Number">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lj9-j2-bNG" firstAttribute="bottom" secondItem="yDs-ai-Gwl" secondAttribute="bottom" constant="40" id="7RP-y8-RyN"/>
-                            <constraint firstItem="swP-Xm-f8K" firstAttribute="top" secondItem="Lj9-j2-bNG" secondAttribute="top" constant="100" id="PDy-3H-fdC"/>
-                            <constraint firstItem="oVW-ru-FzT" firstAttribute="centerX" secondItem="cU0-C2-FcH" secondAttribute="centerX" id="fzu-RY-XEu"/>
-                            <constraint firstItem="oVW-ru-FzT" firstAttribute="centerY" secondItem="cU0-C2-FcH" secondAttribute="centerY" id="tuH-Lq-ehH"/>
-                            <constraint firstItem="swP-Xm-f8K" firstAttribute="centerX" secondItem="cU0-C2-FcH" secondAttribute="centerX" id="vbD-vd-ydS"/>
-                            <constraint firstItem="yDs-ai-Gwl" firstAttribute="centerX" secondItem="cU0-C2-FcH" secondAttribute="centerX" id="zO7-1e-Rbx"/>
+                            <constraint firstItem="DU9-ZE-UHW" firstAttribute="centerX" secondItem="cU0-C2-FcH" secondAttribute="centerX" id="2Lm-hE-del"/>
+                            <constraint firstItem="DU9-ZE-UHW" firstAttribute="top" secondItem="Lj9-j2-bNG" secondAttribute="top" constant="60" id="VQd-2s-vZ9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lj9-j2-bNG"/>
                     </view>
@@ -97,7 +103,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wzu-lB-ALt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.739130434782609" y="156.69642857142856"/>
+            <point key="canvasLocation" x="-72" y="157"/>
+        </scene>
+        <!--Phone Input View Controller-->
+        <scene sceneID="2VA-yI-Ymg">
+            <objects>
+                <viewController id="Yoh-15-S1C" customClass="PhoneInputViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pye-f4-Daa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="8nI-8b-Loe">
+                                <rect key="frame" x="67" y="104" width="280" height="425"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xOz-je-TA5">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="95"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDK-cN-wWN">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="do4-ko-lpv"/>
+                                                    <constraint firstAttribute="width" constant="280" id="xok-6h-Z3M"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your phone number. We will send a verification code to it shortly" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVS-ZK-FZR">
+                                                <rect key="frame" x="0.0" y="41" width="280" height="54"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="54" id="5Lc-CY-vhX"/>
+                                                    <constraint firstAttribute="width" constant="280" id="lg3-j4-BOA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqJ-6x-qgk" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                        <rect key="frame" x="0.0" y="205" width="280" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="BeM-rS-7RO"/>
+                                            <constraint firstAttribute="width" constant="280" id="EbX-FS-HPR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8g-Xc-DZ2">
+                                        <rect key="frame" x="0.0" y="375" width="280" height="50"/>
+                                        <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="1wM-EV-5eO"/>
+                                            <constraint firstAttribute="height" constant="50" id="mF4-gW-zVo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <state key="normal" title="Verify">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8nI-8b-Loe" firstAttribute="centerX" secondItem="pye-f4-Daa" secondAttribute="centerX" id="TpD-0i-3bH"/>
+                            <constraint firstItem="8nI-8b-Loe" firstAttribute="top" secondItem="jhB-q7-4FG" secondAttribute="top" constant="60" id="mSD-DQ-GZ2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jhB-q7-4FG"/>
+                    </view>
+                    <connections>
+                        <outlet property="phoneTextField" destination="DqJ-6x-qgk" id="cNn-wM-IgD"/>
+                        <outlet property="verifyBtn" destination="K8g-Xc-DZ2" id="R6g-VY-jwQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eml-Bp-adL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-980" y="157"/>
         </scene>
     </scenes>
 </document>

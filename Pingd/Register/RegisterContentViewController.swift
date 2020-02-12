@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+struct RegisterUser: Encodable {
+    let firstName: String
+    let lastName: String
+    let password: String
+}
 
 class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     
@@ -176,6 +184,14 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
                 showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
                 return
             }
+            
+            let userCreated = createUser(password: firstTextField.text!)
+            if !userCreated {
+                showErrorMessage(message: "An error occured, please try again later")
+            } else {
+                // Transition to verify screen
+                print("Transition to phone verification")
+            }
         default:
             viewParent?.forwardPage()
         }
@@ -195,5 +211,24 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         // 8 characters total
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}")
         return passwordTest.evaluate(with: password)
+    }
+    
+    func createUser(password: String?) -> Bool {
+        var responseStatusCode: Int = 0
+        let registerUser = RegisterUser(firstName: UserDefaults.standard.string(forKey: "firstName")!,
+                                        lastName: UserDefaults.standard.string(forKey: "lastName")!,
+                                        password: password!)
+        AF.request("http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users", method: .post, parameters: registerUser, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).responseData { response in
+            // responseStatusCode = response.response!.statusCode
+            debugPrint(response)
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
+        return responseStatusCode == 201
     }
 }

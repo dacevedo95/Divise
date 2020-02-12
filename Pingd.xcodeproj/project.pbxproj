@@ -19,6 +19,7 @@
 		5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */; };
 		5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0E23D0123400043218 /* OnboardingViewController.swift */; };
 		5D39EE1123D0172000043218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* MainViewController.swift */; };
+		5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
@@ -37,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release.xcconfig"; sourceTree = "<group>"; };
-		5D39EDE923CC03FA00043218 /* Ping'd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ping'd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D39EDE923CC03FA00043218 /* Ping`d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ping`d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D39EDEC23CC03FA00043218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D39EDF323CC03FA00043218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5D39EE0E23D0123400043218 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		5D39EE1023D0172000043218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputViewController.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		5D39EDEA23CC03FA00043218 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D39EDE923CC03FA00043218 /* Ping'd.app */,
+				5D39EDE923CC03FA00043218 /* Ping`d.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +139,7 @@
 			children = (
 				5D644B7C23E76822005F0720 /* Verify.storyboard */,
 				5D644B7E23E770F2005F0720 /* VerifyViewController.swift */,
+				5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */,
 			);
 			path = Verify;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				5D39EDE523CC03FA00043218 /* Sources */,
 				5D39EDE623CC03FA00043218 /* Frameworks */,
 				5D39EDE723CC03FA00043218 /* Resources */,
+				F04FAF9770EB4AEA0F9BE105 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,7 +244,7 @@
 			);
 			name = Pingd;
 			productName = Pingd;
-			productReference = 5D39EDE923CC03FA00043218 /* Ping'd.app */;
+			productReference = 5D39EDE923CC03FA00043218 /* Ping`d.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -317,6 +321,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F04FAF9770EB4AEA0F9BE105 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pingd/Pods-Pingd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -326,6 +347,7 @@
 			files = (
 				5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */,
 				5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */,
+				5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */,
 				5D9F24C723D617C10045E325 /* RegisterViewController.swift in Sources */,
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D9F24D323D800050045E325 /* String.swift in Sources */,
@@ -494,7 +516,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping'd";
+				PRODUCT_NAME = "Ping`d";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,7 +536,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping'd";
+				PRODUCT_NAME = "Ping`d";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
