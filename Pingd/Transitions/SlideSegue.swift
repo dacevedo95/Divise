@@ -11,11 +11,11 @@ import UIKit
 
 class SlideSegue: UIStoryboardSegue {
     
-    private var selfRetainer: SlideSegue? = nil
+    private var selfSlideRetainer: SlideSegue? = nil
     
     override func perform() {
         destination.transitioningDelegate = self
-        selfRetainer = self
+        selfSlideRetainer = self
         destination.modalPresentationStyle = .fullScreen
         source.present(destination, animated: true, completion: nil)
     }
@@ -27,7 +27,30 @@ extension SlideSegue: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        selfRetainer = nil
+        selfSlideRetainer = nil
         return SlideAnimator(animationDuration: 0.5, animationType: .dismiss)
+    }
+}
+
+class BackslideSegue: UIStoryboardSegue {
+    
+    private var selfBackslideRetainer: BackslideSegue? = nil
+    
+    override func perform() {
+        destination.transitioningDelegate = self
+        selfBackslideRetainer = self
+        destination.modalPresentationStyle = .fullScreen
+        source.present(destination, animated: true, completion: nil)
+    }
+}
+
+extension BackslideSegue: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideAnimator(animationDuration: 0.5, animationType: .dismiss)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        selfBackslideRetainer = nil
+        return SlideAnimator(animationDuration: 0.5, animationType: .present)
     }
 }

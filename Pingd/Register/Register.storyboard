@@ -119,14 +119,14 @@
                                                                             <constraint firstAttribute="width" constant="20" id="yEZ-3F-S7S"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="johndoe@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bP-D5-7jz">
+                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="johndoe@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bP-D5-7jz">
                                                                         <rect key="frame" x="40" y="0.0" width="240" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="240" id="32A-Jk-yfK"/>
                                                                             <constraint firstAttribute="height" constant="40" id="kry-xo-i10"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="email"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -155,14 +155,14 @@
                                                                             <constraint firstAttribute="height" constant="40" id="czP-a1-Nag"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="555-555-5555" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ra-pK-f2A">
+                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="555-555-5555" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ra-pK-f2A">
                                                                         <rect key="frame" x="40" y="0.0" width="240" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="r5J-AQ-R0x"/>
                                                                             <constraint firstAttribute="width" constant="240" id="yzk-B1-W8t"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="tel"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="tel"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -196,6 +196,9 @@
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="9zN-5j-P6f" kind="custom" identifier="verifySegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="HWZ-Xc-ERI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-QZ-T7E">
                                                 <rect key="frame" x="0.0" y="98" width="280" height="40"/>
@@ -238,6 +241,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCe-wT-dsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="126"/>
+        </scene>
+        <!--Verify-->
+        <scene sceneID="5S6-pT-pCj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Verify" id="9zN-5j-P6f" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wc3-ds-fIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="124"/>
         </scene>
     </scenes>
 </document>

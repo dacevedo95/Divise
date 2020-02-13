@@ -10,11 +10,7 @@ import UIKit
 
 class VerifyViewController: UIViewController {
 
-    @IBOutlet weak var codeTextField: UITextField! {
-        didSet {
-            self.codeTextField.setUnderLine()
-        }
-    }
+    @IBOutlet weak var codeTextField: CodeTextField!
     @IBOutlet weak var sendAgainButton: UIButton! {
         didSet {
             sendAgainButton.layer.cornerRadius = 25
@@ -28,6 +24,11 @@ class VerifyViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        codeTextField.configure()
+        codeTextField.becomeFirstResponder()
+        codeTextField.didEnterLastDigit = { [weak self] code in
+            print(code)
+        }
     }
     
 

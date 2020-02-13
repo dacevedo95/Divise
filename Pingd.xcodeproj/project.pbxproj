@@ -20,6 +20,7 @@
 		5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0E23D0123400043218 /* OnboardingViewController.swift */; };
 		5D39EE1123D0172000043218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* MainViewController.swift */; };
 		5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */; };
+		5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
@@ -53,6 +54,7 @@
 		5D39EE0E23D0123400043218 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		5D39EE1023D0172000043218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputViewController.swift; sourceTree = "<group>"; };
+		5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5D644B7C23E76822005F0720 /* Verify.storyboard */,
 				5D644B7E23E770F2005F0720 /* VerifyViewController.swift */,
 				5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */,
+				5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */,
 			);
 			path = Verify;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
+				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
 				5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */,

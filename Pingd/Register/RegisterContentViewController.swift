@@ -89,6 +89,8 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         firstTextField.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
         secondTextField.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
         
+        firstTextField.delegate = self
+        
         // Assigns a type to the keyboard
         self.firstTextField.keyboardType = firstKeyboardType!
         self.secondTextField.keyboardType = secondKeyboardType!
@@ -127,6 +129,10 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return false
+    }
+    
     // MARK: - TextField Delegates
     @objc func firstTextFieldDidChange(_ textField: UITextField) {
         if textField.text!.count == 0 {
@@ -162,6 +168,12 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        firstTextField.resignFirstResponder()
+        secondTextField.becomeFirstResponder()
+        return true
+    }
+    
     // MARK: - Button Handler
     @objc func firstButtonPressed(sender: UIButton!) {
         // Clears error label
@@ -191,6 +203,7 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
             } else {
                 // Transition to verify screen
                 print("Transition to phone verification")
+                performSegue(withIdentifier: "verifySegue", sender: self)
             }
         default:
             viewParent?.forwardPage()
@@ -214,21 +227,22 @@ class RegisterContentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createUser(password: String?) -> Bool {
-        var responseStatusCode: Int = 0
-        let registerUser = RegisterUser(firstName: UserDefaults.standard.string(forKey: "firstName")!,
-                                        lastName: UserDefaults.standard.string(forKey: "lastName")!,
-                                        password: password!)
-        AF.request("http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users", method: .post, parameters: registerUser, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).responseData { response in
-            // responseStatusCode = response.response!.statusCode
-            debugPrint(response)
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-            case let .failure(error):
-                print(error)
-            }
-        }
-        
-        return responseStatusCode == 201
+//        var responseStatusCode: Int = 0
+//        let registerUser = RegisterUser(firstName: UserDefaults.standard.string(forKey: "firstName")!,
+//                                        lastName: UserDefaults.standard.string(forKey: "lastName")!,
+//                                        password: password!)
+//        AF.request("http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users", method: .post, parameters: registerUser, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).responseData { response in
+//            // responseStatusCode = response.response!.statusCode
+//            debugPrint(response)
+//            switch response.result {
+//            case .success:
+//                print("Validation Successful")
+//            case let .failure(error):
+//                print(error)
+//            }
+//        }
+//
+//        return responseStatusCode == 201
+        return true
     }
 }

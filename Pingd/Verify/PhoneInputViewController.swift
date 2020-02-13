@@ -11,6 +11,9 @@ import PhoneNumberKit
 
 class PhoneInputViewController: UIViewController {
     
+    var phoneNumberKit: PhoneNumberKit?
+    var updateUser: Bool?
+    
     // MARK: - Outlets
     @IBOutlet weak var phoneTextField: PhoneNumberTextField! {
         didSet {
@@ -28,9 +31,29 @@ class PhoneInputViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        phoneTextField.becomeFirstResponder()
+        phoneNumberKit = PhoneNumberKit()
     }
     
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return (phoneNumberKit?.isValidPhoneNumber(phoneTextField.text!))!
+    }
+    
+    @IBAction func verifyClicked(_ sender: Any) {
+        do {
+            let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
+            print(phoneNumber.countryCode)
+            print(phoneNumber.nationalNumber)
+        } catch {
+            print("Error")
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

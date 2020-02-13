@@ -46,13 +46,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="m81-Kw-2Zx">
                                         <rect key="frame" x="0.0" y="193" width="280" height="232"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT" customClass="CodeTextField" customModule="Ping_d" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="3Ck-n3-g4R"/>
                                                     <constraint firstAttribute="width" constant="280" id="59R-MU-SaK"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="44"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-ai-Gwl">
@@ -80,6 +81,9 @@
                                                         <state key="normal" title="Change Phone Number">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="Yoh-15-S1C" kind="custom" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="phY-Lb-snu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -97,7 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="L4A-dd-VvU" id="5DJ-pY-hjB"/>
-                        <outlet property="codeTextField" destination="oVW-ru-FzT" id="OD3-E1-KUz"/>
+                        <outlet property="codeTextField" destination="oVW-ru-FzT" id="n6X-qb-F3Q"/>
                         <outlet property="sendAgainButton" destination="gbA-OL-RyN" id="w9f-Vf-gVD"/>
                     </connections>
                 </viewController>
@@ -108,7 +112,7 @@
         <!--Phone Input View Controller-->
         <scene sceneID="2VA-yI-Ymg">
             <objects>
-                <viewController id="Yoh-15-S1C" customClass="PhoneInputViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneInputViewController" id="Yoh-15-S1C" customClass="PhoneInputViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pye-f4-Daa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +165,10 @@
                                         <state key="normal" title="Verify">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="verifyClicked:" destination="Yoh-15-S1C" eventType="touchUpInside" id="Ddq-Q1-Izk"/>
+                                            <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="dj1-B8-lDa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
