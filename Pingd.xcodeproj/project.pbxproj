@@ -21,6 +21,8 @@
 		5D39EE1123D0172000043218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* MainViewController.swift */; };
 		5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */; };
 		5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */; };
+		5D3E26FE23F63C9E0041F8FE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */; };
+		5D3E270023F63CBB0041F8FE /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26FF23F63CBB0041F8FE /* PasswordViewController.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
@@ -28,9 +30,6 @@
 		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
 		5D9F24C223D381700045E325 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24C123D381700045E325 /* UIColor.swift */; };
 		5D9F24C523D5F57D0045E325 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24C423D5F57D0045E325 /* Register.storyboard */; };
-		5D9F24C723D617C10045E325 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24C623D617C10045E325 /* RegisterViewController.swift */; };
-		5D9F24C923D618810045E325 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24C823D618810045E325 /* RegisterPageViewController.swift */; };
-		5D9F24CF23D650070045E325 /* RegisterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */; };
 		5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24D023D6CCF70045E325 /* UIButton.swift */; };
 		5D9F24D323D800050045E325 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24D223D800040045E325 /* String.swift */; };
 		5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24DD23D946D50045E325 /* SlideAnimator.swift */; };
@@ -55,6 +54,8 @@
 		5D39EE1023D0172000043218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputViewController.swift; sourceTree = "<group>"; };
 		5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
+		5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		5D3E26FF23F63CBB0041F8FE /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -62,9 +63,6 @@
 		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		5D9F24C123D381700045E325 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5D9F24C423D5F57D0045E325 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		5D9F24C623D617C10045E325 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		5D9F24C823D618810045E325 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
-		5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContentViewController.swift; sourceTree = "<group>"; };
 		5D9F24D023D6CCF70045E325 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5D9F24D223D800040045E325 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5D9F24DD23D946D50045E325 /* SlideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimator.swift; sourceTree = "<group>"; };
@@ -204,9 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				5D9F24C423D5F57D0045E325 /* Register.storyboard */,
-				5D9F24C623D617C10045E325 /* RegisterViewController.swift */,
-				5D9F24C823D618810045E325 /* RegisterPageViewController.swift */,
-				5D9F24CE23D650070045E325 /* RegisterContentViewController.swift */,
+				5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */,
+				5D3E26FF23F63CBB0041F8FE /* PasswordViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -351,22 +348,21 @@
 				5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */,
 				5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */,
 				5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */,
-				5D9F24C723D617C10045E325 /* RegisterViewController.swift in Sources */,
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D9F24D323D800050045E325 /* String.swift in Sources */,
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
-				5D9F24C923D618810045E325 /* RegisterPageViewController.swift in Sources */,
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
-				5D9F24CF23D650070045E325 /* RegisterContentViewController.swift in Sources */,
 				5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */,
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */,
+				5D3E270023F63CBB0041F8FE /* PasswordViewController.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
 				5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */,
+				5D3E26FE23F63C9E0041F8FE /* NameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

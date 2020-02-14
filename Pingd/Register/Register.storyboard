@@ -1,91 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DgL-qJ-731">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Nc-0D-9Og">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register View Controller-->
-        <scene sceneID="ou1-Fz-Eca">
+        <!--Login-->
+        <scene sceneID="4FA-mj-VWS">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="DgL-qJ-731" customClass="RegisterViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SmF-wp-BG1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <viewControllerPlaceholder storyboardName="Login" id="J4K-r9-h09" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25E-Ok-Akh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-737" y="796"/>
+        </scene>
+        <!--Name View Controller-->
+        <scene sceneID="xLs-eH-Hrm">
+            <objects>
+                <viewController id="6Nc-0D-9Og" customClass="NameViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3kg-sn-f9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-b0-bGz" userLabel="Step Indicator View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWe-ar-OeR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <connections>
-                                    <segue destination="TGw-IF-WnI" kind="embed" id="Ld6-sr-mkz"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="dWe-ar-OeR" firstAttribute="leading" secondItem="1mb-Pe-fm6" secondAttribute="leading" id="I83-5V-ovC"/>
-                            <constraint firstItem="CkN-b0-bGz" firstAttribute="trailing" secondItem="1mb-Pe-fm6" secondAttribute="trailing" id="NZC-5N-Rbp"/>
-                            <constraint firstItem="CkN-b0-bGz" firstAttribute="leading" secondItem="1mb-Pe-fm6" secondAttribute="leading" id="RU2-NL-4lH"/>
-                            <constraint firstItem="CkN-b0-bGz" firstAttribute="trailing" secondItem="1mb-Pe-fm6" secondAttribute="trailing" id="V58-GG-CUF"/>
-                            <constraint firstItem="dWe-ar-OeR" firstAttribute="trailing" secondItem="1mb-Pe-fm6" secondAttribute="trailing" id="gbD-k5-nDn"/>
-                            <constraint firstItem="CkN-b0-bGz" firstAttribute="leading" secondItem="1mb-Pe-fm6" secondAttribute="leading" id="jwT-i4-Sd5"/>
-                            <constraint firstItem="CkN-b0-bGz" firstAttribute="top" secondItem="1mb-Pe-fm6" secondAttribute="top" id="nDi-db-59g"/>
-                            <constraint firstItem="CkN-b0-bGz" firstAttribute="top" secondItem="1mb-Pe-fm6" secondAttribute="top" id="t0h-Dc-q3H"/>
-                            <constraint firstItem="dWe-ar-OeR" firstAttribute="top" secondItem="1mb-Pe-fm6" secondAttribute="top" id="vUs-3k-mWx"/>
-                            <constraint firstItem="dWe-ar-OeR" firstAttribute="bottom" secondItem="1mb-Pe-fm6" secondAttribute="bottom" id="y67-MH-N82"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="1mb-Pe-fm6"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tdM-Aw-99J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="52.5" y="68.661971830985919"/>
-        </scene>
-        <!--Register Page View Controller-->
-        <scene sceneID="cgp-iK-lhr">
-            <objects>
-                <pageViewController storyboardIdentifier="RegisterPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TGw-IF-WnI" customClass="RegisterPageViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eZX-KZ-qhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="845" y="69"/>
-        </scene>
-        <!--Register Content View Controller-->
-        <scene sceneID="SBx-kK-row">
-            <objects>
-                <viewController storyboardIdentifier="RegisterContentViewController" id="cIw-32-KaF" customClass="RegisterContentViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qAe-hl-YTT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="676.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sfb-sZ-Dra">
-                                <rect key="frame" x="67" y="60" width="280" height="425"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aMa-cd-98n">
+                                <rect key="frame" x="67" y="104" width="280" height="425"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-FW-x01">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="VPC-kJ-eN5">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="267"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hbp-I6-oN1">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zHE-aU-E6S">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="90"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qp-cs-hW9">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Your Name?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izs-Jc-qjl">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="33"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="280" id="2o0-yZ-QOG"/>
-                                                            <constraint firstAttribute="height" constant="33" id="ut6-iK-qOc"/>
+                                                            <constraint firstAttribute="width" constant="280" id="Igi-8k-4Zy"/>
+                                                            <constraint firstAttribute="height" constant="33" id="SnY-mx-DVc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f7-Ao-AaG">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We only use your first and last name as the display nme for your profile" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvz-F4-mzU">
                                                         <rect key="frame" x="0.0" y="41" width="280" height="49"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="280" id="ifU-fb-CK7"/>
-                                                            <constraint firstAttribute="height" constant="49" id="wWi-4K-24F"/>
+                                                            <constraint firstAttribute="width" constant="280" id="3S2-Z6-gzA"/>
+                                                            <constraint firstAttribute="height" constant="49" id="XYv-mj-1Cn"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,76 +54,76 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2VI-gK-qmb">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0aG-5q-SdO">
                                                 <rect key="frame" x="0.0" y="125" width="280" height="142"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HHw-I0-NWp">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="OOq-5D-NJd">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="61"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST FIELD NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8W-8j-Q91">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkK-Tj-Q1u">
                                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="14"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="14" id="26O-Q3-CEs"/>
-                                                                    <constraint firstAttribute="width" constant="280" id="ZsA-vR-sfd"/>
+                                                                    <constraint firstAttribute="height" constant="14" id="XNg-yX-qpm"/>
+                                                                    <constraint firstAttribute="width" constant="280" id="ubv-Rw-kCU"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-zF-LZj">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qsv-ej-RLC">
                                                                 <rect key="frame" x="0.0" y="21" width="280" height="40"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g3P-ig-zdv">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstName" translatesAutoresizingMaskIntoConstraints="NO" id="hBo-5q-nlA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="Pf5-vl-WF5"/>
-                                                                            <constraint firstAttribute="width" constant="20" id="yEZ-3F-S7S"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="NYF-de-pv9"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="lBD-iH-6p1"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="johndoe@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bP-D5-7jz">
+                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-qz-ltl">
                                                                         <rect key="frame" x="40" y="0.0" width="240" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="240" id="32A-Jk-yfK"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="kry-xo-i10"/>
+                                                                            <constraint firstAttribute="width" constant="240" id="GEr-SU-UsS"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="fTK-rf-iUP"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" smartInsertDeleteType="no" textContentType="given-name"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="rwL-wR-qyl">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PCc-Or-4EW">
                                                         <rect key="frame" x="0.0" y="81" width="280" height="61"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECOND FIELD NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk8-tW-HBf">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQS-Vi-Rre">
                                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="14"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="280" id="HaT-eV-bv1"/>
-                                                                    <constraint firstAttribute="height" constant="14" id="eAU-7S-R5A"/>
+                                                                    <constraint firstAttribute="width" constant="280" id="0en-N4-ZfF"/>
+                                                                    <constraint firstAttribute="height" constant="14" id="V7v-QU-omS"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s36-y3-iqT">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-ZG-2Cm">
                                                                 <rect key="frame" x="0.0" y="21" width="280" height="40"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMJ-8I-f3N">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LastName" translatesAutoresizingMaskIntoConstraints="NO" id="B1u-2D-uB6">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="20" id="9Aa-WY-qrP"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="czP-a1-Nag"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="Mz5-vj-DoB"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="rf3-Px-Lyf"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="555-555-5555" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ra-pK-f2A">
+                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uum-ST-qUW">
                                                                         <rect key="frame" x="40" y="0.0" width="240" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="r5J-AQ-R0x"/>
-                                                                            <constraint firstAttribute="width" constant="240" id="yzk-B1-W8t"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="Od6-RG-Hoq"/>
+                                                                            <constraint firstAttribute="width" constant="240" id="p6x-ew-zAu"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="tel"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartInsertDeleteType="no" textContentType="family-name"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -172,44 +133,47 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MtV-X9-88n">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fni-9K-ZNT">
                                         <rect key="frame" x="0.0" y="287" width="280" height="138"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN6-HA-LVl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkE-aD-WzX">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="28"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="280" id="2bp-5S-J6g"/>
-                                                    <constraint firstAttribute="height" constant="28" id="JVi-ag-dbR"/>
+                                                    <constraint firstAttribute="height" constant="28" id="5wf-Zw-7js"/>
+                                                    <constraint firstAttribute="width" constant="280" id="Il4-wR-aJq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-nl-9dQ">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWg-aC-gVK">
                                                 <rect key="frame" x="0.0" y="38" width="280" height="50"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="7Hp-N4-Zcr"/>
-                                                    <constraint firstAttribute="width" constant="280" id="qEE-l0-sbV"/>
+                                                    <constraint firstAttribute="width" constant="280" id="cQL-D5-NjZ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="whD-tk-PN5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="9zN-5j-P6f" kind="custom" identifier="verifySegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="HWZ-Xc-ERI"/>
+                                                    <segue destination="0bM-sp-71a" kind="custom" identifier="toPasswordSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="RJL-Jx-RCR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-QZ-T7E">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9f9-b9-yAf">
                                                 <rect key="frame" x="0.0" y="98" width="280" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="280" id="mtP-xA-ndc"/>
-                                                    <constraint firstAttribute="height" constant="40" id="zll-o8-u3X"/>
+                                                    <constraint firstAttribute="width" constant="280" id="1c2-sP-qlF"/>
+                                                    <constraint firstAttribute="height" constant="40" id="n5G-to-Q49"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="13"/>
                                                 <state key="normal" title="Back">
                                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="J4K-r9-h09" kind="custom" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="BuI-Qo-y7L"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -218,29 +182,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Sfb-sZ-Dra" firstAttribute="centerX" secondItem="qAe-hl-YTT" secondAttribute="centerX" id="CXL-MN-qLm"/>
-                            <constraint firstItem="Sfb-sZ-Dra" firstAttribute="top" secondItem="rIb-Do-ATc" secondAttribute="top" constant="60" id="zyi-Ie-abh"/>
+                            <constraint firstItem="aMa-cd-98n" firstAttribute="centerX" secondItem="3kg-sn-f9Q" secondAttribute="centerX" id="DCJ-Nw-WII"/>
+                            <constraint firstItem="aMa-cd-98n" firstAttribute="top" secondItem="daH-nH-XEv" secondAttribute="top" constant="60" id="TMt-R1-qtE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rIb-Do-ATc"/>
+                        <viewLayoutGuide key="safeArea" id="daH-nH-XEv"/>
                     </view>
-                    <size key="freeformSize" width="414" height="676.5"/>
                     <connections>
-                        <outlet property="backButton" destination="y9p-QZ-T7E" id="zHU-Eb-Ov3"/>
-                        <outlet property="errorLabel" destination="mN6-HA-LVl" id="e9t-fi-BEz"/>
-                        <outlet property="firstButton" destination="gn3-nl-9dQ" id="0Jb-ZQ-rIa"/>
-                        <outlet property="firstImage" destination="g3P-ig-zdv" id="3gx-iY-HDk"/>
-                        <outlet property="firstTextField" destination="1bP-D5-7jz" id="Xxq-VT-Kb5"/>
-                        <outlet property="firstTextFieldLabel" destination="F8W-8j-Q91" id="QrR-gY-3os"/>
-                        <outlet property="headerLabel" destination="2Qp-cs-hW9" id="CNA-Bq-FGO"/>
-                        <outlet property="secondImage" destination="jMJ-8I-f3N" id="5Sa-jk-ljm"/>
-                        <outlet property="secondTextField" destination="7ra-pK-f2A" id="YkN-iL-mfo"/>
-                        <outlet property="secondTextFieldLabel" destination="kk8-tW-HBf" id="BVG-Ic-8rp"/>
-                        <outlet property="subheaaderLabel" destination="5f7-Ao-AaG" id="LCT-1k-QVz"/>
+                        <outlet property="errorLabel" destination="lkE-aD-WzX" id="8mG-fE-SdJ"/>
+                        <outlet property="firstNameTextField" destination="c8f-qz-ltl" id="xQX-zQ-YDU"/>
+                        <outlet property="lastNameTextField" destination="uum-ST-qUW" id="ShO-sL-E4L"/>
+                        <outlet property="nextButton" destination="PWg-aC-gVK" id="usk-Ww-U1e"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KCe-wT-dsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbe-e0-OVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="126"/>
+            <point key="canvasLocation" x="52" y="796"/>
         </scene>
         <!--Verify-->
         <scene sceneID="5S6-pT-pCj">
@@ -250,5 +206,202 @@
             </objects>
             <point key="canvasLocation" x="2622" y="124"/>
         </scene>
+        <!--Password View Controller-->
+        <scene sceneID="VaJ-Oo-t7G">
+            <objects>
+                <viewController id="0bM-sp-71a" customClass="PasswordViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EjK-hw-zT2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-Cx-LtU">
+                                <rect key="frame" x="67" y="104" width="280" height="425"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-oS-ETY">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="267"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0dy-Do-cAa">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="90"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Your Password" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-yC-FTj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="33"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="280" id="Btg-Wm-jB8"/>
+                                                            <constraint firstAttribute="height" constant="33" id="Zkb-d3-zzC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords need at least 8 characters with at least one capital and lowercase letter, and one digit" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQS-9A-LNO">
+                                                        <rect key="frame" x="0.0" y="41" width="280" height="49"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="280" id="dSb-XH-hEk"/>
+                                                            <constraint firstAttribute="height" constant="49" id="zBu-dd-rZP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="473-tb-lHX">
+                                                <rect key="frame" x="0.0" y="125" width="280" height="142"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7D1-oL-NX7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDM-5f-sCx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="14"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="280" id="dNg-ZP-n9D"/>
+                                                                    <constraint firstAttribute="height" constant="14" id="x7q-KJ-8Dm"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-r0-oFW">
+                                                                <rect key="frame" x="0.0" y="21" width="280" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="buG-X2-gby">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="FF6-e4-r0v"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="bNX-hD-fq1"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDJ-Z9-c6E">
+                                                                        <rect key="frame" x="40" y="0.0" width="240" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="240" id="3d5-n6-9PW"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="xs9-em-fg8"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES" smartInsertDeleteType="no" textContentType="password"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gx6-cn-3Ms">
+                                                        <rect key="frame" x="0.0" y="81" width="280" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-lB-hDC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="14"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="14" id="fNO-cI-bV3"/>
+                                                                    <constraint firstAttribute="width" constant="280" id="h4x-zF-3PH"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ENj-zH-fiW">
+                                                                <rect key="frame" x="0.0" y="21" width="280" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConfirmPassword" translatesAutoresizingMaskIntoConstraints="NO" id="sP9-Ui-6rD">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="3hu-xM-uKs"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="lvS-0H-6la"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPH-Dy-wDQ">
+                                                                        <rect key="frame" x="40" y="0.0" width="240" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="3TF-ho-yiL"/>
+                                                                            <constraint firstAttribute="width" constant="240" id="tfe-SQ-q9v"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES" smartInsertDeleteType="no" textContentType="password"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L3H-n1-Kb3">
+                                        <rect key="frame" x="0.0" y="287" width="280" height="138"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ko-sw-MOB">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="T0J-sS-duB"/>
+                                                    <constraint firstAttribute="height" constant="28" id="bET-eu-PWg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCL-56-GTZ">
+                                                <rect key="frame" x="0.0" y="38" width="280" height="50"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="1He-j2-5c5"/>
+                                                    <constraint firstAttribute="width" constant="280" id="VCI-zI-73V"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="FcM-MQ-RLD" kind="custom" identifier="toVerifyScreen" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="6BL-Cr-aiC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzz-vS-hcI">
+                                                <rect key="frame" x="0.0" y="98" width="280" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="FV9-Ax-Jku"/>
+                                                    <constraint firstAttribute="width" constant="280" id="TIf-en-AAD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="13"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="6Nc-0D-9Og" kind="custom" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="yEU-eZ-GYd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7uJ-Cx-LtU" firstAttribute="top" secondItem="iWL-Dr-Sam" secondAttribute="top" constant="60" id="H1e-VM-4nU"/>
+                            <constraint firstItem="7uJ-Cx-LtU" firstAttribute="centerX" secondItem="EjK-hw-zT2" secondAttribute="centerX" id="fy4-fU-5Tk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iWL-Dr-Sam"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="gPH-Dy-wDQ" id="xd1-kn-LLo"/>
+                        <outlet property="errorLabel" destination="9Ko-sw-MOB" id="0dM-3v-her"/>
+                        <outlet property="nextButton" destination="HCL-56-GTZ" id="Zkq-Wz-o0s"/>
+                        <outlet property="passwordTextField" destination="iDJ-Z9-c6E" id="S9E-lZ-JO8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRL-hY-gxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="796"/>
+        </scene>
+        <!--Verify-->
+        <scene sceneID="xKt-Bl-qcW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Verify" id="FcM-MQ-RLD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sqw-5i-Qal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643" y="796"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ConfirmPassword" width="40" height="40"/>
+        <image name="FirstName" width="40" height="40"/>
+        <image name="LastName" width="40" height="40"/>
+        <image name="Password" width="40" height="40"/>
+    </resources>
 </document>
