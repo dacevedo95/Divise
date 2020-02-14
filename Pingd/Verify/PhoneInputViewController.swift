@@ -39,19 +39,16 @@ class PhoneInputViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return (phoneNumberKit?.isValidPhoneNumber(phoneTextField.text!))!
-    }
-    
-    @IBAction func verifyClicked(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         do {
+            let vc = segue.destination as! VerifyViewController
             let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
-            print(phoneNumber.countryCode)
-            print(phoneNumber.nationalNumber)
+            vc.countryCode = phoneNumber.countryCode
+            vc.phoneNumber = phoneNumber.nationalNumber
+            vc.formattedNumber = phoneTextField.text!
         } catch {
             print("Error")
         }
-        
     }
     
     /*

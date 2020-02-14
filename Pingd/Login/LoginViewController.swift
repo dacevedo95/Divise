@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextViewDelegate {
+class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
@@ -47,10 +47,33 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
         emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange), for: .editingChanged)
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func signInPressed(_ sender: Any) {
+        // Sign in
+        print("Signing in")
+        if signIn() {
+            // Navigate to main screen
+        } else {
+            // Display error
+        }
     }
     
     @objc func emailTextFieldDidChange(_ textField: UITextField) {
@@ -95,6 +118,30 @@ class LoginViewController: UIViewController, UITextViewDelegate {
                 self.signInButton.layer.borderColor = UIColor.lightGray.cgColor
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+            return true
+        } else if textField.tag == 2 {
+            // Sign in
+            print("Signing in")
+            if signIn() {
+                // Navigate to main screen
+                return true
+            } else {
+                // Display error
+                return false
+            }
+        }
+        
+        return false
+    }
+    
+    private func signIn() -> Bool {
+        return true
     }
     
 

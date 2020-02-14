@@ -18,12 +18,18 @@ class VerifyViewController: UIViewController {
         }
     }
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
+    var countryCode: UInt64?
+    var phoneNumber: UInt64?
+    var formattedNumber: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        descriptionLabel.text! += formattedNumber ?? ""
+        
         codeTextField.configure()
         codeTextField.becomeFirstResponder()
         codeTextField.didEnterLastDigit = { [weak self] code in

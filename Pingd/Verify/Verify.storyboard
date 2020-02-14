@@ -102,6 +102,7 @@
                     <connections>
                         <outlet property="backButton" destination="L4A-dd-VvU" id="5DJ-pY-hjB"/>
                         <outlet property="codeTextField" destination="oVW-ru-FzT" id="n6X-qb-F3Q"/>
+                        <outlet property="descriptionLabel" destination="Czs-nD-QNR" id="DY5-hy-GQ3"/>
                         <outlet property="sendAgainButton" destination="gbA-OL-RyN" id="w9f-Vf-gVD"/>
                     </connections>
                 </viewController>
@@ -166,7 +167,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="verifyClicked:" destination="Yoh-15-S1C" eventType="touchUpInside" id="Ddq-Q1-Izk"/>
                                             <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="dj1-B8-lDa"/>
                                         </connections>
                                     </button>
