@@ -46,6 +46,10 @@ class PasswordViewController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
         
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
     }
@@ -68,7 +72,13 @@ class PasswordViewController: UIViewController {
     }
     
     func createUser(password: String?) -> Bool {
+        // TODO: Make Sign Up Cal;
         return true
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
 

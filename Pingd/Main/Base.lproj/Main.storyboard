@@ -7,20 +7,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login-->
+        <scene sceneID="Kow-W7-oZx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="9Iv-qa-29c" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2gU-mo-c2Z"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVs-Ob-2US" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-253" y="67"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="oIc-S3-UlR">
             <objects>
-                <viewController id="HdZ-cy-HvT" customClass="MainViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HdZ-cy-HvT" customClass="MainViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zpn-K4-J0l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ub4-Wj-w3R">
+                                <rect key="frame" x="146.5" y="395" width="121" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="7wy-FK-Yxh"/>
+                                    <constraint firstAttribute="width" constant="121" id="aPt-0g-BhV"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9Iv-qa-29c" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="d6y-DB-LFV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ub4-Wj-w3R" firstAttribute="centerX" secondItem="Zpn-K4-J0l" secondAttribute="centerX" id="I7N-I7-N4q"/>
+                            <constraint firstItem="ub4-Wj-w3R" firstAttribute="centerY" secondItem="Zpn-K4-J0l" secondAttribute="centerY" id="aGN-3m-yxK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LXz-Kd-7U0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybE-LE-Eyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="67"/>
+            <point key="canvasLocation" x="534.78260869565224" y="66.964285714285708"/>
         </scene>
     </scenes>
 </document>

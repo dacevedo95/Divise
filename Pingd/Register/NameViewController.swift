@@ -46,6 +46,10 @@ class NameViewController: UIViewController {
         firstNameTextField.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
         lastNameTextField.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
         
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
     }
@@ -81,6 +85,11 @@ class NameViewController: UIViewController {
         if firstName != nil && lastName != nil {
             self.nextButton.enable()
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
 

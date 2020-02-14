@@ -62,15 +62,14 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         view.endEditing(true)
     }
     
-    @IBAction func backPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func signInPressed(_ sender: Any) {
         // Sign in
         print("Signing in")
         if signIn() {
             // Navigate to main screen
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false, completion: nil)
         } else {
             // Display error
         }
@@ -130,6 +129,9 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             print("Signing in")
             if signIn() {
                 // Navigate to main screen
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainViewController
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: false, completion: nil)
                 return true
             } else {
                 // Display error
@@ -141,6 +143,8 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     }
     
     private func signIn() -> Bool {
+        
+        // TODO: Make login call
         return true
     }
     

@@ -33,8 +33,33 @@ class VerifyViewController: UIViewController {
         codeTextField.configure()
         codeTextField.becomeFirstResponder()
         codeTextField.didEnterLastDigit = { [weak self] code in
-            print(code)
+            self!.handleVerification(code: code)
         }
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    private func handleVerification(code: String) {
+        if verifyCode(code: code) {
+            // Navigate to main screen
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false, completion: nil)
+        } else {
+            // Display error
+        }
+    }
+    
+    private func verifyCode(code: String) -> Bool {
+        // TODO: Implement Verfification code
+        return true
     }
     
 

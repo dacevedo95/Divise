@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         } else {
             // Show onboarding page
-            self.window?.rootViewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
+            self.window?.rootViewController = UIStoryboard(name: "Verify", bundle: nil).instantiateInitialViewController()
         }
         
         self.window?.makeKeyAndVisible()
