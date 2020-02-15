@@ -1,57 +1,55 @@
 //
-//  PasswordViewController.swift
+//  ResetPasswordViewController.swift
 //  Pingd
 //
-//  Created by David Acevedo on 2/13/20.
+//  Created by David Acevedo on 2/15/20.
 //  Copyright © 2020 David Acevedo. All rights reserved.
 //
 
 import UIKit
 
-class PasswordViewController: UIViewController {
-    
+class ResetPasswordViewController: UIViewController {
+
     // MARK: - Outlets
-    @IBOutlet weak var passwordTextField: UITextField! {
+    @IBOutlet weak var newPasswordLabel: UITextField! {
         didSet {
-            self.passwordTextField.setUnderLine()
+            self.newPasswordLabel.setUnderLine()
         }
     }
-    @IBOutlet weak var confirmPasswordTextField: UITextField! {
+    @IBOutlet weak var confirmNewPasswordLabel: UITextField! {
         didSet {
-            self.confirmPasswordTextField.setUnderLine()
+            self.confirmNewPasswordLabel.setUnderLine()
         }
     }
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton! {
-        didSet {
-            self.nextButton.layer.cornerRadius = 25.0
+    @IBOutlet weak var resetButton: UIButton! {
+        didSet{
+            self.resetButton.layer.cornerRadius = 25.0
         }
     }
     
     
     // MARK: - Properties
-    var firstName: String?
-    var lastName: String?
     var fieldOneHasText = false
     var fieldTwoHasText = false
-
     
-    // MARK: Lifecycle Functions
+    
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.errorLabel.text = ""
+        errorLabel.text = ""
         
-        passwordTextField.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
-        confirmPasswordTextField.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
+        newPasswordLabel.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
+        confirmNewPasswordLabel.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        passwordTextField.delegate = self
-        confirmPasswordTextField.delegate = self
+        newPasswordLabel.delegate = self
+        confirmNewPasswordLabel.delegate = self
     }
     
     
@@ -71,31 +69,30 @@ class PasswordViewController: UIViewController {
         return passwordTest.evaluate(with: password)
     }
     
-    func createUser(password: String?) -> Bool {
-        // TODO: Make Sign Up Cal;
-        return true
-    }
-    
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
+    private func updatePassword(password: String) -> Bool {
+        return true
+    }
+    
 
     // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "toVerifyScreen" {
-            if passwordTextField.text != confirmPasswordTextField.text {
+        if identifier == "toLoginSegue" {
+            if newPasswordLabel.text != confirmNewPasswordLabel.text {
                 showErrorMessage(message: "Password fields must match")
                 return false
             }
-            if !isValidPassword(password: passwordTextField.text!) {
+            if !isValidPassword(password: newPasswordLabel.text!) {
                 showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
                 return false
             }
 
-            let userCreated = createUser(password: passwordTextField.text!)
-            if !userCreated {
+            let passwordUpdated = updatePassword(password: newPasswordLabel.text!)
+            if !passwordUpdated {
                 showErrorMessage(message: "An error occured, please try again later")
                 return false
             } else {
@@ -107,22 +104,19 @@ class PasswordViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.errorLabel.text = ""
-        if segue.identifier == "toVerifySegue" {
-            let destinationVC = segue.destination as! PhoneInputViewController
-            destinationVC.createUser = true
-        }
     }
+
 }
 
-extension PasswordViewController: UITextFieldDelegate {
+extension ResetPasswordViewController: UITextFieldDelegate {
     
     // MARK: - TextField Delegate Functions
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 1 {
-            passwordTextField.resignFirstResponder()
-            confirmPasswordTextField.becomeFirstResponder()
+            newPasswordLabel.resignFirstResponder()
+            confirmNewPasswordLabel.becomeFirstResponder()
         } else {
-            performSegue(withIdentifier: "toVerifySegue", sender: self)
+            performSegue(withIdentifier: "toLoginSegue", sender: self)
         }
         return true
     }
@@ -135,9 +129,9 @@ extension PasswordViewController: UITextFieldDelegate {
         }
         
         if fieldOneHasText && fieldTwoHasText {
-            self.nextButton.enable()
+            self.resetButton.enable()
         } else {
-            self.nextButton.disable()
+            self.resetButton.disable()
         }
     }
     
@@ -149,9 +143,9 @@ extension PasswordViewController: UITextFieldDelegate {
         }
         
         if fieldOneHasText && fieldTwoHasText {
-            self.nextButton.enable()
+            self.resetButton.enable()
         } else {
-            self.nextButton.disable()
+            self.resetButton.disable()
         }
         
         if !fieldOneHasText {

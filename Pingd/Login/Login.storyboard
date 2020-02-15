@@ -140,6 +140,9 @@
                                                         <state key="normal" title="Forgot Password">
                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="QiG-lc-YHM" kind="custom" identifier="toVerifySegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="aiE-5L-K9F"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -216,6 +219,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9H-lz-B2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754" y="98"/>
+        </scene>
+        <!--Verify-->
+        <scene sceneID="TEr-Vh-2xm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Verify" id="QiG-lc-YHM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFT-dI-3nJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="285"/>
         </scene>
         <!--Onboarding-->
         <scene sceneID="MOw-rQ-sle">

@@ -89,6 +89,10 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toVerifySegue" {
+            let destinationVC = segue.destination as! PhoneInputViewController
+            destinationVC.createUser = false
+        }
         errorLabel.text = ""
     }
     

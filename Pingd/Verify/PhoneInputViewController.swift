@@ -11,6 +11,7 @@ import PhoneNumberKit
 
 class PhoneInputViewController: UIViewController {
     
+    var createUser: Bool?
     var phoneNumberKit: PhoneNumberKit?
     var updateUser: Bool?
     
@@ -101,6 +102,9 @@ class PhoneInputViewController: UIViewController {
     }
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! VerifyViewController
+        destinationVC.createUser = createUser
+        
         errorLabel.text = ""
         do {
             let vc = segue.destination as! VerifyViewController
