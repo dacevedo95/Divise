@@ -8,8 +8,9 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextViewDelegate {
     
+    // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             self.emailTextField.setUnderLine()
@@ -38,11 +39,18 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         }
     }
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
+    // MARK: - Properties
     var fieldOneHasText = false
     var fieldTwoHasText = false
     
+    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.errorLabel.text = ""
 
         // Do any additional setup after loading the view.
         emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
@@ -56,12 +64,16 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         passwordTextField.delegate = self
     }
     
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
     
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
     @IBAction func signInPressed(_ sender: Any) {
         // Sign in
         print("Signing in")
@@ -72,8 +84,30 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             present(vc, animated: false, completion: nil)
         } else {
             // Display error
+            errorLabel.text = "An error occured. Please try again later"
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        errorLabel.text = ""
+    }
+    
+    
+    // MARK: - Helpers
+    private func signIn() -> Bool {
+        // TODO: Make login call
+        return false
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+}
+
+// MARK: UITextField Delegates
+extension LoginViewController: UITextFieldDelegate {
     
     @objc func emailTextFieldDidChange(_ textField: UITextField) {
         if textField.text!.count == 0 {
@@ -135,28 +169,12 @@ class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDele
                 return true
             } else {
                 // Display error
+                errorLabel.text = "An error occured. Please try again later"
                 return false
             }
         }
         
+        errorLabel.text = "An error occured. Please try again later"
         return false
     }
-    
-    private func signIn() -> Bool {
-        
-        // TODO: Make login call
-        return true
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
