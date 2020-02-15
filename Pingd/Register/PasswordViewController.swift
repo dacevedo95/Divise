@@ -84,7 +84,7 @@ class PasswordViewController: UIViewController {
 
     // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "toVerifyScreen" {
+        if identifier == "toVerifySegue" {
             if passwordTextField.text != confirmPasswordTextField.text {
                 showErrorMessage(message: "Password fields must match")
                 return false
@@ -122,7 +122,9 @@ extension PasswordViewController: UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.becomeFirstResponder()
         } else {
-            performSegue(withIdentifier: "toVerifySegue", sender: self)
+            if shouldPerformSegue(withIdentifier: "toVerifySegue", sender: self){
+                performSegue(withIdentifier: "toVerifySegue", sender: self)
+            }
         }
         return true
     }

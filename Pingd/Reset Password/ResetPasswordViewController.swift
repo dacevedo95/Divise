@@ -116,7 +116,9 @@ extension ResetPasswordViewController: UITextFieldDelegate {
             newPasswordLabel.resignFirstResponder()
             confirmNewPasswordLabel.becomeFirstResponder()
         } else {
-            performSegue(withIdentifier: "toLoginSegue", sender: self)
+            if shouldPerformSegue(withIdentifier: "toLoginSegue", sender: self) {
+                performSegue(withIdentifier: "toLoginSegue", sender: self)
+            }
         }
         return true
     }
