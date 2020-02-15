@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="DU9-ZE-UHW">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="DU9-ZE-UHW">
                                 <rect key="frame" x="67" y="104" width="280" height="425"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="swP-Xm-f8K">
@@ -44,7 +44,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="m81-Kw-2Zx">
-                                        <rect key="frame" x="0.0" y="193" width="280" height="232"/>
+                                        <rect key="frame" x="0.0" y="171" width="280" height="254"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT" customClass="CodeTextField" customModule="Ping_d" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
@@ -56,11 +56,21 @@
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="44"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-ai-Gwl">
-                                                <rect key="frame" x="0.0" y="110" width="280" height="122"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yDs-ai-Gwl">
+                                                <rect key="frame" x="0.0" y="110" width="280" height="144"/>
                                                 <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oog-PA-02U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="280" id="LXA-vr-O5Q"/>
+                                                            <constraint firstAttribute="height" constant="28" id="MhF-BZ-t20"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-OL-RyN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                                        <rect key="frame" x="0.0" y="36" width="280" height="50"/>
                                                         <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="hKJ-P9-XsB"/>
@@ -72,7 +82,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-dd-VvU">
-                                                        <rect key="frame" x="0.0" y="72" width="280" height="50"/>
+                                                        <rect key="frame" x="0.0" y="94" width="280" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="280" id="8q0-rD-uUa"/>
                                                             <constraint firstAttribute="height" constant="50" id="rZn-H0-aKZ"/>
@@ -103,6 +113,7 @@
                         <outlet property="backButton" destination="L4A-dd-VvU" id="5DJ-pY-hjB"/>
                         <outlet property="codeTextField" destination="oVW-ru-FzT" id="n6X-qb-F3Q"/>
                         <outlet property="descriptionLabel" destination="Czs-nD-QNR" id="DY5-hy-GQ3"/>
+                        <outlet property="errorLabel" destination="oog-PA-02U" id="Zc7-XL-6r9"/>
                         <outlet property="sendAgainButton" destination="gbA-OL-RyN" id="w9f-Vf-gVD"/>
                     </connections>
                 </viewController>
@@ -118,7 +129,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="8nI-8b-Loe">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="92" translatesAutoresizingMaskIntoConstraints="NO" id="8nI-8b-Loe">
                                 <rect key="frame" x="67" y="104" width="280" height="425"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xOz-je-TA5">
@@ -147,7 +158,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqJ-6x-qgk" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
-                                        <rect key="frame" x="0.0" y="205" width="280" height="60"/>
+                                        <rect key="frame" x="0.0" y="187" width="280" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="BeM-rS-7RO"/>
                                             <constraint firstAttribute="width" constant="280" id="EbX-FS-HPR"/>
@@ -155,21 +166,36 @@
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8g-Xc-DZ2">
-                                        <rect key="frame" x="0.0" y="375" width="280" height="50"/>
-                                        <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="1wM-EV-5eO"/>
-                                            <constraint firstAttribute="height" constant="50" id="mF4-gW-zVo"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <state key="normal" title="Verify">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="dj1-B8-lDa"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SPD-qT-F3M">
+                                        <rect key="frame" x="0.0" y="339" width="280" height="86"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-al-GRd">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="0VW-xq-QQb"/>
+                                                    <constraint firstAttribute="width" constant="280" id="cXf-kr-rC7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8g-Xc-DZ2">
+                                                <rect key="frame" x="0.0" y="36" width="280" height="50"/>
+                                                <color key="backgroundColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="1wM-EV-5eO"/>
+                                                    <constraint firstAttribute="height" constant="50" id="mF4-gW-zVo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                <state key="normal" title="Verify">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="dj1-B8-lDa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -181,6 +207,7 @@
                         <viewLayoutGuide key="safeArea" id="jhB-q7-4FG"/>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="6h7-al-GRd" id="np2-Cl-r5k"/>
                         <outlet property="phoneTextField" destination="DqJ-6x-qgk" id="cNn-wM-IgD"/>
                         <outlet property="verifyBtn" destination="K8g-Xc-DZ2" id="R6g-VY-jwQ"/>
                     </connections>

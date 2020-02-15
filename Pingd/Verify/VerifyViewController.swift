@@ -19,6 +19,7 @@ class VerifyViewController: UIViewController {
     }
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var countryCode: UInt64?
     var phoneNumber: UInt64?
@@ -26,6 +27,7 @@ class VerifyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorLabel.text = ""
 
         // Do any additional setup after loading the view.
         descriptionLabel.text! += formattedNumber ?? ""
@@ -54,12 +56,13 @@ class VerifyViewController: UIViewController {
             present(vc, animated: false, completion: nil)
         } else {
             // Display error
+            errorLabel.text = "Incorrect verification code. Please check that the code or phone number is correct"
         }
     }
     
     private func verifyCode(code: String) -> Bool {
         // TODO: Implement Verfification code
-        return true
+        return false
     }
     
 
@@ -72,5 +75,8 @@ class VerifyViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        errorLabel.text = ""
+    }
 
 }

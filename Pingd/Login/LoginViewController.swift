@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
             present(vc, animated: false, completion: nil)
         } else {
             // Display error
-            errorLabel.text = "An error occured. Please try again later"
+            errorLabel.text = "Invalid email or password. Please try again"
         }
     }
     
@@ -96,7 +96,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     // MARK: - Helpers
     private func signIn() -> Bool {
         // TODO: Make login call
-        return false
+        return true
     }
     
     //Calls this function when the tap is recognized.
@@ -169,7 +169,7 @@ extension LoginViewController: UITextFieldDelegate {
                 return true
             } else {
                 // Display error
-                errorLabel.text = "An error occured. Please try again later"
+                errorLabel.text = "Invalid email or password. Please try again"
                 return false
             }
         }

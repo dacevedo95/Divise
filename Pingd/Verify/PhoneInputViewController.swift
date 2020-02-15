@@ -27,8 +27,13 @@ class PhoneInputViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorLabel.text = ""
 
         // Do any additional setup after loading the view.
         phoneTextField.becomeFirstResponder()
@@ -46,6 +51,7 @@ class PhoneInputViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if !phoneNumberKit!.isValidPhoneNumber(phoneTextField.text!) {
             // Show Error culd not send verification
+            errorLabel.text = "Please enter a valid phone number to proceed"
             return false
         }
         
@@ -53,30 +59,21 @@ class PhoneInputViewController: UIViewController {
             let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
             if !sendVerification(countryCode: String(phoneNumber.countryCode), phoneNumber: String(phoneNumber.nationalNumber)) {
                 // Show Error culd not send verification
+                errorLabel.text = "An error occured. Please try again later"
                 return false
             }
             if !userAvailable(phoneNumber: String(phoneNumber.nationalNumber)) {
                 // Show Error culd not send verification
+                errorLabel.text = "This phone number already belongs to a user. Please sign in or reset your password"
                 return false
             }
         } catch {
             // Show Error culd not send verification
+            errorLabel.text = "An error occured. Please try again later"
             return false
         }
         
         return true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        do {
-            let vc = segue.destination as! VerifyViewController
-            let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
-            vc.countryCode = phoneNumber.countryCode
-            vc.phoneNumber = phoneNumber.nationalNumber
-            vc.formattedNumber = phoneTextField.text!
-        } catch {
-            print("Error")
-        }
     }
     
     @objc func dismissKeyboard() {
@@ -103,5 +100,18 @@ class PhoneInputViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        errorLabel.text = ""
+        do {
+            let vc = segue.destination as! VerifyViewController
+            let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
+            vc.countryCode = phoneNumber.countryCode
+            vc.phoneNumber = phoneNumber.nationalNumber
+            vc.formattedNumber = phoneTextField.text!
+        } catch {
+            errorLabel.text = "An error occured. Please try again later"
+            print("Error")
+        }
+    }
 
 }
