@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController, UITextViewDelegate {
     
@@ -97,12 +98,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    // MARK: - Helpers
-    private func signIn() -> Bool {
-        // TODO: Make login call
-        return true
-    }
-    
+    // MARK: Helpers
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -180,5 +176,35 @@ extension LoginViewController: UITextFieldDelegate {
         
         errorLabel.text = "An error occured. Please try again later"
         return false
+    }
+}
+
+extension LoginViewController {
+    struct Login: Encodable {
+        let email: String
+        let password: String
+    }
+    
+    
+    private func signIn() -> Bool {
+        let login = Login(email: emailTextField.text!, password: passwordTextField.text!)
+        let signInUrl = "PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/login"
+        var loggedIn = false
+        
+        AF.request(signInUrl, method: .post, parameters: login, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    debugPrint(response)
+                    loggedIn = true
+                case let .failure(error):
+                    debugPrint(error)
+                    loggedIn = false
+                }
+            }
+        
+        return loggedIn
     }
 }

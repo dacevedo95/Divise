@@ -56,10 +56,12 @@ class NameViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.errorLabel.text = ""
-        if segue.identifier == "toPasswordSegue" {
-            let destinationVC = segue.destination as! PasswordViewController
+        if segue.identifier == "toVerifySegue" {
+            let destinationVC = segue.destination as! PhoneInputViewController
             UserDefaults.standard.set(firstNameTextField.text, forKey: "firstName")
             UserDefaults.standard.set(lastNameTextField.text, forKey: "lastName")
+            
+            destinationVC.createUser = true
             destinationVC.firstName = firstNameTextField.text!
             destinationVC.lastName = lastNameTextField.text!
         }
@@ -99,7 +101,7 @@ extension NameViewController: UITextFieldDelegate {
             firstNameTextField.resignFirstResponder()
             lastNameTextField.becomeFirstResponder()
         } else {
-            performSegue(withIdentifier: "toPasswordSegue", sender: self)
+            performSegue(withIdentifier: "toVerifySegue", sender: self)
         }
         return true
     }

@@ -11,6 +11,9 @@ import PhoneNumberKit
 
 class PhoneInputViewController: UIViewController {
     
+    var firstName: String?
+    var lastName: String?
+    
     var createUser: Bool?
     var phoneNumberKit: PhoneNumberKit?
     var updateUser: Bool?
@@ -82,6 +85,14 @@ class PhoneInputViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func backClicked(_ sender: Any) {
+        if createUser! {
+            performSegue(withIdentifier: "toNameSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "toLoginSegue", sender: self)
+        }
+    }
+    
     private func sendVerification(countryCode: String, phoneNumber: String) -> Bool {
         // TODO: Implement verification call
         return true
@@ -102,19 +113,27 @@ class PhoneInputViewController: UIViewController {
     }
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! VerifyViewController
-        destinationVC.createUser = createUser
-        
-        errorLabel.text = ""
-        do {
-            let vc = segue.destination as! VerifyViewController
-            let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
-            vc.countryCode = phoneNumber.countryCode
-            vc.phoneNumber = phoneNumber.nationalNumber
-            vc.formattedNumber = phoneTextField.text!
-        } catch {
-            errorLabel.text = "An error occured. Please try again later"
-            print("Error")
+        if segue.identifier == "checkVerificationSegue" {
+            let destinationVC = segue.destination as! VerifyViewController
+            destinationVC.createUser = createUser
+            
+            if createUser! {
+                destinationVC.firstName = firstName
+                destinationVC.lastName = lastName
+            }
+            
+            errorLabel.text = ""
+            do {
+                let vc = segue.destination as! VerifyViewController
+                let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
+                
+                vc.countryCode = phoneNumber.countryCode
+                vc.phoneNumber = phoneNumber.nationalNumber
+                vc.formattedNumber = phoneTextField.text!
+            } catch {
+                errorLabel.text = "An error occured. Please try again later"
+                print("Error")
+            }
         }
     }
 

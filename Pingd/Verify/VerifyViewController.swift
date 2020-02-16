@@ -26,6 +26,9 @@ class VerifyViewController: UIViewController {
     var formattedNumber: String?
     var createUser: Bool?
     
+    var firstName: String?
+    var lastName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""
@@ -53,18 +56,11 @@ class VerifyViewController: UIViewController {
         if verifyCode(code: code) {
             // Navigate to main screen
             if createUser! {
-                if updateUserWithPhone() {
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainViewController
-                    vc.modalPresentationStyle = .fullScreen
-                    present(vc, animated: false, completion: nil)
-                } else{
-                    // Display message an error occured
-                }
+                // Go to other page in Register
+                performSegue(withIdentifier: "toPasswordSegue", sender: self)
             } else {
                 // Go to reset password
-                let vc = UIStoryboard(name: "ResetPassword", bundle: nil).instantiateInitialViewController() as! ResetPasswordViewController
-                vc.modalPresentationStyle = .fullScreen
-                present(vc, animated: true, completion: nil)
+                performSegue(withIdentifier: "toResetPasswordSegue", sender: self)
             }
             
         } else {
@@ -94,6 +90,21 @@ class VerifyViewController: UIViewController {
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         errorLabel.text = ""
+        
+        if segue.identifier == "changePhoneSegue" {
+            let destinationVC = segue.destination as! PhoneInputViewController
+            destinationVC.firstName = firstName
+            destinationVC.lastName = lastName
+            destinationVC.createUser = createUser
+        }
+        
+        if segue.identifier == "toPasswordSegue" {
+            let vc = segue.destination as! PasswordViewController
+            vc.firstName = firstName
+            vc.lastName = lastName
+            vc.countryCode = countryCode
+            vc.phoneNumber = phoneNumber
+        }
     }
 
 }

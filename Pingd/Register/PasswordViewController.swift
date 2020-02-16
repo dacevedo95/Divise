@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PasswordViewController: UIViewController {
     
@@ -27,11 +28,15 @@ class PasswordViewController: UIViewController {
             self.nextButton.layer.cornerRadius = 25.0
         }
     }
+    @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!
     
     
     // MARK: - Properties
     var firstName: String?
     var lastName: String?
+    var countryCode: UInt64?
+    var phoneNumber: UInt64?
+    
     var fieldOneHasText = false
     var fieldTwoHasText = false
 
@@ -71,11 +76,6 @@ class PasswordViewController: UIViewController {
         return passwordTest.evaluate(with: password)
     }
     
-    func createUser(password: String?) -> Bool {
-        // TODO: Make Sign Up Cal;
-        return true
-    }
-    
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -84,33 +84,27 @@ class PasswordViewController: UIViewController {
 
     // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "toVerifySegue" {
-            if passwordTextField.text != confirmPasswordTextField.text {
-                showErrorMessage(message: "Password fields must match")
-                return false
-            }
-            if !isValidPassword(password: passwordTextField.text!) {
-                showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
-                return false
-            }
-
-            let userCreated = createUser(password: passwordTextField.text!)
-            if !userCreated {
-                showErrorMessage(message: "An error occured, please try again later")
-                return false
-            } else {
-                return true
-            }
-        }
         return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.errorLabel.text = ""
-        if segue.identifier == "toVerifySegue" {
-            let destinationVC = segue.destination as! PhoneInputViewController
-            destinationVC.createUser = true
+    }
+    
+    @IBAction func createAccountPressed(_ sender: UIButton) {
+        
+        self.nextButton.animateWhileAwitingResponse(showLoading: true, originalConstraints: sender.constraints)
+        
+        if passwordTextField.text != confirmPasswordTextField.text {
+            showErrorMessage(message: "Password fields must match")
+            return
         }
+        if !isValidPassword(password: passwordTextField.text!) {
+            showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
+            return
+        }
+
+        // createUser(password: passwordTextField.text!)
     }
 }
 
@@ -122,8 +116,8 @@ extension PasswordViewController: UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.becomeFirstResponder()
         } else {
-            if shouldPerformSegue(withIdentifier: "toVerifySegue", sender: self){
-                performSegue(withIdentifier: "toVerifySegue", sender: self)
+            if shouldPerformSegue(withIdentifier: "toMainSegue", sender: self){
+                performSegue(withIdentifier: "toMainSegue", sender: self)
             }
         }
         return true
@@ -159,5 +153,36 @@ extension PasswordViewController: UITextFieldDelegate {
         if !fieldOneHasText {
             showErrorMessage(message: "Password must have 8 characters, and at least one capital, one lowercase, and one number")
         }
+    }
+}
+
+extension PasswordViewController {
+    struct NewUser: Encodable {
+        let firstName: String
+        let lastName: String
+        let countryCode: String
+        let phoneNumber: String
+        let password: String
+    }
+    
+    func createUser(password: String?) {
+        
+        let createUserURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users"
+        let user = NewUser(firstName: firstName!, lastName: lastName!, countryCode: String(countryCode!), phoneNumber: String(phoneNumber!), password: password!)
+        
+        AF.request(createUserURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case let .success(data):
+                    debugPrint(data)
+                    self.performSegue(withIdentifier: "toMainSegue", sender: self)
+                    break
+                case let .failure(error):
+                    print(error)
+                    self.showErrorMessage(message: "An error occured. Please try again later")
+                }
+            }
     }
 }
