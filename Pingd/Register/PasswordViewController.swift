@@ -92,8 +92,7 @@ class PasswordViewController: UIViewController {
     }
     
     @IBAction func createAccountPressed(_ sender: UIButton) {
-        
-        self.nextButton.animateWhileAwitingResponse(showLoading: true, originalConstraints: sender.constraints)
+        // self.nextButton.animateWhileAwitingResponse(showLoading: true, originalConstraints: sender.constraints)
         
         if passwordTextField.text != confirmPasswordTextField.text {
             showErrorMessage(message: "Password fields must match")
@@ -104,7 +103,7 @@ class PasswordViewController: UIViewController {
             return
         }
 
-        // createUser(password: passwordTextField.text!)
+        createUser(password: passwordTextField.text!)
     }
 }
 

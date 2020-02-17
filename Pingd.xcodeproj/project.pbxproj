@@ -26,6 +26,7 @@
 		5D3E270323F7BEE70041F8FE /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D3E270223F7BEE70041F8FE /* ResetPassword.storyboard */; };
 		5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270423F7C27C0041F8FE /* ResetPasswordViewController.swift */; };
 		5D3E270723F8F44E0041F8FE /* Password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D3E270623F8F44E0041F8FE /* Password.storyboard */; };
+		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
@@ -62,6 +63,7 @@
 		5D3E270223F7BEE70041F8FE /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
 		5D3E270423F7C27C0041F8FE /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		5D3E270623F8F44E0041F8FE /* Password.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Password.storyboard; sourceTree = "<group>"; };
+		5D3E270823FA43540041F8FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				5D39EDF523CC03FC00043218 /* Assets.xcassets */,
 				5D39EDF723CC03FC00043218 /* LaunchScreen.storyboard */,
 				5D39EDFA23CC03FC00043218 /* Info.plist */,
+				5D3E270823FA43540041F8FE /* Log.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			files = (
 				5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */,
 				5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */,
+				5D3E270923FA43540041F8FE /* Log.swift in Sources */,
 				5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */,
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D9F24D323D800050045E325 /* String.swift in Sources */,

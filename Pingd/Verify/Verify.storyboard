@@ -225,7 +225,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="dj1-B8-lDa"/>
+                                                    <action selector="verifyClicked:" destination="Yoh-15-S1C" eventType="touchUpInside" id="MPw-IB-GQq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLz-3f-T5w">
@@ -260,6 +260,7 @@
                         <outlet property="verifyBtn" destination="K8g-Xc-DZ2" id="R6g-VY-jwQ"/>
                         <segue destination="KTq-te-0Bo" kind="custom" identifier="toNameSegue" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="nYs-CS-Ly9"/>
                         <segue destination="7DX-Rm-Pel" kind="custom" identifier="toLoginSegue" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="EFq-wS-wLO"/>
+                        <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="om5-iV-h5D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eml-Bp-adL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

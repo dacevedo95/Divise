@@ -58,7 +58,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="IAb-is-zxb"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-7J-OOd">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-7J-OOd" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                                         <rect key="frame" x="40" y="0.0" width="240" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0rM-8P-T60"/>
@@ -202,10 +202,11 @@
                     </view>
                     <connections>
                         <outlet property="createAccountButton" destination="ZtT-JU-OtV" id="ChR-YQ-Qha"/>
-                        <outlet property="emailTextField" destination="IMO-7J-OOd" id="nQN-u0-IKP"/>
                         <outlet property="errorLabel" destination="S18-XX-K4S" id="gng-ev-Ub9"/>
                         <outlet property="passwordTextField" destination="qWp-m0-e7Z" id="vUk-Qd-EyQ"/>
+                        <outlet property="phoneNumberTextField" destination="IMO-7J-OOd" id="NGW-Yz-A8D"/>
                         <outlet property="signInButton" destination="JwU-NP-rkg" id="r6o-jV-FCV"/>
+                        <segue destination="IUl-fH-sqK" kind="custom" identifier="toMainSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="mAf-AR-Obe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFd-uJ-ug5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -218,7 +219,15 @@
                 <viewControllerPlaceholder storyboardName="Register" id="cBH-HY-OcC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9H-lz-B2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="98"/>
+            <point key="canvasLocation" x="743" y="244"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Xdr-fo-O99">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="IUl-fH-sqK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4j-dr-5qT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="-46"/>
         </scene>
         <!--Verify-->
         <scene sceneID="TEr-Vh-2xm">
@@ -226,7 +235,7 @@
                 <viewControllerPlaceholder storyboardName="Verify" id="QiG-lc-YHM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFT-dI-3nJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="285"/>
+            <point key="canvasLocation" x="754" y="98"/>
         </scene>
         <!--Onboarding-->
         <scene sceneID="MOw-rQ-sle">

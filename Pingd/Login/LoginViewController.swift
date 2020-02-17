@@ -8,13 +8,16 @@
 
 import UIKit
 import Alamofire
+import PhoneNumberKit
 
 class LoginViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - Outlets
-    @IBOutlet weak var emailTextField: UITextField! {
+    
+    @IBOutlet weak var phoneNumberTextField: PhoneNumberTextField! {
         didSet {
-            self.emailTextField.setUnderLine()
+            self.phoneNumberTextField.setUnderLine()
+            self.phoneNumberTextField.withExamplePlaceholder = true
         }
     }
     
@@ -47,6 +50,8 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     var fieldOneHasText = false
     var fieldTwoHasText = false
     
+    var phoneNumberKit = PhoneNumberKit()
+    
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -54,14 +59,14 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         self.errorLabel.text = ""
 
         // Do any additional setup after loading the view.
-        emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
+        phoneNumberTextField.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange), for: .editingChanged)
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        emailTextField.delegate = self
+        phoneNumberTextField.delegate = self
         passwordTextField.delegate = self
     }
     
@@ -78,15 +83,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     @IBAction func signInPressed(_ sender: Any) {
         // Sign in
         print("Signing in")
-        if signIn() {
-            // Navigate to main screen
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainViewController
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: false, completion: nil)
-        } else {
-            // Display error
-            errorLabel.text = "Invalid email or password. Please try again"
-        }
+        signIn()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -155,23 +152,12 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 1 {
-            emailTextField.resignFirstResponder()
+            phoneNumberTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
             return true
         } else if textField.tag == 2 {
-            // Sign in
-            print("Signing in")
-            if signIn() {
-                // Navigate to main screen
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainViewController
-                vc.modalPresentationStyle = .fullScreen
-                present(vc, animated: false, completion: nil)
-                return true
-            } else {
-                // Display error
-                errorLabel.text = "Invalid email or password. Please try again"
-                return false
-            }
+            signIn()
+            return true
         }
         
         errorLabel.text = "An error occured. Please try again later"
@@ -179,32 +165,38 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+
+// MARK: API Calls
 extension LoginViewController {
     struct Login: Encodable {
-        let email: String
+        let phoneNumber: String
         let password: String
     }
     
-    
-    private func signIn() -> Bool {
-        let login = Login(email: emailTextField.text!, password: passwordTextField.text!)
-        let signInUrl = "PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/login"
-        var loggedIn = false
-        
-        AF.request(signInUrl, method: .post, parameters: login, encoder: JSONParameterEncoder.default)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    debugPrint(response)
-                    loggedIn = true
-                case let .failure(error):
-                    debugPrint(error)
-                    loggedIn = false
+    private func signIn() {
+        do {
+            let nationalNumber = try phoneNumberKit.parse(phoneNumberTextField.text!).nationalNumber
+            let login = Login(phoneNumber: String(nationalNumber), password: passwordTextField.text!)
+            let signInUrl = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/login"
+            
+            AF.request(signInUrl, method: .post, parameters: login, encoder: JSONParameterEncoder.default)
+                .response { response in
+                    switch response.response?.statusCode {
+                    case 200:
+                        // Perform segue to main
+                        self.performSegue(withIdentifier: "toMainSegue", sender: self)
+                    case 401:
+                        self.errorLabel.text = "Invalid email or password. Please try again"
+                    case 500:
+                        self.errorLabel.text = "An error occured. Please try again later"
+                    default:
+                        self.errorLabel.text = "An error occured. Please try again later"
+                        break
+                    }
                 }
-            }
-        
-        return loggedIn
+        } catch {
+            // Show Error could not send verification
+            errorLabel.text = "An error occured. Please try again later"
+        }
     }
 }
