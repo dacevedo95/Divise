@@ -36,8 +36,9 @@ class PhoneInputViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
-    
+    /*
     // MARK: - Lifecycle Functions
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""
@@ -45,6 +46,7 @@ class PhoneInputViewController: UIViewController {
         // Do any additional setup after loading the view.
         phoneTextField.becomeFirstResponder()
         phoneNumberKit = PhoneNumberKit()
+        phoneTextField.delegate = self
         
         // Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -130,19 +132,22 @@ class PhoneInputViewController: UIViewController {
             // Show Error could not send verification
             errorLabel.text = "Please enter a valid phone number to proceed"
             os_log("Valid phone number entered: %s", log: Log.view, type: .error, phoneTextField.text ?? "No value")
-        }
-        
-        do {
-            let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
-            userDoesExist(countryCode: String(phoneNumber.countryCode), phoneNumber: String(phoneNumber.nationalNumber))
-        } catch {
-            // Show Error could not send verification
-            errorLabel.text = "An error occured. Please try again later"
-            // Logs the error
-            os_log("Error checking if user exists: %{public}s", log: Log.view, type: .error, error.localizedDescription)
+        } else {
+            do {
+                let phoneNumber = try phoneNumberKit!.parse(phoneTextField.text!)
+                if createUser! {
+                    userDoesExist(countryCode: String(phoneNumber.countryCode), phoneNumber: String(phoneNumber.nationalNumber))
+                } else {
+                    sendVerification(countryCode: String(phoneNumber.countryCode), phoneNumber: String(phoneNumber.nationalNumber))
+                }
+            } catch {
+                // Show Error could not send verification
+                errorLabel.text = "An error occured. Please try again later"
+                // Logs the error
+                os_log("Error checking if user exists: %{public}s", log: Log.view, type: .error, error.localizedDescription)
+            }
         }
     }
-    
 }
 
 
@@ -185,10 +190,10 @@ extension PhoneInputViewController {
                             // Logs the end of the signpost
                             os_signpost(.end, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "This phone number is already registered to a user")
                         } else {
-                            // Send Verification Code
-                            self.sendVerification(countryCode: countryCode, phoneNumber: phoneNumber)
                             // Logs the end of the signpost
                             os_signpost(.end, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "User does not exist, sending verification")
+                            // Send Verification Code
+                            self.sendVerification(countryCode: countryCode, phoneNumber: phoneNumber)
                         }
                     } catch {
                         // Sets the error label
@@ -242,5 +247,12 @@ extension PhoneInputViewController {
                     break
                 }
             }
+    }
+}
+
+extension PhoneInputViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        errorLabel.text = ""
+        return true
     }
 }

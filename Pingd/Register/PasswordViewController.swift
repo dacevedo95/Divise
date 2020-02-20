@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import os
 
 class PasswordViewController: UIViewController {
     
@@ -43,11 +44,11 @@ class PasswordViewController: UIViewController {
     
     // MARK: Lifecycle Functions
     override func viewDidLoad() {
+        // Initial when the view does load
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         self.errorLabel.text = ""
         
+        // Sets up listeners on text field
         passwordTextField.addTarget(self, action: #selector(firstTextFieldDidChange), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(secondTextFieldDidChange), for: .editingChanged)
         
@@ -55,8 +56,13 @@ class PasswordViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        // assigns the textfield to delegate of itself
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+        
+        // Logs the variables received when the view does load
+        os_log("PasswordViewController loaded with firstName: %s, lastName: %s, countryCode: %s, phoneNumber: %s", log: Log.view, type: .info,
+               firstName ?? "no value", lastName ?? "no value", countryCode?.description ?? "no value", phoneNumber?.description ?? "no value")
     }
     
     
@@ -83,26 +89,15 @@ class PasswordViewController: UIViewController {
     
 
     // MARK: - Navigation
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return true
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.errorLabel.text = ""
     }
     
     @IBAction func createAccountPressed(_ sender: UIButton) {
-        // self.nextButton.animateWhileAwitingResponse(showLoading: true, originalConstraints: sender.constraints)
-        
-        if passwordTextField.text != confirmPasswordTextField.text {
-            showErrorMessage(message: "Password fields must match")
-            return
-        }
-        if !isValidPassword(password: passwordTextField.text!) {
-            showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
-            return
-        }
+        // Logs the entry into the button
+        os_log("Create Account Button Pressed", log: Log.view, type: .debug)
 
+        // Creates the user
         createUser(password: passwordTextField.text!)
     }
 }
@@ -115,14 +110,13 @@ extension PasswordViewController: UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
             confirmPasswordTextField.becomeFirstResponder()
         } else {
-            if shouldPerformSegue(withIdentifier: "toMainSegue", sender: self){
-                performSegue(withIdentifier: "toMainSegue", sender: self)
-            }
+            createUser(password: passwordTextField.text!)
         }
         return true
     }
 
     @objc func firstTextFieldDidChange(_ textField: UITextField) {
+        errorLabel.text = ""
         if textField.text!.count == 0 {
             fieldOneHasText = false
         } else {
@@ -137,6 +131,7 @@ extension PasswordViewController: UITextFieldDelegate {
     }
     
     @objc func secondTextFieldDidChange(_ textField: UITextField) {
+        errorLabel.text = ""
         if textField.text!.count == 0 {
             fieldTwoHasText = false
         } else {
@@ -165,22 +160,53 @@ extension PasswordViewController {
     }
     
     func createUser(password: String?) {
+        // Animates the button
+        // self.nextButton.animateWhileAwitingResponse(showLoading: true, originalConstraints: sender.constraints)
         
+        // First we check if the password fields match
+        if passwordTextField.text != confirmPasswordTextField.text {
+            // Logs an error
+            os_log("Password fields do no match", log: Log.view, type: .error)
+            // Shows the error message
+            showErrorMessage(message: "Password fields must match")
+            return
+        }
+        
+        // Then we check if the password is valid
+        if !isValidPassword(password: passwordTextField.text!) {
+            // Logs an error
+            os_log("Password does not match criteria", log: Log.view, type: .error)
+            // Shows the error message
+            showErrorMessage(message: "Passwords need at least 8 characters, one capital, one lowercase, and one digit")
+            return
+        }
+        
+        // Creates the initial variables
         let createUserURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users"
         let user = NewUser(firstName: firstName!, lastName: lastName!, countryCode: String(countryCode!), phoneNumber: String(phoneNumber!), password: password!)
         
+        // Starts the signpost
+        let signpostID = OSSignpostID(log: Log.networking)
+        os_signpost(.begin, log: Log.networking, name: "Create User", signpostID: signpostID, "Creating user")
+        
+        // Sends the request
         AF.request(createUserURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
                 switch response.result {
                 case let .success(data):
-                    debugPrint(data)
+                    // Ends the signpost
+                    os_signpost(.end, log: Log.networking, name: "Create User", signpostID: signpostID, "Created user successfully")
+                    // Performs the segue and logs it
+                    os_log("Performing segue toMainSegue", log: Log.view, type: .info)
                     self.performSegue(withIdentifier: "toMainSegue", sender: self)
                     break
                 case let .failure(error):
-                    print(error)
+                    // Logs the error
+                    os_signpost(.end, log: Log.networking, name: "Create User", signpostID: signpostID, "Could not create user, error: %s", error.errorDescription ?? "no value")
                     self.showErrorMessage(message: "An error occured. Please try again later")
+                    break
                 }
             }
     }

@@ -124,6 +124,7 @@ extension ResetPasswordViewController: UITextFieldDelegate {
     }
 
     @objc func firstTextFieldDidChange(_ textField: UITextField) {
+        errorLabel.text = ""
         if textField.text!.count == 0 {
             fieldOneHasText = false
         } else {
@@ -138,6 +139,7 @@ extension ResetPasswordViewController: UITextFieldDelegate {
     }
     
     @objc func secondTextFieldDidChange(_ textField: UITextField) {
+        errorLabel.text = ""
         if textField.text!.count == 0 {
             fieldTwoHasText = false
         } else {

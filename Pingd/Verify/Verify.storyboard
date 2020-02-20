@@ -80,6 +80,9 @@
                                                         <state key="normal" title="Send Again">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="sendAgainPressed:" destination="vY5-dr-pTd" eventType="touchUpInside" id="bxs-9p-Njv"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-dd-VvU">
                                                         <rect key="frame" x="0.0" y="94" width="280" height="50"/>

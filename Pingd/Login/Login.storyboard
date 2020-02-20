@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="YIu-Gr-iir">
-                                <rect key="frame" x="67" y="123" width="280" height="580"/>
+                                <rect key="frame" x="67" y="128" width="280" height="580"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9HH-jG-l5X">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="62"/>
@@ -51,15 +51,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="168-J7-0DO">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="Zmq-OV-7TY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="7XV-2M-l1i"/>
-                                                            <constraint firstAttribute="width" constant="20" id="IAb-is-zxb"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-7J-OOd" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
-                                                        <rect key="frame" x="40" y="0.0" width="240" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0rM-8P-T60"/>
                                                         </constraints>
@@ -67,22 +60,12 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                                     </textField>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="IMO-7J-OOd" firstAttribute="width" secondItem="Zmq-OV-7TY" secondAttribute="width" multiplier="12" id="NPM-iR-4LU"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2cH-lY-xvY">
                                                 <rect key="frame" x="0.0" y="70" width="280" height="40"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-Fo-1H1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="Sdy-s8-YUb"/>
-                                                            <constraint firstAttribute="height" constant="40" id="bbR-v3-kXJ"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWp-m0-e7Z">
-                                                        <rect key="frame" x="40" y="0.0" width="240" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="ydn-iV-hmz"/>
                                                         </constraints>
@@ -90,9 +73,6 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="qWp-m0-e7Z" firstAttribute="width" secondItem="Sww-Fo-1H1" secondAttribute="width" multiplier="12" id="MyE-QK-FCO"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -196,7 +176,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YIu-Gr-iir" firstAttribute="centerX" secondItem="XL4-rc-9Z5" secondAttribute="centerX" id="QV9-M4-nez"/>
-                            <constraint firstItem="YIu-Gr-iir" firstAttribute="centerY" secondItem="XL4-rc-9Z5" secondAttribute="centerY" constant="-35" id="xnK-ZH-teM"/>
+                            <constraint firstItem="YIu-Gr-iir" firstAttribute="centerY" secondItem="XL4-rc-9Z5" secondAttribute="centerY" constant="-30" id="xnK-ZH-teM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="df5-uU-421"/>
                     </view>
@@ -246,8 +226,4 @@
             <point key="canvasLocation" x="-966" y="98"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Email" width="40" height="40"/>
-        <image name="Password" width="40" height="40"/>
-    </resources>
 </document>

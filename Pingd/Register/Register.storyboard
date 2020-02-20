@@ -73,17 +73,10 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qsv-ej-RLC">
                                                                 <rect key="frame" x="0.0" y="21" width="280" height="40"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstName" translatesAutoresizingMaskIntoConstraints="NO" id="hBo-5q-nlA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="20" id="NYF-de-pv9"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="lBD-iH-6p1"/>
-                                                                        </constraints>
-                                                                    </imageView>
                                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-qz-ltl">
-                                                                        <rect key="frame" x="40" y="0.0" width="240" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="240" id="GEr-SU-UsS"/>
+                                                                            <constraint firstAttribute="width" constant="280" id="X8z-xx-Syl"/>
                                                                             <constraint firstAttribute="height" constant="40" id="fTK-rf-iUP"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
@@ -109,18 +102,11 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-ZG-2Cm">
                                                                 <rect key="frame" x="0.0" y="21" width="280" height="40"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LastName" translatesAutoresizingMaskIntoConstraints="NO" id="B1u-2D-uB6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="20" id="Mz5-vj-DoB"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="rf3-Px-Lyf"/>
-                                                                        </constraints>
-                                                                    </imageView>
                                                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uum-ST-qUW">
-                                                                        <rect key="frame" x="40" y="0.0" width="240" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="Od6-RG-Hoq"/>
-                                                                            <constraint firstAttribute="width" constant="240" id="p6x-ew-zAu"/>
+                                                                            <constraint firstAttribute="width" constant="280" id="p6x-ew-zAu"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartInsertDeleteType="no" textContentType="family-name"/>
@@ -206,17 +192,5 @@
             </objects>
             <point key="canvasLocation" x="688" y="796"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="xKt-Bl-qcW">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="FcM-MQ-RLD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sqw-5i-Qal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1958" y="796"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="FirstName" width="40" height="40"/>
-        <image name="LastName" width="40" height="40"/>
-    </resources>
 </document>

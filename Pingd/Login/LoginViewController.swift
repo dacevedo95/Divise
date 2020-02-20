@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import PhoneNumberKit
+import os
 
 class LoginViewController: UIViewController, UITextViewDelegate {
     
@@ -55,6 +56,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
+        // Does initial setup
         super.viewDidLoad()
         self.errorLabel.text = ""
 
@@ -81,15 +83,23 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     }
     */
     @IBAction func signInPressed(_ sender: Any) {
-        // Sign in
-        print("Signing in")
+        // Logs entry into this function
+        os_log("Sign in button pressed", log: Log.view, type: .debug)
+        // Performs the sign in operation
         signIn()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Logs entry into the function
+        os_log("Preparing for segue with id %{public}s", log: Log.view, type: .info, segue.identifier ?? "no value")
+        
         if segue.identifier == "toVerifySegue" {
+            // Gets the destination controller
             let destinationVC = segue.destination as! PhoneInputViewController
+            // Sets the value of the createUser value
             destinationVC.createUser = false
+            // Logs the creation
+            os_log("Value createUser sent to PhoneInputViewController with value: %{public}s", log: Log.view, type: .info, false.description)
         }
         errorLabel.text = ""
     }
@@ -107,6 +117,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
 extension LoginViewController: UITextFieldDelegate {
     
     @objc func emailTextFieldDidChange(_ textField: UITextField) {
+        errorLabel.text = ""
         if textField.text!.count == 0 {
             fieldOneHasText = false
         } else {
@@ -129,6 +140,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     @objc func passwordTextFieldDidChange(_ textField: UITextField) {
+        errorLabel.text = ""
         if textField.text!.count == 0 {
             fieldTwoHasText = false
         } else {
@@ -174,27 +186,48 @@ extension LoginViewController {
     }
     
     private func signIn() {
+        // Generates the signpost id
+        let signpostID = OSSignpostID(log: Log.networking)
+        
         do {
             let nationalNumber = try phoneNumberKit.parse(phoneNumberTextField.text!).nationalNumber
             let login = Login(phoneNumber: String(nationalNumber), password: passwordTextField.text!)
             let signInUrl = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/login"
             
+            // Starts the signpost
+            os_signpost(.begin, log: Log.networking, name: "Log In", signpostID: signpostID, "Signing in with phone number: %s, password %s", String(nationalNumber), passwordTextField.text ?? "no value")
+            
+            // Perform the request
             AF.request(signInUrl, method: .post, parameters: login, encoder: JSONParameterEncoder.default)
                 .response { response in
                     switch response.response?.statusCode {
                     case 200:
+                        // Signals the end of the signpost
+                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "200 response received from request")
                         // Perform segue to main
+                        os_log("Performing segue toMainSegue", log: Log.view, type: .info)
                         self.performSegue(withIdentifier: "toMainSegue", sender: self)
                     case 401:
+                        // Signals the end of the signpost
+                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "401 response received from request")
+                        // Sets the error label
                         self.errorLabel.text = "Invalid email or password. Please try again"
                     case 500:
+                        // Signals the end of the signpost
+                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "500 response received from request")
+                        // Sets the error label
                         self.errorLabel.text = "An error occured. Please try again later"
                     default:
+                        // Signals the end of the signpost
+                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "%d response received from request", response.response?.statusCode ?? "no value")
+                        // Sets the error label
                         self.errorLabel.text = "An error occured. Please try again later"
                         break
                     }
                 }
         } catch {
+            // Signals the end of the signpost
+            os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "Error while signing in: %s", error.localizedDescription)
             // Show Error could not send verification
             errorLabel.text = "An error occured. Please try again later"
         }
