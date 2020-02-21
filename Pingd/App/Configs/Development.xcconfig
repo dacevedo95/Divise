@@ -1,0 +1,17 @@
+//
+//  Development.xcconfig
+//  Pingd
+//
+//  Created by David Acevedo on 2/20/20.
+//  Copyright © 2020 David Acevedo. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// SERVER URL
+SERVER_URL=http:/$()/PingdBackend-dev.us-east-1.elasticbeanstalk.com
+
+// App Settings
+APP_NAME=Pingd (dev)
+APP_BUNDLE=com.davidacevedo.Pingd.dev

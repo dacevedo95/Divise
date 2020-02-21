@@ -58,6 +58,7 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
         UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
             viewToAnimate.frame.origin.x = 0
             viewToDismiss.frame.origin.x = -1 * viewToAnimate.frame.width
+            
         }) { _ in
             transitionContext.completeTransition(true)
         }

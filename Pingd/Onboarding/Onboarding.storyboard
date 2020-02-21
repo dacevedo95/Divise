@@ -10,7 +10,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="GYc-Nl-5eg">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" id="NyB-Mc-BG9" customClass="OnboardingViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="NyB-Mc-BG9" customClass="OnboardingViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uwj-nS-dc5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,14 +32,17 @@
                                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.40168380739999998" green="0.20697245" blue="0.78436177969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </pageControl>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WO1-u8-ad0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBG-yw-Lwf">
                                                 <rect key="frame" x="0.0" y="62" width="280" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="280" id="Uw4-Ir-7LM"/>
-                                                    <constraint firstAttribute="height" constant="50" id="uHf-lv-gj9"/>
+                                                    <constraint firstAttribute="width" constant="280" id="VV2-od-aT6"/>
+                                                    <constraint firstAttribute="height" constant="50" id="cAE-lp-N5n"/>
                                                 </constraints>
-                                            </view>
+                                                <state key="normal" image="SignInWithApple">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1I-Uh-1Mf">
                                                 <rect key="frame" x="0.0" y="137" width="280" height="50"/>
                                                 <constraints>
@@ -51,7 +54,7 @@
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="oZ4-l4-uZO" kind="custom" customClass="SlideSegue" customModule="Pingd" customModuleProvider="target" id="BBe-OH-aFj"/>
+                                                    <segue destination="oZ4-l4-uZO" kind="custom" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="BBe-OH-aFj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -79,7 +82,6 @@
                     </view>
                     <connections>
                         <outlet property="pageControl" destination="jeH-s0-OVn" id="cSE-5O-bqE"/>
-                        <outlet property="signInWithApple" destination="WO1-u8-ad0" id="9DY-JF-CiR"/>
                         <outlet property="signInWithEmail" destination="D1I-Uh-1Mf" id="GlI-4E-lIZ"/>
                     </connections>
                 </viewController>
@@ -90,7 +92,7 @@
         <!--Onboarding Page View Controller-->
         <scene sceneID="ZAr-sd-Mch">
             <objects>
-                <pageViewController storyboardIdentifier="OnboardingPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5Wy-HD-UH7" customClass="OnboardingPageViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="OnboardingPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5Wy-HD-UH7" customClass="OnboardingPageViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9N-vi-Lrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-54" y="48"/>
@@ -108,7 +110,7 @@
         <!--Onboarding Content View Controller-->
         <scene sceneID="yEE-a5-tFM">
             <objects>
-                <viewController storyboardIdentifier="OnboardingContentViewController" id="ke3-gC-Fmq" customClass="OnboardingContentViewController" customModule="Pingd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingContentViewController" id="ke3-gC-Fmq" customClass="OnboardingContentViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fHl-Ea-jIE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="537.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,4 +164,7 @@
             <point key="canvasLocation" x="686.95652173913049" y="47.544642857142854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SignInWithApple" width="240" height="28.5"/>
+    </resources>
 </document>
