@@ -52,6 +52,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     var fieldTwoHasText = false
     
     var phoneNumberKit = PhoneNumberKit()
+    var userMgmtManager = UserManagementManager()
     
     
     // MARK: - Lifecycle Methods
@@ -186,48 +187,24 @@ extension LoginViewController {
     }
     
     private func signIn() {
-        // Generates the signpost id
-        let signpostID = OSSignpostID(log: Log.networking)
-        
         do {
             let nationalNumber = try phoneNumberKit.parse(phoneNumberTextField.text!).nationalNumber
             let login = Login(phoneNumber: String(nationalNumber), password: passwordTextField.text!)
-            let signInUrl = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/login"
             
-            // Starts the signpost
-            os_signpost(.begin, log: Log.networking, name: "Log In", signpostID: signpostID, "Signing in with phone number: %s, password %s", String(nationalNumber), passwordTextField.text ?? "no value")
-            
-            // Perform the request
-            AF.request(signInUrl, method: .post, parameters: login, encoder: JSONParameterEncoder.default)
-                .response { response in
-                    switch response.response?.statusCode {
-                    case 200:
-                        // Signals the end of the signpost
-                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "200 response received from request")
-                        // Perform segue to main
-                        os_log("Performing segue toMainSegue", log: Log.view, type: .info)
+            userMgmtManager.logIn(phoneNumber: login.phoneNumber, password: login.password) { (error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        self.errorLabel.text = error
+                        return
+                    } else {
                         self.performSegue(withIdentifier: "toMainSegue", sender: self)
-                    case 401:
-                        // Signals the end of the signpost
-                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "401 response received from request")
-                        // Sets the error label
-                        self.errorLabel.text = "Invalid email or password. Please try again"
-                    case 500:
-                        // Signals the end of the signpost
-                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "500 response received from request")
-                        // Sets the error label
-                        self.errorLabel.text = "An error occured. Please try again later"
-                    default:
-                        // Signals the end of the signpost
-                        os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "%d response received from request", response.response?.statusCode ?? "no value")
-                        // Sets the error label
-                        self.errorLabel.text = "An error occured. Please try again later"
-                        break
                     }
                 }
+            }
+    
         } catch {
-            // Signals the end of the signpost
-            os_signpost(.end, log: Log.networking, name: "Log In", signpostID: signpostID, "Error while signing in: %s", error.localizedDescription)
+            // Signals the end of the error
+            os_log("Error while signing in: %{public}s", error.localizedDescription)
             // Show Error could not send verification
             errorLabel.text = "An error occured. Please try again later"
         }

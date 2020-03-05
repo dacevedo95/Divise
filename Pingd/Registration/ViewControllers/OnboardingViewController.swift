@@ -14,24 +14,20 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
     // MARK: - Outlets
     @IBOutlet var pageControl: UIPageControl!
     
-    @IBOutlet var signInWithApple: UIView! {
+    @IBOutlet weak var signInWithAppleButton: UIButton! {
         didSet {
-            let authBtn = ASAuthorizationAppleIDButton()
-            authBtn.frame = CGRect(x: 0, y: 0, width: signInWithApple.frame.size.width, height: signInWithApple.bounds.height)
-            // Handles the press
-            authBtn.addTarget(self, action: #selector(handleAppleSignin), for: .touchUpInside)
-            // Adds the button to the view
-            signInWithApple.addSubview(authBtn)
+            self.signInWithAppleButton.layer.cornerRadius = 25.0
+            self.signInWithAppleButton.addTarget(self, action: #selector(handleAppleSignin), for: .touchUpInside)
         }
     }
     
     @IBOutlet var signInWithEmail: UIButton! {
         didSet {
             signInWithEmail.backgroundColor = .clear
-            signInWithEmail.layer.cornerRadius = 25
-            signInWithEmail.layer.borderWidth = 1
-            signInWithEmail.layer.borderColor = UIColor.black.cgColor
-            signInWithEmail.layer.masksToBounds = true
+//            signInWithEmail.layer.cornerRadius = 25
+//            signInWithEmail.layer.borderWidth = 1
+//            signInWithEmail.layer.borderColor = UIColor.black.cgColor
+//            signInWithEmail.layer.masksToBounds = true
         }
     }
     

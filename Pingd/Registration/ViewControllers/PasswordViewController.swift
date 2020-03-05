@@ -40,6 +40,8 @@ class PasswordViewController: UIViewController {
     
     var fieldOneHasText = false
     var fieldTwoHasText = false
+    
+    var userMgmtManager = UserManagementManager()
 
     
     // MARK: Lifecycle Functions
@@ -182,32 +184,18 @@ extension PasswordViewController {
         }
         
         // Creates the initial variables
-        let createUserURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users"
         let user = NewUser(firstName: firstName!, lastName: lastName!, countryCode: String(countryCode!), phoneNumber: String(phoneNumber!), password: password!)
         
-        // Starts the signpost
-        let signpostID = OSSignpostID(log: Log.networking)
-        os_signpost(.begin, log: Log.networking, name: "Create User", signpostID: signpostID, "Creating user")
-        
-        // Sends the request
-        AF.request(createUserURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseData { response in
-                switch response.result {
-                case let .success(data):
-                    // Ends the signpost
-                    os_signpost(.end, log: Log.networking, name: "Create User", signpostID: signpostID, "Created user successfully")
-                    // Performs the segue and logs it
-                    os_log("Performing segue toMainSegue", log: Log.view, type: .info)
+        // Makes the API request
+        userMgmtManager.createUser(firstName: user.firstName, lastName: user.lastName, countryCode: user.countryCode, phoneNumber: user.phoneNumber, password: user.password) { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorLabel.text = error
+                } else {
                     self.performSegue(withIdentifier: "toMainSegue", sender: self)
-                    break
-                case let .failure(error):
-                    // Logs the error
-                    os_signpost(.end, log: Log.networking, name: "Create User", signpostID: signpostID, "Could not create user, error: %s", error.errorDescription ?? "no value")
-                    self.showErrorMessage(message: "An error occured. Please try again later")
-                    break
                 }
             }
+        }
     }
+    
 }

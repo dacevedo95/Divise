@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import os
 
 class VerifyViewController: UIViewController {
@@ -30,6 +29,8 @@ class VerifyViewController: UIViewController {
     
     var firstName: String?
     var lastName: String?
+    
+    var userMgmtManager = UserManagementManager()
     
     override func viewDidLoad() {
         // Intial setup
@@ -110,79 +111,36 @@ extension VerifyViewController {
         os_log("entered verifyCode", log: Log.view, type: .debug)
         
         // Sets up url and body for the request
-        let verifyCodeURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users/verification/check"
         let user = VerifyUser(countryCode: countryCode!.description, phoneNumber: phoneNumber!.description, code: code)
         
-        // Starts the signpost
-        let signpostID = OSSignpostID(log: Log.networking)
-        os_signpost(.begin, log: Log.networking, name: "Verify Code", signpostID: signpostID, "Starting code verification")
-        
         // Performs the request
-        AF.request(verifyCodeURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
-            .response { response in
-                os_log("Got error %s and status code %d", log: Log.networking, type: .debug, response.error.debugDescription, response.response?.statusCode ?? 0)
-                switch response.response?.statusCode {
-                case 204:
-                    // Logs the failure
-                    os_signpost(.end, log: Log.networking, name: "Verify Code", signpostID: signpostID, "Successfully verified code")
-                    
-                    // Navigate to main screen
+        userMgmtManager.checkVerification(countryCode: user.countryCode, phoneNumber: user.phoneNumber, code: user.code) { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorLabel.text = error
+                } else {
                     if self.createUser! {
-                        // Go to other page in Register
-                        os_log("Performing segue with id toPasswordSegue", log: Log.view, type: .info)
                         self.performSegue(withIdentifier: "toPasswordSegue", sender: self)
                     } else {
-                        // Go to reset password
-                        os_log("Performing segue with id toResetPasswordSegue", log: Log.view, type: .info)
                         self.performSegue(withIdentifier: "toResetPasswordSegue", sender: self)
                     }
-                    break
-                case 400:
-                    // Logs the failure
-                    os_signpost(.end, log: Log.networking, name: "Verify Code", signpostID: signpostID, "Incorrect verification code")
-                    // Shows error label
-                    self.errorLabel.text = "Incorrect verification code. Please check that the code or phone number is correct"
-                    break
-                default:
-                    // Logs the failure
-                    os_signpost(.end, log: Log.networking, name: "Verify Code", signpostID: signpostID, "Error verifying code, status code: %d", response.response?.statusCode ?? 0)
-                    // Shows error label
-                    self.errorLabel.text = "An error occured. Please try again later"
-                    break
                 }
             }
+        }
     }
     
     private func sendVerification(countryCode: String, phoneNumber: String) {
         // Logs entry into the function
         os_log("in sendVerification", log: Log.view, type: .debug)
         
-        // Sets up url and body for the request
-        let sendVerificationURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users/verification"
-        let user = userExists(countryCode: countryCode, phoneNumber: phoneNumber)
-        
-        // Starts the signpost
-        let signpostID = OSSignpostID(log: Log.networking)
-        os_signpost(.begin, log: Log.networking, name: "Send Verification", signpostID: signpostID, "Sending request with countryCode: %s, phoneNumber %s", user.countryCode, user.phoneNumber)
-        
-        // Performs the request
-        AF.request(sendVerificationURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    // Logs the success message
-                    os_signpost(.end, log: Log.networking, name: "Send Verification", signpostID: signpostID, "Verification sent successfully")
-                    break
-                case let .failure(error):
-                    // Logs the end of the signpost
-                    os_signpost(.end, log: Log.networking, name: "Send Verification", signpostID: signpostID, "Error sending verification: %{public}s", error.localizedDescription)
-                    // Sets the error label
-                    self.errorLabel.text = "An error occured. Please try again later"
-                    break
+        // Makes the request
+        userMgmtManager.sendVerification(countryCode: countryCode, phoneNumber: phoneNumber) { (error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.errorLabel.text = error
                 }
             }
+        }
     }
 }
 

@@ -23,12 +23,12 @@ class SlideSegue: UIStoryboardSegue {
 
 extension SlideSegue: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideAnimator(animationDuration: 0.5, animationType: .present)
+        return SlideAnimator(animationDuration: 0.35, animationType: .present)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         selfSlideRetainer = nil
-        return SlideAnimator(animationDuration: 0.5, animationType: .dismiss)
+        return SlideAnimator(animationDuration: 0.35, animationType: .dismiss)
     }
 }
 
@@ -46,11 +46,11 @@ class BackslideSegue: UIStoryboardSegue {
 
 extension BackslideSegue: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideAnimator(animationDuration: 0.5, animationType: .dismiss)
+        return SlideAnimator(animationDuration: 0.35, animationType: .dismiss)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         selfBackslideRetainer = nil
-        return SlideAnimator(animationDuration: 0.5, animationType: .present)
+        return SlideAnimator(animationDuration: 0.35, animationType: .present)
     }
 }

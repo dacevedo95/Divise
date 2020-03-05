@@ -29,6 +29,20 @@
 		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
+		5D753F1423FF7BE800B558D7 /* UserForLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F1323FF7BE800B558D7 /* UserForLogin.swift */; };
+		5D753F232404E5F600B558D7 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F222404E5F600B558D7 /* EndPointType.swift */; };
+		5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F242404E67A00B558D7 /* HTTPMethod.swift */; };
+		5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F262406119A00B558D7 /* HTTPTask.swift */; };
+		5D753F2A2406124D00B558D7 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F292406124D00B558D7 /* ParameterEncoding.swift */; };
+		5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F2B240614ED00B558D7 /* URLParameterEncoding.swift */; };
+		5D753F2E2406186B00B558D7 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F2D2406186B00B558D7 /* JSONParameterEncoder.swift */; };
+		5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F2F24061AB200B558D7 /* NetworkRouter.swift */; };
+		5D753F3224061CFF00B558D7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F3124061CFF00B558D7 /* Router.swift */; };
+		5D753F37240A266000B558D7 /* UserManagementEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F36240A265F00B558D7 /* UserManagementEndpoint.swift */; };
+		5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F39240B5FB400B558D7 /* UserManagementManager.swift */; };
+		5D753F3D240B6F7600B558D7 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F3C240B6F7600B558D7 /* LogInModel.swift */; };
+		5D753F41240DFC2A00B558D7 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F40240DFC2900B558D7 /* NetworkLogger.swift */; };
+		5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4224109B5300B558D7 /* UserExistenceModel.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
 		5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24B923D368100045E325 /* LoginViewController.swift */; };
 		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
@@ -41,8 +55,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104788713A784B8F5CA570C0 /* Pods-Pingd.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug (development).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug (development).xcconfig"; sourceTree = "<group>"; };
 		552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release.xcconfig"; sourceTree = "<group>"; };
-		5D39EDE923CC03FA00043218 /* Ping`d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ping`d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		591D840A2E362053F3CA51C1 /* Pods-Pingd.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (development).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (development).xcconfig"; sourceTree = "<group>"; };
+		5C3A4C9F2424D9E4FE7F4A2F /* Pods-Pingd.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (production).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (production).xcconfig"; sourceTree = "<group>"; };
+		5D39EDE923CC03FA00043218 /* Centsable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Centsable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D39EDEC23CC03FA00043218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D39EDF323CC03FA00043218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +86,20 @@
 		5D753F0D23FF61FD00B558D7 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		5D753F0E23FF621400B558D7 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		5D753F0F23FF622800B558D7 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		5D753F1323FF7BE800B558D7 /* UserForLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForLogin.swift; sourceTree = "<group>"; };
+		5D753F222404E5F600B558D7 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		5D753F242404E67A00B558D7 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5D753F262406119A00B558D7 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		5D753F292406124D00B558D7 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		5D753F2B240614ED00B558D7 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		5D753F2D2406186B00B558D7 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		5D753F2F24061AB200B558D7 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		5D753F3124061CFF00B558D7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5D753F36240A265F00B558D7 /* UserManagementEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementEndpoint.swift; sourceTree = "<group>"; };
+		5D753F39240B5FB400B558D7 /* UserManagementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementManager.swift; sourceTree = "<group>"; };
+		5D753F3C240B6F7600B558D7 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
+		5D753F40240DFC2900B558D7 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		5D753F4224109B5300B558D7 /* UserExistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExistenceModel.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9F24B923D368100045E325 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -79,7 +110,10 @@
 		5D9F24DD23D946D50045E325 /* SlideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimator.swift; sourceTree = "<group>"; };
 		5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSegue.swift; sourceTree = "<group>"; };
 		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
+		A62FFE42862A620360489166 /* Pods-Pingd.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (staging).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (staging).xcconfig"; sourceTree = "<group>"; };
 		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD52A31AC521042968FFF34E /* Pods-Pingd.debug (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug (staging).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug (staging).xcconfig"; sourceTree = "<group>"; };
+		EFEC2E43AAE30298A0E9A647 /* Pods-Pingd.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug (production).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug (production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +133,12 @@
 			children = (
 				A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */,
 				552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */,
+				104788713A784B8F5CA570C0 /* Pods-Pingd.debug (development).xcconfig */,
+				CD52A31AC521042968FFF34E /* Pods-Pingd.debug (staging).xcconfig */,
+				EFEC2E43AAE30298A0E9A647 /* Pods-Pingd.debug (production).xcconfig */,
+				591D840A2E362053F3CA51C1 /* Pods-Pingd.release (development).xcconfig */,
+				A62FFE42862A620360489166 /* Pods-Pingd.release (staging).xcconfig */,
+				5C3A4C9F2424D9E4FE7F4A2F /* Pods-Pingd.release (production).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -116,7 +156,7 @@
 		5D39EDEA23CC03FA00043218 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D39EDE923CC03FA00043218 /* Ping`d.app */,
+				5D39EDE923CC03FA00043218 /* Centsable.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,14 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				5D9F24AC23D1904A0045E325 /* App */,
-				5D39EE0323CC13BF00043218 /* Fonts */,
-				5D9F24BB23D36C340045E325 /* Extensions */,
-				5D9F24D423D9237D0045E325 /* Transitions */,
-				5D9F24AD23D1904F0045E325 /* Onboarding */,
+				5D753F1523FF7DD200B558D7 /* Networking */,
+				5D753F1C2404CAFB00B558D7 /* Registration */,
 				5D9F24B623D359150045E325 /* Login */,
-				5D9F24C323D5F5630045E325 /* Register */,
-				5D644B7B23E76728005F0720 /* Verify */,
-				5D3E270123F7BCCE0041F8FE /* Reset Password */,
 				5D9F24AE23D1905F0045E325 /* Main */,
 			);
 			path = Pingd;
@@ -146,26 +181,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5D3E270123F7BCCE0041F8FE /* Reset Password */ = {
-			isa = PBXGroup;
-			children = (
-				5D3E270223F7BEE70041F8FE /* ResetPassword.storyboard */,
-				5D3E270423F7C27C0041F8FE /* ResetPasswordViewController.swift */,
-			);
-			path = "Reset Password";
-			sourceTree = "<group>";
-		};
-		5D644B7B23E76728005F0720 /* Verify */ = {
-			isa = PBXGroup;
-			children = (
-				5D644B7C23E76822005F0720 /* Verify.storyboard */,
-				5D644B7E23E770F2005F0720 /* VerifyViewController.swift */,
-				5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */,
-				5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */,
-			);
-			path = Verify;
-			sourceTree = "<group>";
-		};
 		5D753F0C23FF61C300B558D7 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,9 +192,149 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		5D753F1023FF7B5200B558D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F1323FF7BE800B558D7 /* UserForLogin.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D753F1123FF7B5700B558D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D3E270223F7BEE70041F8FE /* ResetPassword.storyboard */,
+				5D9F24B723D3592E0045E325 /* Login.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D753F1223FF7B6000B558D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D3E270423F7C27C0041F8FE /* ResetPasswordViewController.swift */,
+				5D9F24B923D368100045E325 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D753F1523FF7DD200B558D7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F3B240B6F5B00B558D7 /* Model */,
+				5D753F38240B5F3000B558D7 /* Manager */,
+				5D753F35240A235600B558D7 /* Endpoint */,
+				5D753F282406123500B558D7 /* Encoding */,
+				5D753F212404E5D900B558D7 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5D753F1C2404CAFB00B558D7 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F1F2404CB0C00B558D7 /* ViewControllers */,
+				5D753F1E2404CB0700B558D7 /* Views */,
+				5D753F1D2404CB0100B558D7 /* Models */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		5D753F1D2404CB0100B558D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D753F1E2404CB0700B558D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D644B7C23E76822005F0720 /* Verify.storyboard */,
+				5D3E270623F8F44E0041F8FE /* Password.storyboard */,
+				5D9F24C423D5F57D0045E325 /* Register.storyboard */,
+				5D39EE0823CFF48100043218 /* Onboarding.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D753F1F2404CB0C00B558D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D644B7E23E770F2005F0720 /* VerifyViewController.swift */,
+				5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */,
+				5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */,
+				5D3E26FF23F63CBB0041F8FE /* PasswordViewController.swift */,
+				5D39EE0A23D0075000043218 /* OnboardingContentViewController.swift */,
+				5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */,
+				5D39EE0E23D0123400043218 /* OnboardingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D753F202404CB8F00B558D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D753F212404E5D900B558D7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F222404E5F600B558D7 /* EndPointType.swift */,
+				5D753F242404E67A00B558D7 /* HTTPMethod.swift */,
+				5D753F262406119A00B558D7 /* HTTPTask.swift */,
+				5D753F2F24061AB200B558D7 /* NetworkRouter.swift */,
+				5D753F3124061CFF00B558D7 /* Router.swift */,
+				5D753F40240DFC2900B558D7 /* NetworkLogger.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5D753F282406123500B558D7 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F292406124D00B558D7 /* ParameterEncoding.swift */,
+				5D753F2B240614ED00B558D7 /* URLParameterEncoding.swift */,
+				5D753F2D2406186B00B558D7 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		5D753F35240A235600B558D7 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F36240A265F00B558D7 /* UserManagementEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		5D753F38240B5F3000B558D7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F39240B5FB400B558D7 /* UserManagementManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5D753F3B240B6F5B00B558D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F3C240B6F7600B558D7 /* LogInModel.swift */,
+				5D753F4224109B5300B558D7 /* UserExistenceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5D9F24AC23D1904A0045E325 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5D753F202404CB8F00B558D7 /* Supporting Files */,
+				5D9F24D423D9237D0045E325 /* Transitions */,
+				5D9F24BB23D36C340045E325 /* Extensions */,
+				5D39EE0323CC13BF00043218 /* Fonts */,
 				5D753F0C23FF61C300B558D7 /* Configs */,
 				5D39EE0623CD7B8D00043218 /* Pingd.entitlements */,
 				5D39EDEC23CC03FA00043218 /* AppDelegate.swift */,
@@ -189,17 +344,6 @@
 				5D3E270823FA43540041F8FE /* Log.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		5D9F24AD23D1904F0045E325 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				5D39EE0823CFF48100043218 /* Onboarding.storyboard */,
-				5D39EE0A23D0075000043218 /* OnboardingContentViewController.swift */,
-				5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */,
-				5D39EE0E23D0123400043218 /* OnboardingViewController.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		5D9F24AE23D1905F0045E325 /* Main */ = {
@@ -214,8 +358,9 @@
 		5D9F24B623D359150045E325 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5D9F24B723D3592E0045E325 /* Login.storyboard */,
-				5D9F24B923D368100045E325 /* LoginViewController.swift */,
+				5D753F1023FF7B5200B558D7 /* Models */,
+				5D753F1123FF7B5700B558D7 /* Views */,
+				5D753F1223FF7B6000B558D7 /* ViewControllers */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -229,17 +374,6 @@
 				5D9F24D223D800040045E325 /* String.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		5D9F24C323D5F5630045E325 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				5D9F24C423D5F57D0045E325 /* Register.storyboard */,
-				5D3E270623F8F44E0041F8FE /* Password.storyboard */,
-				5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */,
-				5D3E26FF23F63CBB0041F8FE /* PasswordViewController.swift */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		5D9F24D423D9237D0045E325 /* Transitions */ = {
@@ -278,7 +412,7 @@
 			);
 			name = Pingd;
 			productName = Pingd;
-			productReference = 5D39EDE923CC03FA00043218 /* Ping`d.app */;
+			productReference = 5D39EDE923CC03FA00043218 /* Centsable.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -381,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D753F1423FF7BE800B558D7 /* UserForLogin.swift in Sources */,
 				5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */,
 				5D9F24D123D6CCF80045E325 /* UIButton.swift in Sources */,
 				5D3E270923FA43540041F8FE /* Log.swift in Sources */,
@@ -388,17 +523,30 @@
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D9F24D323D800050045E325 /* String.swift in Sources */,
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,
+				5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
+				5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */,
 				5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */,
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
+				5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */,
+				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
+				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
 				5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */,
+				5D753F2A2406124D00B558D7 /* ParameterEncoding.swift in Sources */,
+				5D753F41240DFC2A00B558D7 /* NetworkLogger.swift in Sources */,
+				5D753F3D240B6F7600B558D7 /* LogInModel.swift in Sources */,
+				5D753F232404E5F600B558D7 /* EndPointType.swift in Sources */,
+				5D753F3224061CFF00B558D7 /* Router.swift in Sources */,
 				5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */,
 				5D3E270023F63CBB0041F8FE /* PasswordViewController.swift in Sources */,
+				5D753F37240A266000B558D7 /* UserManagementEndpoint.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
+				5D753F2E2406186B00B558D7 /* JSONParameterEncoder.swift in Sources */,
+				5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */,
 				5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */,
 				5D3E26FE23F63C9E0041F8FE /* NameViewController.swift in Sources */,
 			);
@@ -550,13 +698,13 @@
 				CODE_SIGN_ENTITLEMENTS = Pingd/App/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
-				INFOPLIST_FILE = Pingd/App/Info.plist;
+				INFOPLIST_FILE = Pingd/App/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping`d";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
+				PRODUCT_NAME = Centsable;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -570,13 +718,13 @@
 				CODE_SIGN_ENTITLEMENTS = Pingd/App/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
-				INFOPLIST_FILE = Pingd/App/Info.plist;
+				INFOPLIST_FILE = Pingd/App/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping`d";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
+				PRODUCT_NAME = Centsable;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -651,13 +799,13 @@
 				CODE_SIGN_ENTITLEMENTS = Pingd/App/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
-				INFOPLIST_FILE = Pingd/App/Info.plist;
+				INFOPLIST_FILE = Pingd/App/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping`d";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
+				PRODUCT_NAME = Centsable;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -732,13 +880,13 @@
 				CODE_SIGN_ENTITLEMENTS = Pingd/App/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
-				INFOPLIST_FILE = Pingd/App/Info.plist;
+				INFOPLIST_FILE = Pingd/App/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping`d";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
+				PRODUCT_NAME = Centsable;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -807,13 +955,13 @@
 				CODE_SIGN_ENTITLEMENTS = Pingd/App/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
-				INFOPLIST_FILE = Pingd/App/Info.plist;
+				INFOPLIST_FILE = Pingd/App/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping`d";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
+				PRODUCT_NAME = Centsable;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -882,13 +1030,13 @@
 				CODE_SIGN_ENTITLEMENTS = Pingd/App/Pingd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNBPRX7D85;
-				INFOPLIST_FILE = Pingd/App/Info.plist;
+				INFOPLIST_FILE = Pingd/App/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Pingd;
-				PRODUCT_NAME = "Ping`d";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
+				PRODUCT_NAME = Centsable;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -21,6 +21,8 @@ class PhoneInputViewController: UIViewController {
     var phoneNumberKit: PhoneNumberKit?
     var updateUser: Bool?
     
+    let userMgmtManager = UserManagementManager()
+    
     // MARK: - Outlets
     @IBOutlet weak var phoneTextField: PhoneNumberTextField! {
         didSet {
@@ -164,89 +166,38 @@ extension PhoneInputViewController {
         os_log("in userDoesExist", log: Log.view, type: .debug)
         
         // Sets up url and body for the request
-        let checkUserURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users/exists"
         let user = userExists(countryCode: countryCode, phoneNumber: phoneNumber)
         
-        // Starts the signpost
-        let signpostID = OSSignpostID(log: Log.networking)
-        os_signpost(.begin, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "Sending request with countryCode: %s, phoneNumber %s", user.countryCode, user.phoneNumber)
-        
-        // Performs the request
-        AF.request(checkUserURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseData { response in
-                // Determines what action to take based on the result
-                switch response.result {
-                case let .success(data):
-                    do {
-                        // Gets the body to a JSON format
-                        let body = try JSON(data: data)
-                        
-                        // Checks if the user does exist
-                        if body["exists"].boolValue {
-                            // Sets the error label
-                            self.errorLabel.text = "This phone number is already registered to a user. Please sign in"
-                            // Logs the end of the signpost
-                            os_signpost(.end, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "This phone number is already registered to a user")
-                        } else {
-                            // Logs the end of the signpost
-                            os_signpost(.end, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "User does not exist, sending verification")
-                            // Send Verification Code
-                            self.sendVerification(countryCode: countryCode, phoneNumber: phoneNumber)
-                        }
-                    } catch {
-                        // Sets the error label
-                        self.errorLabel.text = "An error occured. Please try again later"
-                        // Logs the end of the signpost
-                        os_signpost(.end, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "Error checking success result: %{public}s", error.localizedDescription)
+        // Makes request
+        userMgmtManager.checkUserExistence(countryCode: user.countryCode, phoneNumber: user.phoneNumber) { (exists, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorLabel.text = error
+                } else {
+                    if exists! {
+                        self.errorLabel.text = "This phone number is already registered to a user. Please sign in"
+                    } else {
+                        self.sendVerification(countryCode: user.countryCode, phoneNumber: user.phoneNumber)
                     }
-                    // Breaks
-                    break
-                case let .failure(error):
-                    // Sets the error label
-                    self.errorLabel.text = "An error occured. Please try again later"
-                    // Logs the end of the signpost
-                    os_signpost(.end, log: Log.networking, name: "Check User Exists", signpostID: signpostID, "Error checking success result: %{public}s", error.localizedDescription)
-                    // Breaks
-                    break
                 }
             }
+        }
     }
     
     private func sendVerification(countryCode: String, phoneNumber: String) {
         // Logs entry into the function
         os_log("in sendVerification", log: Log.view, type: .debug)
         
-        // Sets up url and body for the request
-        let sendVerificationURL = "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/users/verification"
-        let user = userExists(countryCode: countryCode, phoneNumber: phoneNumber)
-        
-        // Starts the signpost
-        let signpostID = OSSignpostID(log: Log.networking)
-        os_signpost(.begin, log: Log.networking, name: "Send Verification", signpostID: signpostID, "Sending request with countryCode: %s, phoneNumber %s", user.countryCode, user.phoneNumber)
-        
-        // Performs the request
-        AF.request(sendVerificationURL, method: .post, parameters: user, encoder: JSONParameterEncoder.default)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    // Logs the success message
-                    os_signpost(.end, log: Log.networking, name: "Send Verification", signpostID: signpostID, "Verification sent successfully")
-                    // Performs the segue
-                    os_log("Performing segue with id checkVerificationSegue", log: Log.view, type: .info)
+        // Makes the request
+        userMgmtManager.sendVerification(countryCode: countryCode, phoneNumber: phoneNumber) { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorLabel.text = error
+                } else {
                     self.performSegue(withIdentifier: "checkVerificationSegue", sender: self)
-                    break
-                case let .failure(error):
-                    // Logs the end of the signpost
-                    os_signpost(.end, log: Log.networking, name: "Send Verification", signpostID: signpostID, "Error sending verification: %{public}s", error.localizedDescription)
-                    // Sets the error label
-                    self.errorLabel.text = "An error occured. Please try again later"
-                    break
                 }
             }
+        }
     }
 }
 

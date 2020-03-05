@@ -19,15 +19,15 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     weak var onboardingDelegate: OnboardingPageViewControllerDelegate?
     
     var pageHeadings = [
-        "Ping Your Friends",
-        "Pong Them Back",
-        "Check In Anywhere"
+        "Track What You Spend",
+        "Customize Your Budget",
+        "Monitor Your Habits"
     ]
-    var pageImages = ["FirstOnboardingImage", "SecondOnboardingImage", "ThirdOnboardingImage"]
+    var pageImages = ["Notebook", "PieChart", "Graph"]
     var pageSubheadings = [
-        "Send Pings or requests to friends and family to check in on them.",
-        "Pong them back with your location or just with a simple check in with no content.",
-        "Check in on friends family, and custom groups in a simple and efficent way."
+        "Add and categorize what you spend into your needs, and your wants",
+        "Choose how much you want to spend on each category, and how much you want to save",
+        "See how you spend your money from week to week and month to month"
     ]
     
     var currentIndex = 0
