@@ -16,11 +16,12 @@ enum Environment {
 }
 
 public enum UserManagementEndpoint {
-    case logIn(phoneNumber: String, password: String)
+    case logIn(countryCode: String, phoneNumber: String, password: String)
     case createAccount(firstName: String, lastName: String, countryCode: String, phoneNumber: String, password: String)
     case checkUserExistance(countryCode: String, phoneNumber: String)
     case sendVerification(countryCode: String, phoneNumber: String)
     case checkVerification(countryCode: String, phoneNumber: String, code: String)
+    case resetPassword(countryCode: String, phoneNumber: String, newPassword: String)
 }
 
 extension UserManagementEndpoint: EndPointType {
@@ -43,7 +44,7 @@ extension UserManagementEndpoint: EndPointType {
     
     var path: String {
         switch self {
-        case .logIn(_, _):
+        case .logIn(_, _, _):
             return "login"
         case .sendVerification(_, _):
             return "users/verification"
@@ -53,6 +54,8 @@ extension UserManagementEndpoint: EndPointType {
             return "users/verification/check"
         case .checkUserExistance(_, _):
             return "users/exists"
+        case .resetPassword(_, _, _):
+            return "users/reset-password"
         }
     }
     
@@ -62,8 +65,8 @@ extension UserManagementEndpoint: EndPointType {
     
     var task: HTTPTask {
         switch self {
-        case .logIn(let phoneNumber, let password):
-            return .requestParameters(bodyParameters: ["phoneNumber": phoneNumber, "password": password], urlParameters: nil)
+        case .logIn(let countryCode, let phoneNumber, let password):
+            return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber, "password": password], urlParameters: nil)
         case .sendVerification(let countryCode, let phoneNumber):
             return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber], urlParameters: nil)
         case .createAccount(let firstName, let lastName, let countryCode, let phoneNumber, let password):
@@ -72,6 +75,8 @@ extension UserManagementEndpoint: EndPointType {
             return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber, "code": code], urlParameters: nil)
         case .checkUserExistance(let countryCode, let phoneNumber):
             return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber], urlParameters: nil)
+        case .resetPassword(let countryCode, let phoneNumber, let newPassword):
+            return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber, "newPassword": newPassword], urlParameters: nil)
         }
     }
     
@@ -79,9 +84,26 @@ extension UserManagementEndpoint: EndPointType {
         return nil
     }
     
+    var shouldAuthorize: Bool {
+        switch self {
+        case .logIn(_, _, _):
+            return false
+        case .sendVerification:
+            return false
+        case .createAccount:
+            return true
+        case .checkVerification(_, _, _):
+            return false
+        case .checkUserExistance:
+            return false
+        case .resetPassword:
+            return true
+        }
+    }
+    
     var signpostName: StaticString {
         switch self {
-        case .logIn(_, _):
+        case .logIn(_, _, _):
             return "Log In"
         case .sendVerification:
             return "Send Verification"
@@ -91,6 +113,8 @@ extension UserManagementEndpoint: EndPointType {
             return "Check Verification"
         case .checkUserExistance:
             return "Check User Exists"
+        case .resetPassword:
+            return "Reset Password"
         }
     }
 }

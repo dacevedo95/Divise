@@ -90,6 +90,12 @@ class VerifyViewController: UIViewController {
             vc.countryCode = countryCode
             vc.phoneNumber = phoneNumber
         }
+        
+        if segue.identifier == "toResetPasswordSegue" {
+            let vc = segue.destination as! ResetPasswordViewController
+            vc.phoneNumber = phoneNumber
+            vc.countryCode = countryCode
+        }
     }
 }
 

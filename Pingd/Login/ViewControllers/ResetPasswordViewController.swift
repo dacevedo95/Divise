@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os
 
 class ResetPasswordViewController: UIViewController {
 
@@ -32,6 +33,11 @@ class ResetPasswordViewController: UIViewController {
     // MARK: - Properties
     var fieldOneHasText = false
     var fieldTwoHasText = false
+    
+    var userMgmtManager = UserManagementManager()
+    
+    var countryCode: UInt64?
+    var phoneNumber: UInt64?
     
     
     // MARK: - Lifecycle Functions
@@ -78,6 +84,13 @@ class ResetPasswordViewController: UIViewController {
         return true
     }
     
+    @IBAction func resetPasswordPressed(_ sender: Any) {
+        // Logs entry into this function
+        os_log("Sign in button pressed", log: Log.view, type: .debug)
+        // Performs the reset password operation
+        resetPassword()
+    }
+    
 
     // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -115,12 +128,13 @@ extension ResetPasswordViewController: UITextFieldDelegate {
         if textField.tag == 1 {
             newPasswordLabel.resignFirstResponder()
             confirmNewPasswordLabel.becomeFirstResponder()
-        } else {
-            if shouldPerformSegue(withIdentifier: "toLoginSegue", sender: self) {
-                performSegue(withIdentifier: "toLoginSegue", sender: self)
-            }
+        } else if textField.tag == 2 {
+            resetPassword()
+            return true
         }
-        return true
+        
+        errorLabel.text = "An error occured. Please try again later"
+        return false
     }
 
     @objc func firstTextFieldDidChange(_ textField: UITextField) {
@@ -154,6 +168,29 @@ extension ResetPasswordViewController: UITextFieldDelegate {
         
         if !fieldOneHasText {
             showErrorMessage(message: "Password must have 8 characters, and at least one capital, one lowercase, and one number")
+        }
+    }
+}
+
+extension ResetPasswordViewController {
+    struct ResetPasswordModel: Encodable {
+        let countryCode: String
+        let phoneNumber: String
+        let newPassword: String
+    }
+    
+    private func resetPassword() {
+        let newPassword = newPasswordLabel.text
+        
+        userMgmtManager.resetPassword(countryCode: String(countryCode!), phoneNumber: String(phoneNumber!), newPassword: newPassword!) { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorLabel.text = error
+                    return
+                } else {
+                    self.performSegue(withIdentifier: "toLoginSegue", sender: self)
+                }
+            }
         }
     }
 }

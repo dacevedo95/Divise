@@ -43,6 +43,7 @@
 		5D753F3D240B6F7600B558D7 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F3C240B6F7600B558D7 /* LogInModel.swift */; };
 		5D753F41240DFC2A00B558D7 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F40240DFC2900B558D7 /* NetworkLogger.swift */; };
 		5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4224109B5300B558D7 /* UserExistenceModel.swift */; };
+		5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F452417225900B558D7 /* KeychainHelper.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
 		5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24B923D368100045E325 /* LoginViewController.swift */; };
 		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
@@ -100,6 +101,7 @@
 		5D753F3C240B6F7600B558D7 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		5D753F40240DFC2900B558D7 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		5D753F4224109B5300B558D7 /* UserExistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExistenceModel.swift; sourceTree = "<group>"; };
+		5D753F452417225900B558D7 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9F24B923D368100045E325 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -328,9 +330,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5D753F442417222D00B558D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F452417225900B558D7 /* KeychainHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5D9F24AC23D1904A0045E325 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5D753F442417222D00B558D7 /* Helpers */,
 				5D753F202404CB8F00B558D7 /* Supporting Files */,
 				5D9F24D423D9237D0045E325 /* Transitions */,
 				5D9F24BB23D36C340045E325 /* Extensions */,
@@ -533,6 +544,7 @@
 				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
+				5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
 				5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */,

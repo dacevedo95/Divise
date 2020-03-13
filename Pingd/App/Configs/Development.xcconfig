@@ -15,5 +15,5 @@
 SERVER_URL=http:/$()/PingdBackend-dev.us-east-1.elasticbeanstalk.com
 
 // App Settings
-APP_NAME=Centsable (dev)
-APP_BUNDLE=com.davidacevedo.Centsable.dev
+APP_NAME=Divise (dev)
+APP_BUNDLE=com.davidacevedo.Divise.dev

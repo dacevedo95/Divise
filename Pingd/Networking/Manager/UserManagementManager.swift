@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import os
 
 
@@ -25,12 +26,17 @@ enum Result<String> {
     case failure(String)
 }
 
+var service: String {
+    return "com.davidacevedo.Centsable"
+}
+
 struct UserManagementManager {
     static let environment: Environment = .production
     private let router = Router<UserManagementEndpoint>()
     
-    func logIn(phoneNumber: String, password: String, completion: @escaping (_ error: String?) -> ()) {
-        router.request(.logIn(phoneNumber: phoneNumber, password: password)) { (data, response, error) in
+    
+    func logIn(countryCode: String, phoneNumber: String, password: String, completion: @escaping (_ error: String?) -> ()) {
+        router.request(.logIn(countryCode: countryCode, phoneNumber: phoneNumber, password: password)) { (data, response, error) in
             if error != nil {
                 completion("An error occured. Please try again later")
             }
@@ -46,7 +52,7 @@ struct UserManagementManager {
                     
                     do {
                         let apiResponse = try JSONDecoder().decode(LogInResponse.self, from: responseData)
-                        self.storeCredentials(token: apiResponse.token, expiresAt: apiResponse.expiresAt, refreshToken: apiResponse.refreshToken)
+                        try self.storeCredentials(account: phoneNumber, token: apiResponse.token, expiresAt: apiResponse.expiresAt, refreshToken: apiResponse.refreshToken)
                         completion(nil)
                     } catch {
                         os_log("Error: %{public}s", error.localizedDescription)
@@ -71,8 +77,20 @@ struct UserManagementManager {
             
             if let response = response as? HTTPURLResponse {
                 switch response.statusCode {
-                case 204:
-                    completion(nil)
+                case 200:
+                    guard let responseData = data else {
+                        completion(NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    
+                    do {
+                        let apiResponse = try JSONDecoder().decode(LogInResponse.self, from: responseData)
+                        try self.storeCredentials(account: phoneNumber, token: apiResponse.token, expiresAt: apiResponse.expiresAt, refreshToken: apiResponse.refreshToken)
+                        completion(nil)
+                    } catch {
+                        os_log("Error: %{public}s", error.localizedDescription)
+                        completion("An error occured. Please try again later")
+                    }
                 case 400:
                     completion("Incorrect verification code. Please check that the code or phone number is correct")
                 case 500:
@@ -142,18 +160,25 @@ struct UserManagementManager {
                 let result = self.handleNetworkResponse(response)
                 switch result {
                 case .success:
-                    guard let responseData = data else {
-                        completion("An error occured. Please try again later")
-                        return
-                    }
-                    
-                    do {
-                        let _ = try JSONDecoder().decode(LogInResponse.self, from: responseData)
-                        completion(nil)
-                    } catch {
-                        os_log("Error: %{public}s", error.localizedDescription)
-                        completion("An error occured. Please try again later")
-                    }
+                    completion(nil)
+                case .failure(_):
+                    completion("An error occured. Please try again later")
+                }
+            }
+        }
+    }
+    
+    func resetPassword(countryCode: String, phoneNumber: String, newPassword: String, completion: @escaping (_ error: String?) -> ()) {
+        router.request(.resetPassword(countryCode: countryCode, phoneNumber: phoneNumber, newPassword: newPassword)) { (data, response, error) in
+            if error != nil {
+                completion("An error occured. Please try again later")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(nil)
                 case .failure(_):
                     completion("An error occured. Please try again later")
                 }
@@ -178,7 +203,37 @@ struct UserManagementManager {
         }
     }
     
-    fileprivate func storeCredentials(token: String, expiresAt: Int, refreshToken: String) {
+    fileprivate func storeCredentials(account: String, token: String, expiresAt: Int, refreshToken: String) throws {
+
+        var tokenStatus: OSStatus?
+        let currToken = try KeychainHelper.getKeychainItem(key: "Access Token")
+        if currToken != nil {
+            tokenStatus = KeychainHelper.updateKeychainItem(key: "Access Token", updatedValue: token)
+        } else {
+            tokenStatus = KeychainHelper.addKeychainItem(key: "Access Token", value: token)
+        }
+        guard tokenStatus == errSecSuccess else { throw KeychainError.unhandledError(status: tokenStatus!) }
+        
+        
+        var refreshTokenStatus: OSStatus?
+        let currRefreshToken = try KeychainHelper.getKeychainItem(key: "Refresh Token")
+        if currRefreshToken != nil {
+            refreshTokenStatus = KeychainHelper.updateKeychainItem(key: "Refresh Token", updatedValue: refreshToken)
+        } else {
+            refreshTokenStatus = KeychainHelper.addKeychainItem(key: "Refresh Token", value: refreshToken)
+        }
+        guard refreshTokenStatus == errSecSuccess else { throw KeychainError.unhandledError(status: refreshTokenStatus!) }
+        
+        
+        var timestampStatus: OSStatus?
+        let currTimestamp = try KeychainHelper.getKeychainItem(key: "Timestamp")
+        if currTimestamp != nil {
+            timestampStatus = KeychainHelper.updateKeychainItem(key: "Timestamp", updatedValue: String(expiresAt))
+        } else {
+            timestampStatus = KeychainHelper.addKeychainItem(key: "Timestamp", value: String(expiresAt))
+        }
+        guard timestampStatus == errSecSuccess else { throw KeychainError.unhandledError(status: timestampStatus!) }
         
     }
+    
 }

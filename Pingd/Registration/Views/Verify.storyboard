@@ -10,7 +10,7 @@
         <!--Verify View Controller-->
         <scene sceneID="MDe-Q4-IpR">
             <objects>
-                <viewController storyboardIdentifier="VerifyViewController" id="vY5-dr-pTd" customClass="VerifyViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyViewController" id="vY5-dr-pTd" customClass="VerifyViewController" customModule="Centsable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cU0-C2-FcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="m81-Kw-2Zx">
                                         <rect key="frame" x="0.0" y="171" width="280" height="254"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT" customClass="CodeTextField" customModule="Ping_d" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-ru-FzT" customClass="CodeTextField" customModule="Centsable" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="3Ck-n3-g4R"/>
@@ -95,7 +95,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Yoh-15-S1C" kind="custom" identifier="changePhoneSegue" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="phY-Lb-snu"/>
+                                                            <segue destination="Yoh-15-S1C" kind="custom" identifier="changePhoneSegue" customClass="BackslideSegue" customModule="Centsable" customModuleProvider="target" id="phY-Lb-snu"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -118,8 +118,8 @@
                         <outlet property="descriptionLabel" destination="Czs-nD-QNR" id="DY5-hy-GQ3"/>
                         <outlet property="errorLabel" destination="oog-PA-02U" id="Zc7-XL-6r9"/>
                         <outlet property="sendAgainButton" destination="gbA-OL-RyN" id="w9f-Vf-gVD"/>
-                        <segue destination="Sd7-6r-UJR" kind="custom" identifier="toResetPasswordSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="71m-PU-Vwu"/>
-                        <segue destination="Wrc-wq-uFz" kind="custom" identifier="toPasswordSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="Hil-gY-xFT"/>
+                        <segue destination="Sd7-6r-UJR" kind="custom" identifier="toResetPasswordSegue" customClass="SlideSegue" customModule="Centsable" customModuleProvider="target" id="71m-PU-Vwu"/>
+                        <segue destination="Wrc-wq-uFz" kind="custom" identifier="toPasswordSegue" customClass="SlideSegue" customModule="Centsable" customModuleProvider="target" id="Hil-gY-xFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wzu-lB-ALt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,7 +140,7 @@
                 <viewControllerPlaceholder storyboardName="ResetPassword" id="Sd7-6r-UJR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4V-9H-HVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="157"/>
+            <point key="canvasLocation" x="662" y="157"/>
         </scene>
         <!--Login-->
         <scene sceneID="1In-NF-egw">
@@ -161,7 +161,7 @@
         <!--Phone Input View Controller-->
         <scene sceneID="2VA-yI-Ymg">
             <objects>
-                <viewController storyboardIdentifier="PhoneInputViewController" id="Yoh-15-S1C" customClass="PhoneInputViewController" customModule="Ping_d" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneInputViewController" id="Yoh-15-S1C" customClass="PhoneInputViewController" customModule="Centsable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pye-f4-Daa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,9 +261,9 @@
                         <outlet property="errorLabel" destination="6h7-al-GRd" id="np2-Cl-r5k"/>
                         <outlet property="phoneTextField" destination="DqJ-6x-qgk" id="cNn-wM-IgD"/>
                         <outlet property="verifyBtn" destination="K8g-Xc-DZ2" id="R6g-VY-jwQ"/>
-                        <segue destination="KTq-te-0Bo" kind="custom" identifier="toNameSegue" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="nYs-CS-Ly9"/>
-                        <segue destination="7DX-Rm-Pel" kind="custom" identifier="toLoginSegue" customClass="BackslideSegue" customModule="Ping_d" customModuleProvider="target" id="EFq-wS-wLO"/>
-                        <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Ping_d" customModuleProvider="target" id="om5-iV-h5D"/>
+                        <segue destination="KTq-te-0Bo" kind="custom" identifier="toNameSegue" customClass="BackslideSegue" customModule="Centsable" customModuleProvider="target" id="nYs-CS-Ly9"/>
+                        <segue destination="7DX-Rm-Pel" kind="custom" identifier="toLoginSegue" customClass="BackslideSegue" customModule="Centsable" customModuleProvider="target" id="EFq-wS-wLO"/>
+                        <segue destination="vY5-dr-pTd" kind="custom" identifier="checkVerificationSegue" customClass="SlideSegue" customModule="Centsable" customModuleProvider="target" id="om5-iV-h5D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eml-Bp-adL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

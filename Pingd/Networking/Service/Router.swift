@@ -9,6 +9,12 @@
 import Foundation
 import os
 
+enum KeychainError: Error {
+    case noData
+    case unexpectedPasswordData
+    case unhandledError(status: OSStatus)
+}
+
 class Router<EndPoint: EndPointType>: NetworkRouter {
     private var task: URLSessionTask?
     
@@ -45,6 +51,10 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path), cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
         request.httpMethod = route.httpMethod.rawValue
         
+        if route.shouldAuthorize {
+            addAuthorizationHeader(request: &request)
+        }
+        
         do {
             switch route.task {
             case .request:
@@ -74,12 +84,52 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
     }
     
+    fileprivate func addAuthorizationHeader(request: inout URLRequest) {
+        var token = "Bearer "
+        
+        do {
+            let expiresAt = try KeychainHelper.getKeychainItem(key: "Timestamp")
+            let currentTimestamp = Int(NSDate().timeIntervalSince1970)
+            
+            if Int(expiresAt!)! - currentTimestamp < 60 {
+                // Refresh token
+            } else {
+                token += try KeychainHelper.getKeychainItem(key: "Access Token")!
+            }
+            
+            request.addValue(token, forHTTPHeaderField: "Authorization")
+        } catch {
+            os_log(error as! StaticString)
+        }
+        
+    }
+    
     fileprivate func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
         guard let headers = additionalHeaders else { return }
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
     }
+    
+    fileprivate func getKeychainItem<T>(label: String) throws -> T? {
+        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
+                                    kSecAttrLabel as String: label,
+                                    kSecReturnAttributes as String: true,
+                                    kSecReturnData as String: true]
+        var item: CFTypeRef?
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
+        guard status != errSecItemNotFound else { throw KeychainError.noData }
+        guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
+        
+        guard let existingItem = item as? [String: Any], let data = existingItem[kSecValueData as String] as? T
+        else {
+            return nil
+        }
+        
+        return data
+    }
+    
+    
     
     func cancel() {
         self.task?.cancel()

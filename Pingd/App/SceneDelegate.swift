@@ -19,6 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        UserDefaults.standard.set(false, forKey: "hasToken")
+        UserDefaults.standard.set(false, forKey: "hasRefreshToken")
+        UserDefaults.standard.set(false, forKey: "hasTimestamp")
+        
         // Gets logged in status
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         
