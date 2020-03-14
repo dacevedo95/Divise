@@ -17,7 +17,6 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
     @IBOutlet weak var signInWithAppleButton: UIButton! {
         didSet {
             self.signInWithAppleButton.layer.cornerRadius = 25.0
-            self.signInWithAppleButton.addTarget(self, action: #selector(handleAppleSignin), for: .touchUpInside)
         }
     }
     
@@ -40,18 +39,6 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
 
         // Do any additional setup after loading the view.
     }
-    
-    // MARK: - Helpers
-    @objc func handleAppleSignin() {
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
-        let request = appleIDProvider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = self
-        authorizationController.performRequests()
-    }
-    
 
     // MARK: - Actions
     func didUpdatePageIndex(currentIndex: Int) {
@@ -71,34 +58,4 @@ class OnboardingViewController: UIViewController, OnboardingPageViewControllerDe
     }
     
     
-}
-
-// MARK: - Extensions
-extension OnboardingViewController: ASAuthorizationControllerDelegate {
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            // Create an account as per your requirement
-            let appleId = appleIDCredential.user
-            let appleUserFirstName = appleIDCredential.fullName?.givenName
-            let appleUserLastName = appleIDCredential.fullName?.familyName
-            let appleUserEmail = appleIDCredential.email
-            //Write your code
-            
-        } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
-            let appleUsername = passwordCredential.user
-            let applePassword = passwordCredential.password
-            //Write your code
-
-        }
-    }
-}
-
-extension OnboardingViewController: ASAuthorizationControllerPresentationContextProviding {
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
-    }
 }
