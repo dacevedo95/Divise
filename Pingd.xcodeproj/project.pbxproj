@@ -44,6 +44,8 @@
 		5D753F41240DFC2A00B558D7 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F40240DFC2900B558D7 /* NetworkLogger.swift */; };
 		5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4224109B5300B558D7 /* UserExistenceModel.swift */; };
 		5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F452417225900B558D7 /* KeychainHelper.swift */; };
+		5D753F4C241C839700B558D7 /* IncomeInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D753F4B241C839700B558D7 /* IncomeInput.storyboard */; };
+		5D753F4E241C891100B558D7 /* IncomeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4D241C891100B558D7 /* IncomeInputViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
 		5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24B923D368100045E325 /* LoginViewController.swift */; };
 		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
@@ -102,6 +104,8 @@
 		5D753F40240DFC2900B558D7 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		5D753F4224109B5300B558D7 /* UserExistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExistenceModel.swift; sourceTree = "<group>"; };
 		5D753F452417225900B558D7 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		5D753F4B241C839700B558D7 /* IncomeInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IncomeInput.storyboard; sourceTree = "<group>"; };
+		5D753F4D241C891100B558D7 /* IncomeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInputViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9F24B923D368100045E325 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		5D39EDEB23CC03FA00043218 /* Pingd */ = {
 			isa = PBXGroup;
 			children = (
+				5D753F47241C7FD300B558D7 /* Setup */,
 				5D9F24AC23D1904A0045E325 /* App */,
 				5D753F1523FF7DD200B558D7 /* Networking */,
 				5D753F1C2404CAFB00B558D7 /* Registration */,
@@ -338,6 +343,39 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		5D753F47241C7FD300B558D7 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F4A241C7FFA00B558D7 /* Views */,
+				5D753F49241C7FF100B558D7 /* Models */,
+				5D753F48241C7FE600B558D7 /* ViewControllers */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		5D753F48241C7FE600B558D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F4D241C891100B558D7 /* IncomeInputViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D753F49241C7FF100B558D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D753F4B241C839700B558D7 /* IncomeInput.storyboard */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D753F4A241C7FFA00B558D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5D9F24AC23D1904A0045E325 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +506,7 @@
 				5D39EE0923CFF48100043218 /* Onboarding.storyboard in Resources */,
 				5D9F24C523D5F57D0045E325 /* Register.storyboard in Resources */,
 				5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */,
+				5D753F4C241C839700B558D7 /* IncomeInput.storyboard in Resources */,
 				5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */,
 				5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */,
 				5D39EE0523CC144800043218 /* unicode.arialr.ttf in Resources */,
@@ -534,6 +573,7 @@
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D9F24D323D800050045E325 /* String.swift in Sources */,
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,
+				5D753F4E241C891100B558D7 /* IncomeInputViewController.swift in Sources */,
 				5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
