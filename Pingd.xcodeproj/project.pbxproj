@@ -45,7 +45,8 @@
 		5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4224109B5300B558D7 /* UserExistenceModel.swift */; };
 		5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F452417225900B558D7 /* KeychainHelper.swift */; };
 		5D753F4C241C839700B558D7 /* IncomeInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D753F4B241C839700B558D7 /* IncomeInput.storyboard */; };
-		5D753F4E241C891100B558D7 /* IncomeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4D241C891100B558D7 /* IncomeInputViewController.swift */; };
+		5D753F4E241C891100B558D7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4D241C891100B558D7 /* WelcomeViewController.swift */; };
+		5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F4F241D733F00B558D7 /* IncomeViewController.swift */; };
 		5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F24B723D3592E0045E325 /* Login.storyboard */; };
 		5D9F24BA23D368100045E325 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24B923D368100045E325 /* LoginViewController.swift */; };
 		5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24BC23D36C460045E325 /* UITextField.swift */; };
@@ -105,7 +106,8 @@
 		5D753F4224109B5300B558D7 /* UserExistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExistenceModel.swift; sourceTree = "<group>"; };
 		5D753F452417225900B558D7 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		5D753F4B241C839700B558D7 /* IncomeInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IncomeInput.storyboard; sourceTree = "<group>"; };
-		5D753F4D241C891100B558D7 /* IncomeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInputViewController.swift; sourceTree = "<group>"; };
+		5D753F4D241C891100B558D7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5D753F4F241D733F00B558D7 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		5D9F24B723D3592E0045E325 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9F24B923D368100045E325 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D9F24BC23D36C460045E325 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -356,7 +358,8 @@
 		5D753F48241C7FE600B558D7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D753F4D241C891100B558D7 /* IncomeInputViewController.swift */,
+				5D753F4D241C891100B558D7 /* WelcomeViewController.swift */,
+				5D753F4F241D733F00B558D7 /* IncomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -573,7 +576,7 @@
 				5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */,
 				5D9F24D323D800050045E325 /* String.swift in Sources */,
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,
-				5D753F4E241C891100B558D7 /* IncomeInputViewController.swift in Sources */,
+				5D753F4E241C891100B558D7 /* WelcomeViewController.swift in Sources */,
 				5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
@@ -586,6 +589,7 @@
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
+				5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */,
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
 				5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */,
 				5D753F2A2406124D00B558D7 /* ParameterEncoding.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IncomeInputViewController: UIViewController {
+class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel! {
         didSet {
