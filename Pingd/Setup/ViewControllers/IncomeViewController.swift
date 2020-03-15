@@ -94,7 +94,7 @@ class IncomeViewController: UIViewController {
         incomeLabel.text = "$" + incomeString
         
         let amount = Double(incomeString)
-        print(amount)
+        
         if amount != nil {
             if amount! >= 100.00 {
                 nextButton.enable()
