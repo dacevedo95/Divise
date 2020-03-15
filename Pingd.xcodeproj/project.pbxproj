@@ -63,7 +63,7 @@
 		552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release.xcconfig"; sourceTree = "<group>"; };
 		591D840A2E362053F3CA51C1 /* Pods-Pingd.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (development).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (development).xcconfig"; sourceTree = "<group>"; };
 		5C3A4C9F2424D9E4FE7F4A2F /* Pods-Pingd.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (production).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (production).xcconfig"; sourceTree = "<group>"; };
-		5D39EDE923CC03FA00043218 /* Centsable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Centsable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D39EDE923CC03FA00043218 /* Divise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Divise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D39EDEC23CC03FA00043218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D39EDEE23CC03FA00043218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D39EDF323CC03FA00043218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		5D39EDEA23CC03FA00043218 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D39EDE923CC03FA00043218 /* Centsable.app */,
+				5D39EDE923CC03FA00043218 /* Divise.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 			);
 			name = Pingd;
 			productName = Pingd;
-			productReference = 5D39EDE923CC03FA00043218 /* Centsable.app */;
+			productReference = 5D39EDE923CC03FA00043218 /* Divise.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -759,10 +759,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
-				PRODUCT_NAME = Centsable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Divise;
+				PRODUCT_NAME = Divise;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Debug (Development)";
 		};
@@ -779,10 +779,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
-				PRODUCT_NAME = Centsable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Divise;
+				PRODUCT_NAME = Divise;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release (Development)";
 		};
@@ -860,10 +860,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
-				PRODUCT_NAME = Centsable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Divise;
+				PRODUCT_NAME = Divise;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Debug (Production)";
 		};
@@ -941,10 +941,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
-				PRODUCT_NAME = Centsable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Divise;
+				PRODUCT_NAME = Divise;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Debug (Staging)";
 		};
@@ -1016,10 +1016,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
-				PRODUCT_NAME = Centsable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Divise;
+				PRODUCT_NAME = Divise;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release (Staging)";
 		};
@@ -1091,10 +1091,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Centsable;
-				PRODUCT_NAME = Centsable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidacevedo.Divise;
+				PRODUCT_NAME = Divise;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release (Production)";
 		};

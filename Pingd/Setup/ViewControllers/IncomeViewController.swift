@@ -38,7 +38,7 @@ class IncomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        incomeLabel.text = incomeString
+        incomeLabel.text = "$" + incomeString
     }
     
     @IBAction func keypadPressed(_ sender: UIButton) {
