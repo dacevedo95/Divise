@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class WelcomeViewController: UIViewController {
     
@@ -25,9 +26,15 @@ class WelcomeViewController: UIViewController {
             self.logoImage.alpha = 0.0
         }
     }
+    @IBOutlet weak var logoImageView: UIView! {
+        didSet {
+            self.logoImageView.hero.id = "logoImageView"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
 
         UIView.animate(withDuration: 0.5, animations: {
             self.welcomeLabel.alpha = 1.0
@@ -37,7 +44,15 @@ class WelcomeViewController: UIViewController {
             }) { (animate) in
                 UIView.animate(withDuration: 1.0, animations: {
                     self.logoImage.alpha = 1.0
-                }, completion: nil)
+                }) { (animate) in
+                    UIView.animate(withDuration: 0.0, delay: 4.0, animations: {
+                        return
+                    }) { (animate) in
+                        self.welcomeLabel.heroModifiers = [.fade]
+                        self.toLabel.heroModifiers = [.fade]
+                        self.performSegue(withIdentifier: "toIncomeScreen", sender: self)
+                    }
+                }
             }
         }
     }

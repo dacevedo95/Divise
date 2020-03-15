@@ -31,14 +31,23 @@ class IncomeViewController: UIViewController {
             self.nextButton.layer.cornerRadius = 25.0
         }
     }
+    @IBOutlet weak var logoImageView: UIImageView! {
+        didSet {
+            self.logoImageView.hero.id = "logoImageView"
+        }
+    }
+    @IBOutlet weak var incomeStackView: UIStackView!
+    @IBOutlet weak var bottomStackView: UIView!
+    
     
     private var incomeString: String = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
 
         // Do any additional setup after loading the view.
-        incomeLabel.text = "$" + incomeString
+        incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
     }
     
     @IBAction func keypadPressed(_ sender: UIButton) {
@@ -91,10 +100,9 @@ class IncomeViewController: UIViewController {
             incomeString = "0"
         }
         
-        incomeLabel.text = "$" + incomeString
+        incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
         
         let amount = Double(incomeString)
-        
         if amount != nil {
             if amount! >= 100.00 {
                 nextButton.enable()
@@ -105,6 +113,14 @@ class IncomeViewController: UIViewController {
             nextButton.disable()
         }
         
+    }
+    
+    func toAttributedIncomeString(originalString: String) -> NSAttributedString {
+        let amountText = NSMutableAttributedString.init(string: originalString)
+        amountText.setAttributes([NSAttributedString.Key.font: UIFont(name: "Arial Rounded MT Bold", size: 48.0)!,
+                                  NSAttributedString.Key.foregroundColor: UIColor.gray,
+                                  NSAttributedString.Key.baselineOffset: 30.0], range: NSMakeRange(0, 1))
+        return amountText
     }
     
 
