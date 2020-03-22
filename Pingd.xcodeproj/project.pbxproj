@@ -29,6 +29,8 @@
 		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
+		5D6486782427AE0F00826503 /* BudgetSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6486772427AE0F00826503 /* BudgetSelector.storyboard */; };
+		5D64867A2427AE2600826503 /* BudgetSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */; };
 		5D753F1423FF7BE800B558D7 /* UserForLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F1323FF7BE800B558D7 /* UserForLogin.swift */; };
 		5D753F232404E5F600B558D7 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F222404E5F600B558D7 /* EndPointType.swift */; };
 		5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F242404E67A00B558D7 /* HTTPMethod.swift */; };
@@ -87,6 +89,8 @@
 		5D3E270823FA43540041F8FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
+		5D6486772427AE0F00826503 /* BudgetSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetSelector.storyboard; sourceTree = "<group>"; };
+		5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSelectorViewController.swift; sourceTree = "<group>"; };
 		5D753F0D23FF61FD00B558D7 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		5D753F0E23FF621400B558D7 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		5D753F0F23FF622800B558D7 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 			children = (
 				5D753F4D241C891100B558D7 /* WelcomeViewController.swift */,
 				5D753F4F241D733F00B558D7 /* IncomeViewController.swift */,
+				5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				5D753F4B241C839700B558D7 /* IncomeInput.storyboard */,
+				5D6486772427AE0F00826503 /* BudgetSelector.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 				5D39EE0923CFF48100043218 /* Onboarding.storyboard in Resources */,
 				5D9F24C523D5F57D0045E325 /* Register.storyboard in Resources */,
 				5D9F24B823D3592E0045E325 /* Login.storyboard in Resources */,
+				5D6486782427AE0F00826503 /* BudgetSelector.storyboard in Resources */,
 				5D753F4C241C839700B558D7 /* IncomeInput.storyboard in Resources */,
 				5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */,
 				5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */,
@@ -578,6 +585,7 @@
 				5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */,
 				5D753F4E241C891100B558D7 /* WelcomeViewController.swift in Sources */,
 				5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */,
+				5D64867A2427AE2600826503 /* BudgetSelectorViewController.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
 				5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */,
