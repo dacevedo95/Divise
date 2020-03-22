@@ -36,15 +36,40 @@ class IncomeViewController: UIViewController {
             self.logoImageView.hero.id = "logoImageView"
         }
     }
-    @IBOutlet weak var incomeStackView: UIStackView!
-    @IBOutlet weak var bottomStackView: UIView!
-    
+    @IBOutlet weak var incomeStackView: UIStackView! {
+        didSet {
+            self.incomeStackView.alpha = 1.0
+        }
+    }
+    @IBOutlet weak var bottomStackView: UIView! {
+        didSet {
+            self.bottomStackView.alpha = 1.0
+        }
+    }
+    @IBOutlet weak var incomeConstraint: NSLayoutConstraint! {
+        didSet {
+            self.incomeConstraint.constant = 0.0
+        }
+    }
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint! {
+        didSet {
+            self.bottomConstraint.constant = 0.0
+        }
+    }
     
     private var incomeString: String = "0"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hero.isEnabled = true
+        
+//        UIView.animate(withDuration: 3.5, delay: 6.5, animations: {
+//            self.incomeStackView.alpha = 1.0
+//            self.bottomStackView.alpha = 1.0
+//            self.incomeConstraint.constant = 0.0
+//            self.bottomConstraint.constant = 0.0
+//        }, completion: nil)
 
         // Do any additional setup after loading the view.
         incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)

@@ -367,7 +367,6 @@
 		5D753F49241C7FF100B558D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D753F4B241C839700B558D7 /* IncomeInput.storyboard */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,6 +374,7 @@
 		5D753F4A241C7FFA00B558D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D753F4B241C839700B558D7 /* IncomeInput.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
