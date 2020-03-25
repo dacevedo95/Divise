@@ -25,51 +25,48 @@ public enum KeyInput: String {
 
 class IncomeViewController: UIViewController {
     
-    @IBOutlet weak var incomeLabel: UILabel!
+    // MARK: - Outlets
+    @IBOutlet weak var incomeLabel: UILabel! {
+        didSet {
+            // incomeLabel.hero.modifiers = [.fade, .duration(1.0)]
+        }
+    }
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             self.nextButton.layer.cornerRadius = 25.0
         }
     }
-    @IBOutlet weak var logoImageView: UIImageView! {
+    @IBOutlet weak var bottomView: UIView! {
         didSet {
-            self.logoImageView.hero.id = "logoImageView"
+            bottomView.layer.cornerRadius = bottomView.frame.size.width / 5
+            bottomView.layer.maskedCorners = .layerMinXMinYCorner
         }
     }
-    @IBOutlet weak var incomeStackView: UIStackView! {
+    @IBOutlet weak var incomeStaticLabel: UILabel! {
         didSet {
-            self.incomeStackView.alpha = 1.0
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 5.0
+            
+            let attrString = NSMutableAttributedString(string: incomeStaticLabel.text!)
+            attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+            
+            incomeStaticLabel.attributedText = attrString
         }
     }
-    @IBOutlet weak var bottomStackView: UIView! {
+    @IBOutlet weak var logo: UIImageView! {
         didSet {
-            self.bottomStackView.alpha = 1.0
+            self.logo.hero.id = "logoImageView"
         }
     }
-    @IBOutlet weak var incomeConstraint: NSLayoutConstraint! {
-        didSet {
-            self.incomeConstraint.constant = 0.0
-        }
-    }
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint! {
-        didSet {
-            self.bottomConstraint.constant = 0.0
-        }
-    }
+    @IBOutlet weak var keypad: UIStackView!
     
+    // MARK: - Properties
     private var incomeString: String = "0"
     
-    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hero.isEnabled = true
-        
-//        UIView.animate(withDuration: 3.5, delay: 6.5, animations: {
-//            self.incomeStackView.alpha = 1.0
-//            self.bottomStackView.alpha = 1.0
-//            self.incomeConstraint.constant = 0.0
-//            self.bottomConstraint.constant = 0.0
-//        }, completion: nil)
 
         // Do any additional setup after loading the view.
         incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
@@ -143,8 +140,8 @@ class IncomeViewController: UIViewController {
     func toAttributedIncomeString(originalString: String) -> NSAttributedString {
         let amountText = NSMutableAttributedString.init(string: originalString)
         amountText.setAttributes([NSAttributedString.Key.font: UIFont(name: "Arial Rounded MT Bold", size: 48.0)!,
-                                  NSAttributedString.Key.foregroundColor: UIColor.gray,
-                                  NSAttributedString.Key.baselineOffset: 30.0], range: NSMakeRange(0, 1))
+                                  NSAttributedString.Key.foregroundColor: UIColor.init(red: 203, green: 203, blue: 203),
+                                  NSAttributedString.Key.baselineOffset: 25.0], range: NSMakeRange(0, 1))
         return amountText
     }
     
