@@ -77,19 +77,19 @@ class IncomeViewController: UIViewController {
         keypad.hero.modifiers = [.fade,
                                  .delay(0.3),
                                  .duration(0.5),
-                                 .translate(CGPoint(x: 0.0, y: keypad.frame.origin.y + 40))]
+                                 .translate(CGPoint(x: 0.0, y: keypad.frame.origin.y + 10))]
         buttons.hero.modifiers = [.fade,
                                   .delay(0.3),
                                   .duration(0.5),
-                                  .translate(CGPoint(x: 0.0, y: buttons.frame.origin.y + 40))]
+                                  .translate(CGPoint(x: 0.0, y: buttons.frame.origin.y + 10))]
         incomeStaticLabel.hero.modifiers = [.fade,
                                             .delay(0.3),
                                             .duration(0.5),
-                                            .translate(CGPoint(x: 0.0, y: incomeStaticLabel.frame.origin.y + 40))]
+                                            .translate(CGPoint(x: 0.0, y: incomeStaticLabel.frame.origin.y + 10))]
         incomeLabel.hero.modifiers = [.fade,
                                       .delay(0.3),
                                       .duration(0.5),
-                                      .translate(CGPoint(x: 0.0, y: incomeLabel.frame.origin.y + 40))]
+                                      .translate(CGPoint(x: 0.0, y: incomeLabel.frame.origin.y + 10))]
     }
     
     override func viewWillAppear(_ animated: Bool) {
