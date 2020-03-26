@@ -36,16 +36,11 @@ class IncomeViewController: UIViewController {
             self.nextButton.layer.cornerRadius = 25.0
         }
     }
-    @IBOutlet weak var bottomView: UIView! {
-        didSet {
-            bottomView.layer.cornerRadius = bottomView.frame.size.width / 5
-            bottomView.layer.maskedCorners = .layerMinXMinYCorner
-        }
-    }
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var incomeStaticLabel: UILabel! {
         didSet {
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 5.0
+            paragraphStyle.lineSpacing = 10.0
             
             let attrString = NSMutableAttributedString(string: incomeStaticLabel.text!)
             attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
@@ -59,6 +54,7 @@ class IncomeViewController: UIViewController {
         }
     }
     @IBOutlet weak var keypad: UIStackView!
+    @IBOutlet weak var buttons: UIStackView!
     
     // MARK: - Properties
     private var incomeString: String = "0"
@@ -70,6 +66,34 @@ class IncomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
+        
+        let roundedView = RoundedView(frame: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: self.view.frame.size.width,
+                                                    height: bottomView.frame.size.height + 44))
+        roundedView.hero.modifiers = [.translate(CGPoint(x: 0.0, y: bottomView.frame.size.height + 44)), .duration(0.3)]
+        self.bottomView.insertSubview(roundedView, at: 0)
+        
+        keypad.hero.modifiers = [.fade,
+                                 .delay(0.3),
+                                 .duration(0.5),
+                                 .translate(CGPoint(x: 0.0, y: keypad.frame.origin.y + 40))]
+        buttons.hero.modifiers = [.fade,
+                                  .delay(0.3),
+                                  .duration(0.5),
+                                  .translate(CGPoint(x: 0.0, y: buttons.frame.origin.y + 40))]
+        incomeStaticLabel.hero.modifiers = [.fade,
+                                            .delay(0.3),
+                                            .duration(0.5),
+                                            .translate(CGPoint(x: 0.0, y: incomeStaticLabel.frame.origin.y + 40))]
+        incomeLabel.hero.modifiers = [.fade,
+                                      .delay(0.3),
+                                      .duration(0.5),
+                                      .translate(CGPoint(x: 0.0, y: incomeLabel.frame.origin.y + 40))]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     @IBAction func keypadPressed(_ sender: UIButton) {

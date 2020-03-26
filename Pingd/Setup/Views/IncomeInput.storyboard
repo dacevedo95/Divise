@@ -88,8 +88,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5k-oM-gYJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-Ii-Qqb">
-                                                <rect key="frame" x="40" y="91.666666666666671" width="295" height="165.66666666666663"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-Ii-Qqb">
+                                                <rect key="frame" x="40" y="87.666666666666671" width="295" height="173.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your monthly income after tax" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ap7-Lm-LX1">
                                                         <rect key="frame" x="0.0" y="0.0" width="206.66666666666666" height="46.333333333333336"/>
@@ -98,7 +98,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$976.38" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-GD-DeD">
-                                                        <rect key="frame" x="0.0" y="54.333333333333336" width="295" height="111.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="62.333333333333336" width="295" height="111.33333333333331"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="96"/>
                                                         <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -316,10 +316,9 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.6588235294117647" green="0.63529411764705879" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Psz-qB-fyk" secondAttribute="trailing" constant="37" id="1Om-D4-YKP"/>
-                                            <constraint firstItem="Psz-qB-fyk" firstAttribute="centerY" secondItem="5cu-ln-Y5c" secondAttribute="centerY" id="N2d-Yd-tx1"/>
+                                            <constraint firstItem="Psz-qB-fyk" firstAttribute="centerY" secondItem="5cu-ln-Y5c" secondAttribute="centerY" priority="250" id="N2d-Yd-tx1"/>
                                             <constraint firstItem="Psz-qB-fyk" firstAttribute="leading" secondItem="5cu-ln-Y5c" secondAttribute="leading" constant="37" id="Rq5-EH-cJz"/>
                                         </constraints>
                                     </view>
@@ -341,6 +340,7 @@
                     <navigationItem key="navigationItem" id="2h7-Vb-m6Z"/>
                     <connections>
                         <outlet property="bottomView" destination="5cu-ln-Y5c" id="uNz-fc-Dud"/>
+                        <outlet property="buttons" destination="17x-fC-9JQ" id="Gxh-y5-xl2"/>
                         <outlet property="incomeLabel" destination="yNr-GD-DeD" id="aJ8-fO-va7"/>
                         <outlet property="incomeStaticLabel" destination="ap7-Lm-LX1" id="vbh-y5-psQ"/>
                         <outlet property="keypad" destination="I3x-z7-HpK" id="97s-J3-c51"/>
