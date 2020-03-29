@@ -72,24 +72,24 @@ class IncomeViewController: UIViewController {
                                                     width: self.view.frame.size.width,
                                                     height: bottomView.frame.size.height + 44))
         roundedView.hero.modifiers = [.translate(CGPoint(x: 0.0, y: bottomView.frame.size.height + 44)),
-                                      .duration(0.5),
+                                      .duration(0.3),
                                       .timingFunction(.deceleration)]
         self.bottomView.insertSubview(roundedView, at: 0)
         
         keypad.hero.modifiers = [.fade,
-                                 .delay(0.5),
+                                 .delay(0.3),
                                  .duration(0.5),
                                  .translate(y: 20)]
         buttons.hero.modifiers = [.fade,
-                                  .delay(0.5),
+                                  .delay(0.3),
                                   .duration(0.5),
                                   .translate(y: 20)]
         incomeStaticLabel.hero.modifiers = [.fade,
-                                            .delay(0.5),
+                                            .delay(0.3),
                                             .duration(0.5),
                                             .translate(y: 20)]
         incomeLabel.hero.modifiers = [.fade,
-                                      .delay(0.5),
+                                      .delay(0.3),
                                       .duration(0.5),
                                       .translate(y: 20)]
     }

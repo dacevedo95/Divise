@@ -32,6 +32,8 @@
 		5D6486782427AE0F00826503 /* BudgetSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6486772427AE0F00826503 /* BudgetSelector.storyboard */; };
 		5D64867A2427AE2600826503 /* BudgetSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */; };
 		5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486AF242C1FFA00826503 /* RoundedView.swift */; };
+		5D6486D5242FB01300826503 /* CVCarosuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486D4242FB01300826503 /* CVCarosuel.swift */; };
+		5D6486D7242FB44400826503 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486D6242FB44400826503 /* CategoryCell.swift */; };
 		5D753F1423FF7BE800B558D7 /* UserForLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F1323FF7BE800B558D7 /* UserForLogin.swift */; };
 		5D753F232404E5F600B558D7 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F222404E5F600B558D7 /* EndPointType.swift */; };
 		5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F242404E67A00B558D7 /* HTTPMethod.swift */; };
@@ -93,6 +95,8 @@
 		5D6486772427AE0F00826503 /* BudgetSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetSelector.storyboard; sourceTree = "<group>"; };
 		5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSelectorViewController.swift; sourceTree = "<group>"; };
 		5D6486AF242C1FFA00826503 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		5D6486D4242FB01300826503 /* CVCarosuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCarosuel.swift; sourceTree = "<group>"; };
+		5D6486D6242FB44400826503 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5D753F0D23FF61FD00B558D7 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		5D753F0E23FF621400B558D7 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		5D753F0F23FF622800B558D7 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -202,6 +206,15 @@
 				5D6486AF242C1FFA00826503 /* RoundedView.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		5D6486D3242FAFA300826503 /* CVCarosuel */ = {
+			isa = PBXGroup;
+			children = (
+				5D6486D4242FB01300826503 /* CVCarosuel.swift */,
+				5D6486D6242FB44400826503 /* CategoryCell.swift */,
+			);
+			path = CVCarosuel;
 			sourceTree = "<group>";
 		};
 		5D753F0C23FF61C300B558D7 /* Configs */ = {
@@ -362,6 +375,7 @@
 		5D753F47241C7FD300B558D7 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				5D6486D3242FAFA300826503 /* CVCarosuel */,
 				5D6486AE242C1FBC00826503 /* Custom */,
 				5D753F4A241C7FFA00B558D7 /* Views */,
 				5D753F49241C7FF100B558D7 /* Models */,
@@ -603,6 +617,7 @@
 				5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */,
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */,
+				5D6486D7242FB44400826503 /* CategoryCell.swift in Sources */,
 				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
 				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
@@ -620,6 +635,7 @@
 				5D9F24E023D95C2C0045E325 /* SlideSegue.swift in Sources */,
 				5D3E270023F63CBB0041F8FE /* PasswordViewController.swift in Sources */,
 				5D753F37240A266000B558D7 /* UserManagementEndpoint.swift in Sources */,
+				5D6486D5242FB01300826503 /* CVCarosuel.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
 				5D753F2E2406186B00B558D7 /* JSONParameterEncoder.swift in Sources */,
 				5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */,
