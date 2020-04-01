@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wjl-gI-3Ng">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,46 +12,73 @@
             <objects>
                 <viewController id="Wjl-gI-3Ng" customClass="BudgetSelectorViewController" customModule="Divise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I2N-x3-UYu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RPD-Vb-2rL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Du7-n8-oGE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="437"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="394"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set up your monthly goals for each category" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJj-op-zhq" userLabel="Top Static Text">
-                                                <rect key="frame" x="8" y="24" width="287.5" height="46.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                                <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Net Monthly income is $976.38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V9-Q6-urE" userLabel="Monthly Income Text">
-                                                <rect key="frame" x="8" y="99" width="236.5" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                                <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck1-pr-NBA">
-                                                <rect key="frame" x="0.0" y="168.5" width="414" height="100"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="DU7-d1-s3g">
+                                                <rect key="frame" x="160.66666666666666" y="8" width="54" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ck1-pr-NBA" secondAttribute="height" multiplier="207:50" id="zOC-BB-tXh"/>
+                                                    <constraint firstAttribute="height" constant="22" id="Q3b-Ua-HnO"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="USS-ME-d0D"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="WzA-xP-zwe"/>
+                                                    <constraint firstAttribute="width" constant="54" id="jxi-fR-Cbf"/>
                                                 </constraints>
-                                            </view>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="IbJ-L1-PTu">
+                                                <rect key="frame" x="0.0" y="71.333333333333314" width="375" height="251"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UMZ-zP-yc4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set up your monthly goals for each category" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vJj-op-zhq" userLabel="Top Static Text" customClass="InsetLabel" customModule="Divise" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="46.333333333333336"/>
+                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                                                <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Monthly income is $976.38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9V9-Q6-urE" userLabel="Monthly Income Text" customClass="InsetLabel" customModule="Divise" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="62.333333333333321" width="243.66666666666666" height="18.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                                <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="9V9-Q6-urE" firstAttribute="width" secondItem="UMZ-zP-yc4" secondAttribute="width" multiplier="0.65" id="0c8-Rc-sRw"/>
+                                                            <constraint firstItem="vJj-op-zhq" firstAttribute="width" secondItem="UMZ-zP-yc4" secondAttribute="width" multiplier="0.7" id="ZKQ-PO-Z17"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck1-pr-NBA">
+                                                        <rect key="frame" x="0.0" y="141" width="375" height="110"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ck1-pr-NBA" secondAttribute="height" multiplier="75:22" id="zSP-hE-fQg"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ck1-pr-NBA" secondAttribute="trailing" id="5WW-N6-VBg"/>
+                                                    <constraint firstItem="ck1-pr-NBA" firstAttribute="leading" secondItem="IbJ-L1-PTu" secondAttribute="leading" id="sPj-gW-lpR"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="ck1-pr-NBA" firstAttribute="leading" secondItem="Du7-n8-oGE" secondAttribute="leading" id="Xzi-hI-n9D"/>
-                                            <constraint firstItem="ck1-pr-NBA" firstAttribute="centerY" secondItem="Du7-n8-oGE" secondAttribute="centerY" id="cfB-rk-82X"/>
-                                            <constraint firstAttribute="trailing" secondItem="ck1-pr-NBA" secondAttribute="trailing" id="l5U-1c-dpc"/>
+                                            <constraint firstItem="IbJ-L1-PTu" firstAttribute="leading" secondItem="Du7-n8-oGE" secondAttribute="leading" id="Cb1-7f-hpp"/>
+                                            <constraint firstAttribute="trailing" secondItem="IbJ-L1-PTu" secondAttribute="trailing" id="P0p-LE-vbQ"/>
+                                            <constraint firstItem="DU7-d1-s3g" firstAttribute="centerX" secondItem="Du7-n8-oGE" secondAttribute="centerX" id="Xzs-zu-hJr"/>
+                                            <constraint firstItem="IbJ-L1-PTu" firstAttribute="centerY" secondItem="Du7-n8-oGE" secondAttribute="centerY" id="csf-Yl-M3d"/>
+                                            <constraint firstItem="DU7-d1-s3g" firstAttribute="top" secondItem="Du7-n8-oGE" secondAttribute="top" constant="8" id="u8Z-0R-FWa"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ar-lJ-N8d" userLabel="Bottom View">
-                                        <rect key="frame" x="0.0" y="437" width="414" height="415"/>
+                                        <rect key="frame" x="0.0" y="394" width="375" height="374"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -71,11 +98,15 @@
                     </view>
                     <connections>
                         <outlet property="container" destination="ck1-pr-NBA" id="6CU-BK-upT"/>
+                        <outlet property="topStaticLabel" destination="vJj-op-zhq" id="3vV-tN-uNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3g-Gw-UxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.130434782608695" y="148.66071428571428"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="148.52216748768473"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="121" height="53.666667938232422"/>
+    </resources>
 </document>

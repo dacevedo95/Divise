@@ -40,7 +40,7 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var incomeStaticLabel: UILabel! {
         didSet {
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 10.0
+            paragraphStyle.lineSpacing = 5.0
             
             let attrString = NSMutableAttributedString(string: incomeStaticLabel.text!)
             attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
@@ -63,6 +63,7 @@ class IncomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hero.isEnabled = true
+        print(self.incomeLabel.font.description)
 
         // Do any additional setup after loading the view.
         incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
