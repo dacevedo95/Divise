@@ -10,6 +10,7 @@ import UIKit
 
 class BudgetSelectorViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var topStaticLabel: InsetLabel!{
         didSet {
@@ -22,13 +23,29 @@ class BudgetSelectorViewController: UIViewController {
             topStaticLabel.attributedText = attrString
         }
     }
+    @IBOutlet weak var bottomView: UIView! {
+        didSet {
+            self.bottomView.backgroundColor = .clear
+        }
+    }
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            self.nextButton.layer.cornerRadius = 25.0
+            self.nextButton.enable()
+        }
+    }
+    @IBOutlet weak var backButton: UIButton! {
+        didSet {
+            self.backButton.layer.cornerRadius = 25.0
+        }
+    }
     
+    // MARK: - Properties
     let data: [CustomData] = [
         CustomData(title: "signs", image: #imageLiteral(resourceName: "Calendar"), bgColor: #colorLiteral(red: 0.6588235294, green: 0.6352941176, blue: 0.9294117647, alpha: 1)),
         CustomData(title: "grafetti", image: #imageLiteral(resourceName: "ShoppingBag"), bgColor: #colorLiteral(red: 0.7568627451, green: 0.6509803922, blue: 0.9333333333, alpha: 1)),
         CustomData(title: "view", image: #imageLiteral(resourceName: "PiggyBank"), bgColor: #colorLiteral(red: 0.6078431373, green: 0.6745098039, blue: 0.9490196078, alpha: 1))
     ]
-    
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -67,6 +84,9 @@ class BudgetSelectorViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let roundedView = RoundedView(frame: CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: bottomView.frame.size.height + 44))
+        bottomView.insertSubview(roundedView, at: 0)
     }
     
 
@@ -141,21 +161,11 @@ extension BudgetSelectorViewController: UICollectionViewDelegateFlowLayout, UICo
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
                 cell.frame = CGRect(x: self.xPosSelected, y: cell.frame.origin.y, width: 2 * cellWidth + self.spacingMargin, height: cellWidth)
             }, completion: nil)
-            
-            
-            
-//            UIView.animate(withDuration: 0.2) {
-//                cell.frame = CGRect(x: self.xPosSelected, y: cell.frame.origin.y, width: 2 * cellWidth + self.spacingMargin, height: cellWidth)
-//            }
             xPosSelected += 2 * cellWidth + spacingMargin
         } else {
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
                 cell.frame = CGRect(x: self.xPosSelected, y: cell.frame.origin.y, width: cellWidth, height: cellWidth)
             }, completion: nil)
-            
-//            UIView.animate(withDuration: 0.2) {
-//                cell.frame = CGRect(x: self.xPosSelected, y: cell.frame.origin.y, width: cellWidth, height: cellWidth)
-//            }
             xPosSelected += cellWidth
         }
         xPosSelected += spacingMargin
