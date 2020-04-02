@@ -33,6 +33,8 @@
 		5D64867A2427AE2600826503 /* BudgetSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */; };
 		5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486AF242C1FFA00826503 /* RoundedView.swift */; };
 		5D6486D924310C7600826503 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486D824310C7600826503 /* InsetLabel.swift */; };
+		5D6486DC24366ADD00826503 /* SelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486DB24366ADD00826503 /* SelectorCell.swift */; };
+		5D6486DE24366D7000826503 /* CVSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6486DD24366D7000826503 /* CVSelector.swift */; };
 		5D753F1423FF7BE800B558D7 /* UserForLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F1323FF7BE800B558D7 /* UserForLogin.swift */; };
 		5D753F232404E5F600B558D7 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F222404E5F600B558D7 /* EndPointType.swift */; };
 		5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D753F242404E67A00B558D7 /* HTTPMethod.swift */; };
@@ -95,6 +97,8 @@
 		5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSelectorViewController.swift; sourceTree = "<group>"; };
 		5D6486AF242C1FFA00826503 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5D6486D824310C7600826503 /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		5D6486DB24366ADD00826503 /* SelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorCell.swift; sourceTree = "<group>"; };
+		5D6486DD24366D7000826503 /* CVSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSelector.swift; sourceTree = "<group>"; };
 		5D753F0D23FF61FD00B558D7 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		5D753F0E23FF621400B558D7 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		5D753F0F23FF622800B558D7 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -198,13 +202,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5D6486AE242C1FBC00826503 /* Custom */ = {
+		5D6486AE242C1FBC00826503 /* Random */ = {
 			isa = PBXGroup;
 			children = (
 				5D6486AF242C1FFA00826503 /* RoundedView.swift */,
 				5D6486D824310C7600826503 /* InsetLabel.swift */,
 			);
-			path = Custom;
+			path = Random;
+			sourceTree = "<group>";
+		};
+		5D6486DA2436678900826503 /* CVSelector */ = {
+			isa = PBXGroup;
+			children = (
+				5D6486DB24366ADD00826503 /* SelectorCell.swift */,
+				5D6486DD24366D7000826503 /* CVSelector.swift */,
+			);
+			path = CVSelector;
 			sourceTree = "<group>";
 		};
 		5D753F0C23FF61C300B558D7 /* Configs */ = {
@@ -365,7 +378,8 @@
 		5D753F47241C7FD300B558D7 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
-				5D6486AE242C1FBC00826503 /* Custom */,
+				5D6486DA2436678900826503 /* CVSelector */,
+				5D6486AE242C1FBC00826503 /* Random */,
 				5D753F4A241C7FFA00B558D7 /* Views */,
 				5D753F49241C7FF100B558D7 /* Models */,
 				5D753F48241C7FE600B558D7 /* ViewControllers */,
@@ -612,6 +626,7 @@
 				5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */,
 				5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
+				5D6486DE24366D7000826503 /* CVSelector.swift in Sources */,
 				5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */,
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
 				5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */,
@@ -627,6 +642,7 @@
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
 				5D753F2E2406186B00B558D7 /* JSONParameterEncoder.swift in Sources */,
 				5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */,
+				5D6486DC24366ADD00826503 /* SelectorCell.swift in Sources */,
 				5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */,
 				5D3E26FE23F63C9E0041F8FE /* NameViewController.swift in Sources */,
 			);
