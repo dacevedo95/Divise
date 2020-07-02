@@ -7,9 +7,9 @@ target 'Pingd' do
 
 #   Pods for Pingd
   pod 'Hero'
-#  pod 'StepIndicator', '~> 1.0.8'
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'PhoneNumberKit', '~> 3.2'
+  pod 'SnapKit', '~> 5.0.0'
 
 end

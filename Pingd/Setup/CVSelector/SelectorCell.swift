@@ -12,6 +12,7 @@ import UIKit
 struct SelectorData {
     var image: UIImage
     var bgColor: UIColor
+    var supplementaryColor: UIColor
     var title: String
     var description: String
 }

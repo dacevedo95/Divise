@@ -14,9 +14,9 @@ import UIKit
 class CVSelector: UICollectionView {
     
     private let data: [SelectorData] = [
-        SelectorData(image: #imageLiteral(resourceName: "Calendar"), bgColor: #colorLiteral(red: 0.6588235294, green: 0.6352941176, blue: 0.9294117647, alpha: 1), title: "Needs", description: "The things in your life that are absolutely neccesary"),
-        SelectorData(image: #imageLiteral(resourceName: "ShoppingBag"), bgColor: #colorLiteral(red: 0.7568627451, green: 0.6509803922, blue: 0.9333333333, alpha: 1), title: "Wants", description: "The things in your life that are nice to have, but not neccesary"),
-        SelectorData(image: #imageLiteral(resourceName: "PiggyBank"), bgColor: #colorLiteral(red: 0.6078431373, green: 0.6745098039, blue: 0.9490196078, alpha: 1), title: "Savings", description: "The money left over to invest or pay off any debts")
+        SelectorData(image: #imageLiteral(resourceName: "Calendar"), bgColor: #colorLiteral(red: 0.6588235294, green: 0.6352941176, blue: 0.9294117647, alpha: 1), supplementaryColor: #colorLiteral(red: 0.7450980392, green: 0.7254901961, blue: 0.9568627451, alpha: 1), title: "Needs", description: "The things in your life that are absolutely neccesary"),
+        SelectorData(image: #imageLiteral(resourceName: "ShoppingBag"), bgColor: #colorLiteral(red: 0.7568627451, green: 0.6509803922, blue: 0.9333333333, alpha: 1), supplementaryColor: #colorLiteral(red: 0.8431372549, green: 0.7450980392, blue: 1, alpha: 1), title: "Wants", description: "The things in your life that are nice to have, but not neccesary"),
+        SelectorData(image: #imageLiteral(resourceName: "PiggyBank"), bgColor: #colorLiteral(red: 0.6078431373, green: 0.6745098039, blue: 0.9490196078, alpha: 1), supplementaryColor: #colorLiteral(red: 0.7176470588, green: 0.768627451, blue: 0.9764705882, alpha: 1), title: "Savings", description: "The money left over to invest or pay off any debts")
     ]
     
     private var previousIndex: Int = 0
@@ -26,6 +26,8 @@ class CVSelector: UICollectionView {
     
     let sideMargins: CGFloat = 20.0
     let spacingMargin: CGFloat = 10.0
+    
+    var didSelectCell: ((SelectorData) -> Void)?
     
     init() {
         let layout =  UICollectionViewFlowLayout()
@@ -121,9 +123,10 @@ extension CVSelector: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        
         xPos = 0
         xPosSelected = 0
+        
+        didSelectCell?(data[indexPath.row])
         
         collectionView.reloadData()
     }

@@ -10,15 +10,31 @@ import UIKit
 
 class RoundedView: UIView {
     
+    var fillColor = UIColor(red: 168, green: 162, blue: 237)
+    var fillLayer = CAShapeLayer()
+    var maskLayer = CAShapeLayer()
+    
+    func changeBackgroundColor(to color: UIColor) {
+        fillLayer.fillColor = color.cgColor
+    }
+    
+    override func layoutSubviews() {
+        let path = generatePath()
+        
+        fillLayer.path = path.cgPath
+        maskLayer.path = path.cgPath
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let shape = CAShapeLayer()
-        shape.fillColor = UIColor(red: 168, green: 162, blue: 237).cgColor
+        fillLayer.fillColor = fillColor.cgColor
+        fillLayer.fillRule = .evenOdd
         
-        let viewPath = generatePath()
-        shape.path = viewPath.cgPath
-        self.layer.addSublayer(shape)
+        layer.addSublayer(fillLayer)
+        
+        maskLayer.fillRule = .evenOdd
+        layer.mask = maskLayer
     }
     
     required init?(coder: NSCoder) {
@@ -26,10 +42,7 @@ class RoundedView: UIView {
     }
     
     private func generatePath() -> UIBezierPath {
-        let path = UIBezierPath(roundedRect: frame,
-                                byRoundingCorners: .topLeft,
-                                cornerRadii: CGSize(width: frame.size.width/5, height: 0.0))
-        
+        let path = UIBezierPath(roundedRect: frame, byRoundingCorners: .topLeft, cornerRadii: CGSize(width: frame.size.width/5, height: 0.0))
         return path
     }
     

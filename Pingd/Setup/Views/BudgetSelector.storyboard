@@ -81,26 +81,25 @@
                                         <rect key="frame" x="0.0" y="384" width="375" height="384"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-mK-uDr">
-                                                <rect key="frame" x="30" y="54" width="315" height="276"/>
+                                                <rect key="frame" x="30" y="48" width="315" height="288"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1q-ms-AJE">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1q-ms-AJE" customClass="UIPickerView">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="118"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="P1q-ms-AJE" secondAttribute="height" multiplier="315:118" id="swk-pA-dAg"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The things in your life that are absolutely neccesary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zQD-X8-hm6">
-                                                        <rect key="frame" x="0.0" y="153" width="315" height="38"/>
+                                                        <rect key="frame" x="0.0" y="153" width="315" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="38" id="Kgx-iX-1QL"/>
+                                                            <constraint firstAttribute="height" constant="50" id="Kgx-iX-1QL"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GLz-7P-MEt" userLabel="Buttons">
-                                                        <rect key="frame" x="0.0" y="226" width="315" height="50"/>
+                                                        <rect key="frame" x="0.0" y="238" width="315" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcA-vP-a76" userLabel="Back Button">
                                                                 <rect key="frame" x="0.0" y="0.0" width="99.666666666666671" height="50"/>
@@ -164,7 +163,9 @@
                         <outlet property="backButton" destination="wcA-vP-a76" id="xjT-9e-4Zs"/>
                         <outlet property="bottomView" destination="0ar-lJ-N8d" id="ncM-rc-AgW"/>
                         <outlet property="container" destination="ck1-pr-NBA" id="6CU-BK-upT"/>
+                        <outlet property="descriptionLabel" destination="zQD-X8-hm6" id="4n5-XB-isT"/>
                         <outlet property="nextButton" destination="GB8-sn-wJ4" id="Fod-zI-V7e"/>
+                        <outlet property="pickerContainer" destination="P1q-ms-AJE" id="dF9-Kx-1ax"/>
                         <outlet property="topStaticLabel" destination="vJj-op-zhq" id="3vV-tN-uNa"/>
                     </connections>
                 </viewController>
