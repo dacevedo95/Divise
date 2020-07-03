@@ -134,6 +134,18 @@ class CategorySelectorViewController: UIViewController {
         }
     }
     
+    // MARK: - Percent Labels
+    @IBOutlet weak var needsPercentageLabel: UILabel!
+    @IBOutlet weak var wantsPercentageLabel: UILabel!
+    @IBOutlet weak var savingsPercentageLabel: UILabel!
+    
+    // MARK: - Properties
+    var income = 99999
+    var needsPercent = 50
+    var wantsPercent = 30
+    var savingsPercent = 20
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -143,6 +155,11 @@ class CategorySelectorViewController: UIViewController {
         
         // Enable confirm button
         confirmButton.enable()
+        
+        // Sets the labels
+        needsPercentageLabel.text = String(needsPercent)
+        wantsPercentageLabel.text = String(wantsPercent)
+        savingsPercentageLabel.text = String(savingsPercent)
     }
     
 
