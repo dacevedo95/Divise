@@ -67,6 +67,8 @@
 		5DB279EB24AC103600254D29 /* CategorySelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB279EA24AC103600254D29 /* CategorySelector.storyboard */; };
 		5DB279ED24AC164400254D29 /* CategorySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279EC24AC164400254D29 /* CategorySelectorViewController.swift */; };
 		5DB279EF24AE1C6700254D29 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279EE24AE1C6700254D29 /* CALayer.swift */; };
+		5DB279F224AFCE9800254D29 /* IncomeILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279F124AFCE9800254D29 /* IncomeILabel.swift */; };
+		5DB279F424AFD83000254D29 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279F324AFD82F00254D29 /* EditCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +141,8 @@
 		5DB279EA24AC103600254D29 /* CategorySelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategorySelector.storyboard; sourceTree = "<group>"; };
 		5DB279EC24AC164400254D29 /* CategorySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorViewController.swift; sourceTree = "<group>"; };
 		5DB279EE24AE1C6700254D29 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		5DB279F124AFCE9800254D29 /* IncomeILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeILabel.swift; sourceTree = "<group>"; };
+		5DB279F324AFD82F00254D29 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
 		A62FFE42862A620360489166 /* Pods-Pingd.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (staging).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (staging).xcconfig"; sourceTree = "<group>"; };
 		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +401,7 @@
 		5D753F47241C7FD300B558D7 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				5DB279F024AFCCDD00254D29 /* IncomeLabel */,
 				5D2D0BEB2443BBDC00E807EC /* CVNumberScroller */,
 				5D6486DA2436678900826503 /* CVSelector */,
 				5D6486AE242C1FBC00826503 /* Random */,
@@ -414,6 +419,7 @@
 				5D753F4F241D733F00B558D7 /* IncomeViewController.swift */,
 				5D6486792427AE2600826503 /* BudgetSelectorViewController.swift */,
 				5DB279EC24AC164400254D29 /* CategorySelectorViewController.swift */,
+				5DB279F324AFD82F00254D29 /* EditCategoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -492,6 +498,14 @@
 				5D9F24DF23D95C2C0045E325 /* SlideSegue.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		5DB279F024AFCCDD00254D29 /* IncomeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				5DB279F124AFCE9800254D29 /* IncomeILabel.swift */,
+			);
+			path = IncomeLabel;
 			sourceTree = "<group>";
 		};
 		E98E82D8A4B7B7F684E4DDEF /* Frameworks */ = {
@@ -639,6 +653,7 @@
 				5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */,
 				5D2D0BED2443BE7E00E807EC /* CVNumberScroller.swift in Sources */,
 				5D64867A2427AE2600826503 /* BudgetSelectorViewController.swift in Sources */,
+				5DB279F424AFD83000254D29 /* EditCategoryViewController.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
 				5D9F24C223D381700045E325 /* UIColor.swift in Sources */,
 				5D753F4324109B5300B558D7 /* UserExistenceModel.swift in Sources */,
@@ -656,6 +671,7 @@
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
 				5D2D0BEF2443C28500E807EC /* ScrollerCell.swift in Sources */,
 				5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */,
+				5DB279F224AFCE9800254D29 /* IncomeILabel.swift in Sources */,
 				5D753F2A2406124D00B558D7 /* ParameterEncoding.swift in Sources */,
 				5D753F41240DFC2A00B558D7 /* NetworkLogger.swift in Sources */,
 				5D753F3D240B6F7600B558D7 /* LogInModel.swift in Sources */,

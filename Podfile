@@ -11,5 +11,6 @@ target 'Pingd' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'PhoneNumberKit', '~> 3.2'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'MSCircularSlider'
 
 end

@@ -100,7 +100,7 @@
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                         </variation>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$976.38" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-GD-DeD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$976.38" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-GD-DeD" customClass="IncomeLabel" customModule="Divise" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="62.333333333333336" width="295" height="111.33333333333331"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="96"/>
                                                         <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
@@ -344,7 +344,7 @@
                     <connections>
                         <outlet property="bottomView" destination="5cu-ln-Y5c" id="uNz-fc-Dud"/>
                         <outlet property="buttons" destination="17x-fC-9JQ" id="Gxh-y5-xl2"/>
-                        <outlet property="incomeLabel" destination="yNr-GD-DeD" id="aJ8-fO-va7"/>
+                        <outlet property="incomeLabel" destination="yNr-GD-DeD" id="bRr-yj-tuc"/>
                         <outlet property="incomeStaticLabel" destination="ap7-Lm-LX1" id="vbh-y5-psQ"/>
                         <outlet property="keypad" destination="I3x-z7-HpK" id="97s-J3-c51"/>
                         <outlet property="logo" destination="fN4-WU-FdZ" id="a55-4d-kxQ"/>

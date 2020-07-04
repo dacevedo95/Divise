@@ -42,7 +42,7 @@ class RoundedView: UIView {
     }
     
     private func generatePath() -> UIBezierPath {
-        let path = UIBezierPath(roundedRect: frame, byRoundingCorners: .topLeft, cornerRadii: CGSize(width: frame.size.width/5, height: 0.0))
+        let path = UIBezierPath(roundedRect: frame, byRoundingCorners: .topLeft, cornerRadii: CGSize(width: frame.size.width/7, height: 0.0))
         return path
     }
     

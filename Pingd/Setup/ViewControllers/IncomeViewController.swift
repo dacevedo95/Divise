@@ -26,16 +26,12 @@ public enum KeyInput: String {
 class IncomeViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var incomeLabel: UILabel! {
-        didSet {
-            // incomeLabel.hero.modifiers = [.fade, .duration(1.0)]
-        }
-    }
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             self.nextButton.layer.cornerRadius = 25.0
         }
     }
+    @IBOutlet weak var incomeLabel: IncomeLabel!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var incomeStaticLabel: UILabel! {
         didSet {
@@ -66,7 +62,7 @@ class IncomeViewController: UIViewController {
         print(self.incomeLabel.font.description)
 
         // Do any additional setup after loading the view.
-        incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
+        incomeLabel.setIncomeLabel(amount: incomeString)
         
         let roundedView = RoundedView(frame: CGRect(x: 0,
                                                     y: 0,
@@ -149,7 +145,7 @@ class IncomeViewController: UIViewController {
             incomeString = "0"
         }
         
-        incomeLabel.attributedText = toAttributedIncomeString(originalString: "$" + incomeString)
+        incomeLabel.setIncomeLabel(amount: incomeString)
         
         let amount = Double(incomeString)
         if amount != nil {
