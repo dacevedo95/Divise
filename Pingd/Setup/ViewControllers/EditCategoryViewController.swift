@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MSCircularSlider
 
 class EditCategoryViewController: UIViewController {
 
@@ -28,6 +29,8 @@ class EditCategoryViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var circularSlider: MSCircularSlider!
+    
     // MARK: - Properties
     var income: CGFloat?
     var percentage: Int?
@@ -38,7 +41,10 @@ class EditCategoryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        categoryIncomeLabel.setIncomeLabel(amount: "9999.99")
+        categoryIncomeLabel.setIncomeLabel(amount: "9999.99", specifiedPointSize: categoryIncomeLabel.font.pointSize)
+        
+        // Sets the circular slider delegate
+        circularSlider.delegate = self
         
         // Attaches the bottom view
         let roundedView = RoundedView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height + 44))
@@ -66,4 +72,10 @@ class EditCategoryViewController: UIViewController {
     }
     */
 
+}
+
+extension EditCategoryViewController: MSCircularSliderDelegate {
+    func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
+        print("Value changed To: " + round(value).description)
+    }
 }

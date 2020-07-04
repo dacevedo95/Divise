@@ -140,7 +140,8 @@ class CategorySelectorViewController: UIViewController {
     @IBOutlet weak var savingsPercentageLabel: UILabel!
     
     // MARK: - Properties
-    var income = 99999
+    var income: NSNumber?
+    
     var needsPercent = 50
     var wantsPercent = 30
     var savingsPercent = 20
@@ -160,6 +161,12 @@ class CategorySelectorViewController: UIViewController {
         needsPercentageLabel.text = String(needsPercent)
         wantsPercentageLabel.text = String(wantsPercent)
         savingsPercentageLabel.text = String(savingsPercent)
+        
+        // Sets the income label
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattedAmount = numberFormatter.string(from: income ?? 0)
+        incomeLabel.text = "$" + (formattedAmount ?? "")
     }
     
 

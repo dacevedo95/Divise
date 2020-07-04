@@ -58,37 +58,16 @@ class IncomeViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hero.isEnabled = true
-        print(self.incomeLabel.font.description)
 
         // Do any additional setup after loading the view.
-        incomeLabel.setIncomeLabel(amount: incomeString)
+        incomeLabel.setIncomeLabel(amount: incomeString, specifiedPointSize: 96.0)
         
         let roundedView = RoundedView(frame: CGRect(x: 0,
                                                     y: 0,
                                                     width: self.view.frame.size.width,
                                                     height: bottomView.frame.size.height + 44))
-        roundedView.hero.modifiers = [.translate(CGPoint(x: 0.0, y: bottomView.frame.size.height + 44)),
-                                      .duration(0.3),
-                                      .timingFunction(.deceleration)]
-        self.bottomView.insertSubview(roundedView, at: 0)
         
-        keypad.hero.modifiers = [.fade,
-                                 .delay(0.3),
-                                 .duration(0.5),
-                                 .translate(y: 20)]
-        buttons.hero.modifiers = [.fade,
-                                  .delay(0.3),
-                                  .duration(0.5),
-                                  .translate(y: 20)]
-        incomeStaticLabel.hero.modifiers = [.fade,
-                                            .delay(0.3),
-                                            .duration(0.5),
-                                            .translate(y: 20)]
-        incomeLabel.hero.modifiers = [.fade,
-                                      .delay(0.3),
-                                      .duration(0.5),
-                                      .translate(y: 20)]
+        self.bottomView.insertSubview(roundedView, at: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,7 +124,8 @@ class IncomeViewController: UIViewController {
             incomeString = "0"
         }
         
-        incomeLabel.setIncomeLabel(amount: incomeString)
+        print(self.incomeLabel.font.description)
+        incomeLabel.setIncomeLabel(amount: incomeString, specifiedPointSize: 96.0)
         
         let amount = Double(incomeString)
         if amount != nil {
@@ -178,5 +158,12 @@ class IncomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCategories" {
+            let destinationVC = segue.destination as! CategorySelectorViewController
+            destinationVC.income = NumberFormatter().number(from: incomeString)
+        }
+    }
 
 }
