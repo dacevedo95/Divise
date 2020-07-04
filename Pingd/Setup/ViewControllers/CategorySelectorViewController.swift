@@ -142,9 +142,11 @@ class CategorySelectorViewController: UIViewController {
     // MARK: - Properties
     var income: NSNumber?
     
-    var needsPercent = 50
-    var wantsPercent = 30
-    var savingsPercent = 20
+    var needsPercent: Int?
+    var wantsPercent: Int?
+    var savingsPercent: Int?
+    
+    var editCategoryInfo: [EditCategoryModel] = []
     
     
     override func viewDidLoad() {
@@ -158,15 +160,22 @@ class CategorySelectorViewController: UIViewController {
         confirmButton.enable()
         
         // Sets the labels
-        needsPercentageLabel.text = String(needsPercent)
-        wantsPercentageLabel.text = String(wantsPercent)
-        savingsPercentageLabel.text = String(savingsPercent)
+        needsPercentageLabel.text = String(needsPercent ?? 50)
+        wantsPercentageLabel.text = String(wantsPercent ?? 30)
+        savingsPercentageLabel.text = String(savingsPercent ?? 20)
         
         // Sets the income label
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.maximumFractionDigits = 2
         let formattedAmount = numberFormatter.string(from: income ?? 0)
         incomeLabel.text = "$" + (formattedAmount ?? "")
+        
+        // Sets the category
+        editCategoryInfo.append(EditCategoryModel(name: "Needs", description: "The things in your life that are absolutely neccesary", percentage: needsPercent ?? 50))
+        editCategoryInfo.append(EditCategoryModel(name: "Wants", description: "The things in your life that are nice to have, but not neccesary", percentage: wantsPercent ?? 30))
+        editCategoryInfo.append(EditCategoryModel(name: "Savings", description: "The money left over to invest or pay off any debts", percentage: savingsPercent ?? 20))
     }
     
 
@@ -179,5 +188,21 @@ class CategorySelectorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func editCategory(_ sender: Any) {
+        performSegue(withIdentifier: "editCategory", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editCategory" {
+            let destinationVC = segue.destination as! EditCategoryViewController
+            let model = editCategoryInfo[(sender as! UIButton).tag]
+            
+            destinationVC.categoryName = model.name
+            destinationVC.categoryDescription = model.description
+            destinationVC.percentage = model.percentage
+            
+            destinationVC.income = income
+        }
+    }
+    
 }

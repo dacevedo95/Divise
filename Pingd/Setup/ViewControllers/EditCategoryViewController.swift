@@ -31,11 +31,28 @@ class EditCategoryViewController: UIViewController {
     
     @IBOutlet weak var circularSlider: MSCircularSlider!
     
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 5.0
+            
+            let attrString = NSMutableAttributedString(string: descriptionLabel.text!)
+            attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+            
+            descriptionLabel.attributedText = attrString
+            descriptionLabel.textAlignment = .center
+        }
+    }
+    
     // MARK: - Properties
-    var income: CGFloat?
+    var income: NSNumber?
     var percentage: Int?
     
     var monthlyIncomeBeginning = "Monthly income is "
+    
+    var categoryName: String?
+    var categoryDescription: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +68,14 @@ class EditCategoryViewController: UIViewController {
         self.bottomView.insertSubview(roundedView, at: 0)
         
         // adds the string
-        let monthlyIncome = monthlyIncomeBeginning + "$" + (income ?? 9999.99).description
+        // Sets the income label
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.maximumFractionDigits = 2
+        let formattedAmount = numberFormatter.string(from: income ?? 0) ?? ""
+        
+        let monthlyIncome = monthlyIncomeBeginning + "$" + formattedAmount
         let attributedIncomeString = NSMutableAttributedString(string: monthlyIncome, attributes: [NSAttributedString.Key.font: UIFont(name: "Arial Rounded MT Bold", size: 14.0)!])
         attributedIncomeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 198, green: 198, blue: 198), range: NSRange(location: 0, length: 17))
         attributedIncomeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 122, green: 122, blue: 122), range: NSRange(location: 17, length: (monthlyIncome.count - 17)))
@@ -59,6 +83,10 @@ class EditCategoryViewController: UIViewController {
         
         // Enables button
         confirmButton.enable()
+        
+        // Sets the labels
+        categoryLabel.text = categoryName
+        descriptionLabel.text = categoryDescription
     }
     
 
@@ -71,6 +99,12 @@ class EditCategoryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToCategories" {
+            let destinationVC = segue.destination as! CategorySelectorViewController
+            destinationVC.income = income
+        }
+    }
 
 }
 

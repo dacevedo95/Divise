@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="IncomeInput" id="erd-Vo-z2W" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dq-mj-vlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621" y="257"/>
+            <point key="canvasLocation" x="125" y="595"/>
         </scene>
         <!--Category Selector View Controller-->
         <scene sceneID="Ktf-H7-V0k">
@@ -164,6 +164,9 @@
                                                                 </constraints>
                                                                 <inset key="contentEdgeInsets" minX="12" minY="10" maxX="12" maxY="10"/>
                                                                 <state key="normal" image="Edit"/>
+                                                                <connections>
+                                                                    <action selector="editCategory:" destination="eXs-mm-Dmv" eventType="touchUpInside" id="JB8-h5-kf6"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -238,7 +241,7 @@
                                                                     <constraint firstItem="5ir-Vo-bN2" firstAttribute="leading" secondItem="XUl-XI-G33" secondAttribute="trailing" id="uNb-b2-Fkn"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-XD-ua9">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-XD-ua9">
                                                                 <rect key="frame" x="300" y="25" width="40" height="40"/>
                                                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
@@ -247,6 +250,9 @@
                                                                 </constraints>
                                                                 <inset key="contentEdgeInsets" minX="12" minY="10" maxX="12" maxY="10"/>
                                                                 <state key="normal" image="Edit"/>
+                                                                <connections>
+                                                                    <action selector="editCategory:" destination="eXs-mm-Dmv" eventType="touchUpInside" id="Kpt-qF-uyz"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -322,7 +328,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="Lr0-QZ-qJA" secondAttribute="bottom" constant="17" id="yWW-ni-nNs"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tk-kf-KBk">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tk-kf-KBk">
                                                                 <rect key="frame" x="300" y="25" width="40" height="40"/>
                                                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
@@ -331,6 +337,9 @@
                                                                 </constraints>
                                                                 <inset key="contentEdgeInsets" minX="12" minY="10" maxX="12" maxY="10"/>
                                                                 <state key="normal" image="Edit"/>
+                                                                <connections>
+                                                                    <action selector="editCategory:" destination="eXs-mm-Dmv" eventType="touchUpInside" id="xZs-Y1-fTY"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -425,6 +434,7 @@
                         <outlet property="wantsLeftView" destination="XUl-XI-G33" id="ONL-vu-JCS"/>
                         <outlet property="wantsPercentageLabel" destination="3k3-36-iFn" id="ugm-VN-i3Q"/>
                         <outlet property="wantsRightView" destination="5ir-Vo-bN2" id="A2A-zf-oRG"/>
+                        <segue destination="4Bf-VJ-okb" kind="custom" identifier="editCategory" customClass="SlideSegue" customModule="Divise" customModuleProvider="target" id="8Iv-hI-jB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDQ-88-x63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,7 +456,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="229"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-Vy-TQt">
-                                                <rect key="frame" x="127" y="65" width="160" height="42"/>
+                                                <rect key="frame" x="36" y="65" width="342" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
                                                 <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -534,8 +544,8 @@
                                                 <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$9999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsD-V4-rBS" customClass="IncomeLabel" customModule="Divise" customModuleProvider="target">
-                                                <rect key="frame" x="126" y="305" width="162" height="57"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$9999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsD-V4-rBS" customClass="IncomeLabel" customModule="Divise" customModuleProvider="target">
+                                                <rect key="frame" x="82" y="305" width="251" height="57"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
                                                 <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -556,6 +566,9 @@
                                                         <state key="normal" title="Back">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="eXs-mm-Dmv" kind="custom" identifier="backToCategories" customClass="BackslideSegue" customModule="Divise" customModuleProvider="target" id="lJG-mU-f2p"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umf-px-6tz">
                                                         <rect key="frame" x="124" y="0.0" width="216" height="50"/>
@@ -595,19 +608,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jdh-9a-vP0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pZA-e0-RHW"/>
                     <connections>
                         <outlet property="backButton" destination="YXq-Rg-VSH" id="6SL-wP-eyB"/>
                         <outlet property="bottomView" destination="CFP-i3-OlN" id="QkN-W4-dJd"/>
                         <outlet property="categoryIncomeLabel" destination="DsD-V4-rBS" id="QSZ-bt-5Ql"/>
+                        <outlet property="categoryLabel" destination="lAg-Vy-TQt" id="vhj-yx-TPB"/>
                         <outlet property="circularSlider" destination="ZZg-hR-j9Q" id="7GM-NC-MHx"/>
                         <outlet property="confirmButton" destination="Umf-px-6tz" id="1PF-0c-6aP"/>
+                        <outlet property="descriptionLabel" destination="WZv-LK-iEm" id="fh8-0q-r2K"/>
                         <outlet property="monthlyIncomeLabel" destination="5px-U4-f1p" id="nB1-8F-AX8"/>
                         <outlet property="percentageLabel" destination="seL-n1-Dwr" id="iOX-od-5A1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74I-hW-zj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.8550724637682" y="159.375"/>
+            <point key="canvasLocation" x="1126" y="160"/>
         </scene>
     </scenes>
     <resources>
