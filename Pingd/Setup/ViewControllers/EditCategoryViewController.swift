@@ -17,6 +17,17 @@ class EditCategoryViewController: UIViewController {
     
     @IBOutlet weak var bottomView: UIView!
         
+    @IBOutlet weak var confirmButton: UIButton! {
+        didSet {
+            self.confirmButton.layer.cornerRadius = 25.0
+        }
+    }
+    @IBOutlet weak var backButton: UIButton! {
+        didSet {
+            self.backButton.layer.cornerRadius = 25.0
+        }
+    }
+    
     // MARK: - Properties
     var income: CGFloat?
     var percentage: Int?
@@ -39,6 +50,9 @@ class EditCategoryViewController: UIViewController {
         attributedIncomeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 198, green: 198, blue: 198), range: NSRange(location: 0, length: 17))
         attributedIncomeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 122, green: 122, blue: 122), range: NSRange(location: 17, length: (monthlyIncome.count - 17)))
         monthlyIncomeLabel.attributedText = attributedIncomeString
+        
+        // Enables button
+        confirmButton.enable()
     }
     
 

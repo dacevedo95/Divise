@@ -460,7 +460,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seL-n1-Dwr">
                                                         <rect key="frame" x="70" y="71" width="115" height="112"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="96"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="84"/>
                                                         <color key="textColor" red="0.38040429349999999" green="0.38037991519999997" blue="0.38039284940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -534,6 +534,38 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-i3-OlN">
                                         <rect key="frame" x="0.0" y="679" width="414" height="139"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BGn-0r-Ep0">
+                                                <rect key="frame" x="37" y="44.5" width="340" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXq-Rg-VSH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="50"/>
+                                                        <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                                        <state key="normal" title="Back">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umf-px-6tz">
+                                                        <rect key="frame" x="124" y="0.0" width="216" height="50"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                                        <state key="normal" title="Confirm">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Umf-px-6tz" firstAttribute="width" secondItem="YXq-Rg-VSH" secondAttribute="width" multiplier="2" id="Cpw-34-Xgn"/>
+                                                    <constraint firstAttribute="height" constant="50" id="gBH-u1-K9t"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="BGn-0r-Ep0" firstAttribute="leading" secondItem="CFP-i3-OlN" secondAttribute="leading" constant="37" id="18g-qJ-zPU"/>
+                                            <constraint firstAttribute="trailing" secondItem="BGn-0r-Ep0" secondAttribute="trailing" constant="37" id="UBk-1m-yJ6"/>
+                                            <constraint firstItem="BGn-0r-Ep0" firstAttribute="centerY" secondItem="CFP-i3-OlN" secondAttribute="centerY" id="ft6-U3-fLw"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -553,8 +585,10 @@
                         <viewLayoutGuide key="safeArea" id="jdh-9a-vP0"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="YXq-Rg-VSH" id="6SL-wP-eyB"/>
                         <outlet property="bottomView" destination="CFP-i3-OlN" id="QkN-W4-dJd"/>
                         <outlet property="categoryIncomeLabel" destination="DsD-V4-rBS" id="QSZ-bt-5Ql"/>
+                        <outlet property="confirmButton" destination="Umf-px-6tz" id="1PF-0c-6aP"/>
                         <outlet property="monthlyIncomeLabel" destination="5px-U4-f1p" id="nB1-8F-AX8"/>
                         <outlet property="percentageLabel" destination="seL-n1-Dwr" id="iOX-od-5A1"/>
                     </connections>
