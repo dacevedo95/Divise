@@ -485,7 +485,10 @@
                         <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="eUG-OA-lgH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="iyb-us-tiU"/>
+                    <tabBarItem key="tabBarItem" title="" id="iyb-us-tiU">
+                        <inset key="imageInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="15" vertical="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZB-pe-6s0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
