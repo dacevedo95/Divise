@@ -20,7 +20,7 @@
 		5D39EE0B23D0075000043218 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0A23D0075000043218 /* OnboardingContentViewController.swift */; };
 		5D39EE0D23D00D7200043218 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */; };
 		5D39EE0F23D0123400043218 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE0E23D0123400043218 /* OnboardingViewController.swift */; };
-		5D39EE1123D0172000043218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* MainViewController.swift */; };
+		5D39EE1123D0172000043218 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EE1023D0172000043218 /* OverviewViewController.swift */; };
 		5D3E26FA23F2665B0041F8FE /* PhoneInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */; };
 		5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */; };
 		5D3E26FE23F63C9E0041F8FE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */; };
@@ -31,6 +31,8 @@
 		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
 		5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */; };
 		5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446FA24B13CC9009EED14 /* UIDevice.swift */; };
+		5D4689A724F174C000716D89 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689A624F174C000716D89 /* MainTabBarController.swift */; };
+		5D4689A924F176D600716D89 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689A824F176D600716D89 /* TransactionViewController.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D6486782427AE0F00826503 /* BudgetSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6486772427AE0F00826503 /* BudgetSelector.storyboard */; };
@@ -93,7 +95,7 @@
 		5D39EE0A23D0075000043218 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
 		5D39EE0C23D00D7200043218 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5D39EE0E23D0123400043218 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		5D39EE1023D0172000043218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5D39EE1023D0172000043218 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		5D3E26F923F2665B0041F8FE /* PhoneInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputViewController.swift; sourceTree = "<group>"; };
 		5D3E26FB23F4CC120041F8FE /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
 		5D3E26FD23F63C9E0041F8FE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,8 @@
 		5D3E270823FA43540041F8FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryModel.swift; sourceTree = "<group>"; };
 		5D4446FA24B13CC9009EED14 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		5D4689A624F174C000716D89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5D4689A824F176D600716D89 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D6486772427AE0F00826503 /* BudgetSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetSelector.storyboard; sourceTree = "<group>"; };
@@ -469,7 +473,9 @@
 			isa = PBXGroup;
 			children = (
 				5D39EDF223CC03FA00043218 /* Main.storyboard */,
-				5D39EE1023D0172000043218 /* MainViewController.swift */,
+				5D39EE1023D0172000043218 /* OverviewViewController.swift */,
+				5D4689A624F174C000716D89 /* MainTabBarController.swift */,
+				5D4689A824F176D600716D89 /* TransactionViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				5D753F4E241C891100B558D7 /* WelcomeViewController.swift in Sources */,
 				5D753F2C240614ED00B558D7 /* URLParameterEncoding.swift in Sources */,
 				5D2D0BED2443BE7E00E807EC /* CVNumberScroller.swift in Sources */,
+				5D4689A924F176D600716D89 /* TransactionViewController.swift in Sources */,
 				5D64867A2427AE2600826503 /* BudgetSelectorViewController.swift in Sources */,
 				5DB279F424AFD83000254D29 /* EditCategoryViewController.swift in Sources */,
 				5D9F24BD23D36C460045E325 /* UITextField.swift in Sources */,
@@ -668,7 +675,7 @@
 				5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */,
 				5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */,
 				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
-				5D39EE1123D0172000043218 /* MainViewController.swift in Sources */,
+				5D39EE1123D0172000043218 /* OverviewViewController.swift in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */,
 				5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */,
@@ -697,6 +704,7 @@
 				5DB279EF24AE1C6700254D29 /* CALayer.swift in Sources */,
 				5D9F24DE23D946D60045E325 /* SlideAnimator.swift in Sources */,
 				5D3E26FE23F63C9E0041F8FE /* NameViewController.swift in Sources */,
+				5D4689A724F174C000716D89 /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
