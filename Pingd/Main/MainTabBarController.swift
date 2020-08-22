@@ -12,8 +12,19 @@ import UIKit
 class MainTabBarController : UITabBarController {
     
     override func viewDidLoad() {
-        print("Tab Loaded")
         setupMiddleButton()
+        
+        self.tabBar.layer.borderWidth = 0.5
+        self.tabBar.layer.borderColor = UIColor(red: 229, green: 229, blue: 229).cgColor
+        self.tabBar.clipsToBounds = true
+        
+        let myTabBarItem1 = (self.tabBar.items?[0])! as UITabBarItem
+        myTabBarItem1.image = UIImage(named: "Home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        myTabBarItem1.selectedImage = UIImage(named: "SelectedHome")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        
+        let myTabBarItem2 = (self.tabBar.items?[1])! as UITabBarItem
+        myTabBarItem2.image = UIImage(named: "Transactions")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        myTabBarItem2.selectedImage = UIImage(named: "SelectedTransactions")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
     
     func setupMiddleButton() {
@@ -26,9 +37,9 @@ class MainTabBarController : UITabBarController {
 
         menuButton.backgroundColor = UIColor(red: 136, green: 87, blue: 215)
         menuButton.layer.cornerRadius = menuButtonFrame.height/2
+        menuButton.layer.applySketchShadow(color: .black, alpha: 0.25, x: 0.0, y: 4.0, blur: 10, spread: 0)
         view.addSubview(menuButton)
-
-        menuButton.setImage(UIImage(named: "example"), for: .normal)
+        
         menuButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .touchUpInside)
 
         view.layoutIfNeeded()
