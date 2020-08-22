@@ -18,7 +18,7 @@ class IncomeLabel: UILabel {
         super.init(coder: aDecoder)
     }
     
-    func setIncomeLabel(amount: String, specifiedPointSize: CGFloat) {
+    func setIncomeLabel(amount: String, specifiedPointSize: CGFloat, isIncomeLabel: Bool) {
         let sizeOfDollarSign = specifiedPointSize * 0.6
         let baselineOffset = round((specifiedPointSize * 0.2) * 1000.0) / 1000.0
         
@@ -34,6 +34,12 @@ class IncomeLabel: UILabel {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
+        
+        if !isIncomeLabel {
+            numberFormatter.minimumFractionDigits = 2
+            numberFormatter.maximumFractionDigits = 2
+        }
+        
         let formattedAmount = numberFormatter.string(from: n) ?? amount
         
         let amountText = NSMutableAttributedString.init(string: "$" + formattedAmount)

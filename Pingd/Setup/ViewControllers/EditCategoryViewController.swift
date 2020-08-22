@@ -53,12 +53,17 @@ class EditCategoryViewController: UIViewController {
     
     var categoryName: String?
     var categoryDescription: String?
+    var selectorColor: UIColor?
+    
+    var currentValue: Double?
+    
+    var numberFormatter: NumberFormatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        categoryIncomeLabel.setIncomeLabel(amount: "9999.99", specifiedPointSize: categoryIncomeLabel.font.pointSize)
+        categoryIncomeLabel.setIncomeLabel(amount: "9999.99", specifiedPointSize: categoryIncomeLabel.font.pointSize, isIncomeLabel: false)
         
         // Sets the circular slider delegate
         circularSlider.delegate = self
@@ -69,7 +74,6 @@ class EditCategoryViewController: UIViewController {
         
         // adds the string
         // Sets the income label
-        let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumFractionDigits = 2
         numberFormatter.maximumFractionDigits = 2
@@ -87,6 +91,16 @@ class EditCategoryViewController: UIViewController {
         // Sets the labels
         categoryLabel.text = categoryName
         descriptionLabel.text = categoryDescription
+        
+        percentageLabel.text = String(percentage ?? 0)
+        currentValue = Double(percentage ?? 20) - 20.0
+        circularSlider.currentValue = currentValue!
+        circularSlider.filledColor = selectorColor!
+        circularSlider.handleColor = selectorColor!
+        
+        let categoryAmount = NSNumber(value: income!.doubleValue * (Double(percentage!) / 100.0))
+        let formattedCategoryAmount = numberFormatter.string(from: categoryAmount)
+        categoryIncomeLabel.setIncomeLabel(amount: formattedCategoryAmount ?? "", specifiedPointSize: 36.0, isIncomeLabel: false)
     }
     
 
@@ -103,13 +117,44 @@ class EditCategoryViewController: UIViewController {
         if segue.identifier == "backToCategories" {
             let destinationVC = segue.destination as! CategorySelectorViewController
             destinationVC.income = income
+            
+            if (sender as! UIButton).tag == 1 {
+                if categoryName == "Needs" {
+                    destinationVC.needsPercent = Int(currentValue ?? 30.0) + 20
+                } else if categoryName == "Wants" {
+                    destinationVC.wantsPercent = Int(currentValue ?? 10.0) + 20
+                } else {
+                    destinationVC.savingsPercent = Int(currentValue ?? 0.0) + 20
+                }
+            }
         }
     }
+    
+    @IBAction func confirmUpdate(_ sender: Any) {
+        performSegue(withIdentifier: "backToCategories", sender: sender)
+    }
+    
 
 }
 
 extension EditCategoryViewController: MSCircularSliderDelegate {
+    
     func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
-        print("Value changed To: " + round(value).description)
+        if round(value) != round(currentValue!) {
+            // Vibrates the device
+            UIDevice.vibrate()
+            // sets the current value
+            currentValue = round(value)
+            // sets the label
+            percentageLabel.text = (Int(round(currentValue!)) + 20).description
+            // sets the text
+            let categoryAmount = NSNumber(value: income!.doubleValue * (Double(round(currentValue!) + 20) / 100.0))
+            let formattedCategoryAmount = numberFormatter.string(from: categoryAmount)
+            categoryIncomeLabel.setIncomeLabel(amount: formattedCategoryAmount ?? "", specifiedPointSize: 36.0, isIncomeLabel: false)
+        }
+    }
+    
+    func circularSlider(_ slider: MSCircularSlider, startedTrackingWith value: Double) {
+        currentValue = round(value)
     }
 }

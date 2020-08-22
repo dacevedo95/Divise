@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 class EditCategoryModel {
     var name: String
     var description: String
     var percentage: Int
+    var color: UIColor
     
-    init(name: String, description: String, percentage: Int) {
+    init(name: String, description: String, percentage: Int, color: UIColor) {
         self.name = name
         self.description = description
         self.percentage = percentage
+        self.color = color
     }
 }

@@ -114,6 +114,8 @@ class CategorySelectorViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
     // MARK: - Buttons
     @IBOutlet weak var needsButton: UIButton! {
         didSet {
@@ -148,6 +150,8 @@ class CategorySelectorViewController: UIViewController {
     
     var editCategoryInfo: [EditCategoryModel] = []
     
+    var userMgmtManager = UserManagementManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,9 +164,16 @@ class CategorySelectorViewController: UIViewController {
         confirmButton.enable()
         
         // Sets the labels
+        UserDefaults.standard.set(false, forKey: "hasToken")
+        
+        // Gets logged in status
+        let needsPercentage = UserDefaults.standard.bool(forKey: "needsPercent")
+        
         needsPercentageLabel.text = String(needsPercent ?? 50)
         wantsPercentageLabel.text = String(wantsPercent ?? 30)
         savingsPercentageLabel.text = String(savingsPercent ?? 20)
+        
+        errorLabel.text = ""
         
         // Sets the income label
         let numberFormatter = NumberFormatter()
@@ -173,9 +184,9 @@ class CategorySelectorViewController: UIViewController {
         incomeLabel.text = "$" + (formattedAmount ?? "")
         
         // Sets the category
-        editCategoryInfo.append(EditCategoryModel(name: "Needs", description: "The things in your life that are absolutely neccesary", percentage: needsPercent ?? 50))
-        editCategoryInfo.append(EditCategoryModel(name: "Wants", description: "The things in your life that are nice to have, but not neccesary", percentage: wantsPercent ?? 30))
-        editCategoryInfo.append(EditCategoryModel(name: "Savings", description: "The money left over to invest or pay off any debts", percentage: savingsPercent ?? 20))
+        editCategoryInfo.append(EditCategoryModel(name: "Needs", description: "The things in your life that are absolutely neccesary", percentage: needsPercent ?? 50, color: #colorLiteral(red: 0.6588235294, green: 0.6352941176, blue: 0.9294117647, alpha: 1)))
+        editCategoryInfo.append(EditCategoryModel(name: "Wants", description: "The things in your life that are nice to have, but not neccesary", percentage: wantsPercent ?? 30, color: #colorLiteral(red: 0.7568627451, green: 0.6509803922, blue: 0.9333333333, alpha: 1)))
+        editCategoryInfo.append(EditCategoryModel(name: "Savings", description: "The money left over to invest or pay off any debts", percentage: savingsPercent ?? 20, color: #colorLiteral(red: 0.6078431373, green: 0.6745098039, blue: 0.9490196078, alpha: 1)))
     }
     
 
@@ -192,6 +203,38 @@ class CategorySelectorViewController: UIViewController {
         performSegue(withIdentifier: "editCategory", sender: sender)
     }
     
+    @IBAction func confirmBudget(_ sender: Any) {
+        let needs = Double(needsPercent ?? 50)/100.00
+        let wants = Double(wantsPercent ?? 30)/100.00
+        let savings = Double(savingsPercent ?? 20)/100.00
+        
+        if needs + wants + savings == 1.00 {
+            self.errorLabel.text = ""
+            
+            // Gets the date and returns it as a string
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM"
+            let now = df.string(from: Date())
+
+            print(income!.floatValue)
+            
+            // Makes the API call
+            userMgmtManager.createSettings(income: income!.floatValue, needsPercentage: needs, wantsPercentage: wants, savingsPercentage: savings, effectiveAt: now) { (error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        self.errorLabel.text = error
+                        return
+                    } else {
+                        self.performSegue(withIdentifier: "goToMain", sender: self)
+                    }
+                }
+            }
+        } else {
+            self.errorLabel.text = "All categories must equal 100 percent. Please change your values and try again."
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editCategory" {
             let destinationVC = segue.destination as! EditCategoryViewController
@@ -200,9 +243,17 @@ class CategorySelectorViewController: UIViewController {
             destinationVC.categoryName = model.name
             destinationVC.categoryDescription = model.description
             destinationVC.percentage = model.percentage
+            destinationVC.selectorColor = model.color
             
             destinationVC.income = income
         }
     }
     
+}
+
+// MARK: - API Calls
+extension CategorySelectorViewController {
+    func createSettings(income: Float, needsPercentage needs: Int, wantsPercentage wants: Int, savingsPercentage savings: Int) {
+        
+    }
 }

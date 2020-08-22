@@ -186,6 +186,24 @@ struct UserManagementManager {
         }
     }
     
+    func createSettings(income: Float, needsPercentage: Double, wantsPercentage: Double, savingsPercentage: Double, effectiveAt: String, completion: @escaping (_ error: String?) -> ()) {
+        router.request(.createSettings(income: income, needsPercentage: needsPercentage, wantsPercentage: wantsPercentage, savingsPercentage: savingsPercentage, effectiveAt: effectiveAt)) { (data, response, error) in
+            if error != nil {
+                completion("An error occured. Please try again later")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(nil)
+                case .failure(_):
+                    completion("An error occured. Please try again later")
+                }
+            }
+        }
+    }
+    
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         switch response.statusCode {
         case 200...299:

@@ -12,5 +12,5 @@ target 'Pingd' do
   pod 'PhoneNumberKit', '~> 3.2'
   pod 'SnapKit', '~> 5.0.0'
   pod 'MSCircularSlider'
-
+  pod 'GTProgressBar'
 end

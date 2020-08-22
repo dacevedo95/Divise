@@ -22,6 +22,7 @@ public enum UserManagementEndpoint {
     case sendVerification(countryCode: String, phoneNumber: String)
     case checkVerification(countryCode: String, phoneNumber: String, code: String)
     case resetPassword(countryCode: String, phoneNumber: String, newPassword: String)
+    case createSettings(income: Float, needsPercentage: Double, wantsPercentage: Double, savingsPercentage: Double, effectiveAt: String)
 }
 
 extension UserManagementEndpoint: EndPointType {
@@ -29,11 +30,11 @@ extension UserManagementEndpoint: EndPointType {
     var environmentBaseUrl: String {
         switch UserManagementManager.environment {
         case .development:
-            return "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/"
+            return "http://127.0.0.1:5000/api/v1/"
         case .staging:
-            return "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/"
+            return "http://127.0.0.1:5000/api/v1/"
         case .production:
-            return "http://PingdBackend-dev.us-east-1.elasticbeanstalk.com/api/v1/"
+            return "http://127.0.0.1:5000/api/v1/"
         }
     }
     
@@ -56,6 +57,8 @@ extension UserManagementEndpoint: EndPointType {
             return "users/exists"
         case .resetPassword(_, _, _):
             return "users/reset-password"
+        case .createSettings(_, _, _, _, _):
+            return "settings"
         }
     }
     
@@ -77,6 +80,8 @@ extension UserManagementEndpoint: EndPointType {
             return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber], urlParameters: nil)
         case .resetPassword(let countryCode, let phoneNumber, let newPassword):
             return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber, "newPassword": newPassword], urlParameters: nil)
+        case .createSettings(let income, let needsPercentage, let wantsPercentage, let savingsPercentage, let effectiveAt):
+            return .requestParameters(bodyParameters: ["income": income, "needsPercentage": needsPercentage, "wantsPercentage": wantsPercentage, "savingsPercentage": savingsPercentage, "effectiveAt": effectiveAt], urlParameters: nil)
         }
     }
     
@@ -98,6 +103,8 @@ extension UserManagementEndpoint: EndPointType {
             return false
         case .resetPassword:
             return true
+        case .createSettings:
+            return true
         }
     }
     
@@ -115,6 +122,8 @@ extension UserManagementEndpoint: EndPointType {
             return "Check User Exists"
         case .resetPassword:
             return "Reset Password"
+        case .createSettings:
+            return "Create Settings"
         }
     }
 }

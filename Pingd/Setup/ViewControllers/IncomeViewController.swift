@@ -60,7 +60,7 @@ class IncomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        incomeLabel.setIncomeLabel(amount: incomeString, specifiedPointSize: 96.0)
+        incomeLabel.setIncomeLabel(amount: incomeString, specifiedPointSize: 96.0, isIncomeLabel: true)
         
         let roundedView = RoundedView(frame: CGRect(x: 0,
                                                     y: 0,
@@ -125,7 +125,7 @@ class IncomeViewController: UIViewController {
         }
         
         print(self.incomeLabel.font.description)
-        incomeLabel.setIncomeLabel(amount: incomeString, specifiedPointSize: 96.0)
+        incomeLabel.setIncomeLabel(amount: incomeString, specifiedPointSize: 96.0, isIncomeLabel: true)
         
         let amount = Double(incomeString)
         if amount != nil {

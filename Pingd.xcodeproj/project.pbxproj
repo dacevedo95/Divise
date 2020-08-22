@@ -30,6 +30,7 @@
 		5D3E270723F8F44E0041F8FE /* Password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D3E270623F8F44E0041F8FE /* Password.storyboard */; };
 		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
 		5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */; };
+		5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446FA24B13CC9009EED14 /* UIDevice.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D6486782427AE0F00826503 /* BudgetSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6486772427AE0F00826503 /* BudgetSelector.storyboard */; };
@@ -102,6 +103,7 @@
 		5D3E270623F8F44E0041F8FE /* Password.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Password.storyboard; sourceTree = "<group>"; };
 		5D3E270823FA43540041F8FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryModel.swift; sourceTree = "<group>"; };
+		5D4446FA24B13CC9009EED14 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D6486772427AE0F00826503 /* BudgetSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetSelector.storyboard; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				5D9F24D023D6CCF70045E325 /* UIButton.swift */,
 				5D9F24D223D800040045E325 /* String.swift */,
 				5DB279EE24AE1C6700254D29 /* CALayer.swift */,
+				5D4446FA24B13CC9009EED14 /* UIDevice.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */,
 				5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */,
+				5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D6486DE24366D7000826503 /* CVSelector.swift in Sources */,
 				5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */,
