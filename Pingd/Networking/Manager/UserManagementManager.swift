@@ -204,6 +204,38 @@ struct UserManagementManager {
         }
     }
     
+    func getOverview(completion: @escaping (_ overview: Overview?, _ error: String?)  -> ()) {
+        router.request(.getOverview) { (data, response, error) in
+            if error != nil {
+                completion(nil, "An error occured. Please try again later")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "No data returned")
+                        return
+                    }
+                    
+                    do {
+                        print(responseData)
+                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        print(jsonData)
+                        let apiResponse = try JSONDecoder().decode(Overview.self, from: responseData)
+                        completion(apiResponse, nil)
+                    } catch {
+                        print(error)
+                        completion(nil, "Unable to decode")
+                    }
+                case .failure(_):
+                    completion(nil, "An error occured. Please try again later")
+                }
+            }
+        }
+    }
+    
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         switch response.statusCode {
         case 200...299:

@@ -8,13 +8,43 @@
 
 import UIKit
 
-class OverviewViewController: UIViewController {
+class OverviewViewController: UIViewController, SummaryPageViewControllerDelegate {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    @IBOutlet weak var needsImageBackground: UIView! {
+        didSet {
+            self.needsImageBackground.layer.cornerRadius = self.needsImageBackground.frame.height * 0.2
+        }
+    }
+    @IBOutlet weak var wantsImageBackground: UIView! {
+        didSet {
+            self.wantsImageBackground.layer.cornerRadius = self.wantsImageBackground.frame.height * 0.2
+        }
+    }
+    @IBOutlet weak var savingsImageBackground: UIView! {
+        didSet {
+            self.savingsImageBackground.layer.cornerRadius = self.savingsImageBackground.frame.height * 0.2
+        }
+    }
+    
+    // MARK: - Properties
+    var overviewPageViewController: OverviewPageViewController?
+    
+    var userMgmtManager = UserManagementManager()
+    
+    var overview: Overview?
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        print("overview loaded")
+    }
+    
+    func didUpdatePageIndex(currentIndex: Int) {
+        if let index = overviewPageViewController?.currentIndex {
+            pageControl.currentPage = index
+        }
     }
     
 
@@ -27,5 +57,29 @@ class OverviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination
+        
+        if let pageViewController = destination as? OverviewPageViewController {
+            overviewPageViewController = pageViewController
+            overviewPageViewController?.amountSpent = overview?.amountSpent
+            overviewPageViewController?.totalAmount = overview?.monthlyIncome
+            overviewPageViewController?.summaryDelegate = self
+        }
+    }
 
+}
+
+extension OverviewViewController {
+    func getOverview() {
+        userMgmtManager.getOverview { (overview, error) in
+            DispatchQueue.main.async {
+                if let _ = error {
+                    return
+                } else {
+                    self.overview = overview
+                }
+            }
+        }
+    }
 }

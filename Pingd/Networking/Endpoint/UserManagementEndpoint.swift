@@ -23,6 +23,7 @@ public enum UserManagementEndpoint {
     case checkVerification(countryCode: String, phoneNumber: String, code: String)
     case resetPassword(countryCode: String, phoneNumber: String, newPassword: String)
     case createSettings(income: Float, needsPercentage: Double, wantsPercentage: Double, savingsPercentage: Double, effectiveAt: String)
+    case getOverview
 }
 
 extension UserManagementEndpoint: EndPointType {
@@ -59,11 +60,30 @@ extension UserManagementEndpoint: EndPointType {
             return "users/reset-password"
         case .createSettings(_, _, _, _, _):
             return "settings"
+        case .getOverview:
+            return "overview"
         }
     }
     
     var httpMethod: HTTPMethod {
-        return .post
+        switch self {
+        case .logIn(_, _, _):
+            return .post
+        case .sendVerification(_, _):
+            return .post
+        case .createAccount(_, _, _, _, _):
+            return .post
+        case .checkVerification(_, _, _):
+            return .post
+        case .checkUserExistance(_, _):
+            return .post
+        case .resetPassword(_, _, _):
+            return .post
+        case .createSettings(_, _, _, _, _):
+            return .post
+        case .getOverview:
+            return .get
+        }
     }
     
     var task: HTTPTask {
@@ -82,6 +102,8 @@ extension UserManagementEndpoint: EndPointType {
             return .requestParameters(bodyParameters: ["countryCode": countryCode, "phoneNumber": phoneNumber, "newPassword": newPassword], urlParameters: nil)
         case .createSettings(let income, let needsPercentage, let wantsPercentage, let savingsPercentage, let effectiveAt):
             return .requestParameters(bodyParameters: ["income": income, "needsPercentage": needsPercentage, "wantsPercentage": wantsPercentage, "savingsPercentage": savingsPercentage, "effectiveAt": effectiveAt], urlParameters: nil)
+        case .getOverview:
+            return .request
         }
     }
     
@@ -105,6 +127,8 @@ extension UserManagementEndpoint: EndPointType {
             return true
         case .createSettings:
             return true
+        case .getOverview:
+            return true
         }
     }
     
@@ -124,6 +148,8 @@ extension UserManagementEndpoint: EndPointType {
             return "Reset Password"
         case .createSettings:
             return "Create Settings"
+        case .getOverview:
+            return "Get Overview"
         }
     }
 }

@@ -54,6 +54,8 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     var phoneNumberKit = PhoneNumberKit()
     var userMgmtManager = UserManagementManager()
     
+    var overview: Overview?
+    
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -102,6 +104,15 @@ class LoginViewController: UIViewController, UITextViewDelegate {
             // Logs the creation
             os_log("Value createUser sent to PhoneInputViewController with value: %{public}s", log: Log.view, type: .info, false.description)
         }
+        
+        if segue.identifier == "toMainSegue" {
+            // Gets the destination controller
+            let destinationVC = segue.destination as! MainTabBarController
+            // Sets the value of the createUser value
+            destinationVC.overview = self.overview
+            print("Overview: " + destinationVC.overview!.header)
+        }
+        
         errorLabel.text = ""
     }
     
@@ -194,12 +205,20 @@ extension LoginViewController {
             let login = Login(countryCode: String(countryCode), phoneNumber: String(nationalNumber), password: passwordTextField.text!)
             
             userMgmtManager.logIn(countryCode: login.countryCode, phoneNumber: login.phoneNumber, password: login.password) { (error) in
-                DispatchQueue.main.async {
-                    if let error = error {
-                        self.errorLabel.text = error
-                        return
-                    } else {
-                        self.performSegue(withIdentifier: "toMainSegue", sender: self)
+                if let error = error {
+                    self.errorLabel.text = error
+                    return
+                } else {
+                    self.userMgmtManager.getOverview { (overview, error) in
+                        DispatchQueue.main.async {
+                            guard overview != nil else {
+                                self.errorLabel.text = error
+                                return
+                            }
+                            
+                            self.overview = overview
+                            self.performSegue(withIdentifier: "toMainSegue", sender: self)
+                        }
                     }
                 }
             }

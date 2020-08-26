@@ -11,6 +11,16 @@ import UIKit
 
 class MainTabBarController : UITabBarController {
     
+    var overview: Overview?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let overviewView = self.viewControllers![0] as! OverviewViewController
+        overviewView.overview = self.overview
+        print("Overview MainTab: " + overview!.header)
+    }
+    
     override func viewDidLoad() {
         setupMiddleButton()
         
@@ -25,6 +35,8 @@ class MainTabBarController : UITabBarController {
         let myTabBarItem2 = (self.tabBar.items?[1])! as UITabBarItem
         myTabBarItem2.image = UIImage(named: "Transactions")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         myTabBarItem2.selectedImage = UIImage(named: "SelectedTransactions")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        
+        
     }
     
     func setupMiddleButton() {
