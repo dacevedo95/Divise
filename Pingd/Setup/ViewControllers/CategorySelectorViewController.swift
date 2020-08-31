@@ -152,6 +152,8 @@ class CategorySelectorViewController: UIViewController {
     
     var userMgmtManager = UserManagementManager()
     
+    var overviewResponse: OverviewResponse?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -204,33 +206,53 @@ class CategorySelectorViewController: UIViewController {
     }
     
     @IBAction func confirmBudget(_ sender: Any) {
-        let needs = Double(needsPercent ?? 50)/100.00
-        let wants = Double(wantsPercent ?? 30)/100.00
-        let savings = Double(savingsPercent ?? 20)/100.00
+        // Sets the decimal settings
+        let needs = settingToDecimal(needsPercent, default: 50)
+        let wants = settingToDecimal(wantsPercent, default: 30)
+        let savings = settingToDecimal(savingsPercent, default: 20)
         
-        if needs + wants + savings == 1.00 {
-            self.errorLabel.text = ""
+        // Checks if the settings are valid
+        if percentagesAreValid(needs, wants, savings) {
+            // Resets the label
+            resetErrorLabel()
             
             // Gets the date and returns it as a string
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM"
-            let now = df.string(from: Date())
-
-            print(income!.floatValue)
+            let now = getMonthAndYear()
             
             // Makes the API call
             userMgmtManager.createSettings(income: income!.floatValue, needsPercentage: needs, wantsPercentage: wants, savingsPercentage: savings, effectiveAt: now) { (error) in
-                DispatchQueue.main.async {
-                    if let error = error {
-                        self.errorLabel.text = error
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else {
                         return
-                    } else {
-                        self.performSegue(withIdentifier: "goToMain", sender: self)
+                    }
+                    
+                    if let error = error {
+                        self.setErrorLabel(message: error)
+                        return
+                    }
+                    
+                    self.userMgmtManager.getOverview { (overview, error) in
+                        if let error = error {
+                            self.setErrorLabel(message: error)
+                            return
+                        }
+                        
+                        DispatchQueue.main.async {
+                            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                            guard let overview = overview else {
+                                self.setErrorLabel(message: error ?? "An error occured")
+                                return
+                            }
+                            
+                            self.overviewResponse = overview
+                            appDelegate.persistentContainer.saveOverview(overview)
+                            self.performSegue(withIdentifier: "goToMain", sender: self)
+                        }
                     }
                 }
             }
         } else {
-            self.errorLabel.text = "All categories must equal 100 percent. Please change your values and try again."
+            self.setErrorLabel(message: "All categories must equal 100 percent. Please change your values and try again.")
         }
     }
     
@@ -247,6 +269,11 @@ class CategorySelectorViewController: UIViewController {
             
             destinationVC.income = income
         }
+        
+        if segue.identifier == "goToMain" {
+            let destinationVC = segue.destination as! MainTabBarController
+            destinationVC.overview = overviewResponse
+        }
     }
     
 }
@@ -255,5 +282,30 @@ class CategorySelectorViewController: UIViewController {
 extension CategorySelectorViewController {
     func createSettings(income: Float, needsPercentage needs: Int, wantsPercentage wants: Int, savingsPercentage savings: Int) {
         
+    }
+}
+
+// MARK: - Private Functions
+extension CategorySelectorViewController {
+    private func settingToDecimal(_ value: Int?, default defaultValue: Int) -> Double {
+        return Double(value ?? defaultValue) / 100.00
+    }
+    
+    private func percentagesAreValid(_ needs: Double, _ wants: Double, _ savings: Double) -> Bool {
+        return (needs + wants + savings) == 1.00
+    }
+    
+    private func setErrorLabel(message: String) {
+        self.errorLabel.text = message
+    }
+    
+    private func resetErrorLabel() {
+        setErrorLabel(message: "")
+    }
+    
+    private func getMonthAndYear() -> String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM"
+        return df.string(from: Date())
     }
 }

@@ -11,18 +11,19 @@ import UIKit
 
 class MainTabBarController : UITabBarController {
     
-    var overview: Overview?
+    var overview: OverviewResponse?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let overviewView = self.viewControllers![0] as! OverviewViewController
-        overviewView.overview = self.overview
-        print("Overview MainTab: " + overview!.header)
     }
     
     override func viewDidLoad() {
         setupMiddleButton()
+        
+        let overviewVC = viewControllers![0] as! OverviewViewController
+        overviewVC.overview = overview
+        
+        print("Here " + (overview == nil).description)
         
         self.tabBar.layer.borderWidth = 0.5
         self.tabBar.layer.borderColor = UIColor(red: 229, green: 229, blue: 229).cgColor
@@ -36,7 +37,8 @@ class MainTabBarController : UITabBarController {
         myTabBarItem2.image = UIImage(named: "Transactions")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         myTabBarItem2.selectedImage = UIImage(named: "SelectedTransactions")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         
-        
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(paths[0])
     }
     
     func setupMiddleButton() {

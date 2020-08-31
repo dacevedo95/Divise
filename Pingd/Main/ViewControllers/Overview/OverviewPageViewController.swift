@@ -20,10 +20,7 @@ class OverviewPageViewController: UIPageViewController {
     
     var currentIndex = 0
     
-    var amountSpent: Float?
-    var totalAmount: Float?
-    var daysLeft: Int?
-    var percentageSpent: Int?
+    var overview: OverviewResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +42,8 @@ class OverviewPageViewController: UIPageViewController {
         if index == 0 {
             if let summaryTextViewController = storyboard.instantiateViewController(identifier: "SummaryTextViewController") as? SummaryTextViewController {
                 summaryTextViewController.pageIndex = index
-                summaryTextViewController.amountSpent = amountSpent
-                summaryTextViewController.totalAmount = totalAmount
+                summaryTextViewController.amountSpent = overview?.amountSpent
+                summaryTextViewController.totalAmount = overview?.monthlyIncome
                 return summaryTextViewController
             }
         } else if index == 1 {
@@ -60,9 +57,6 @@ class OverviewPageViewController: UIPageViewController {
         
         return nil
     }
-    
-    
-    
 
     /*
     // MARK: - Navigation
@@ -93,14 +87,14 @@ extension OverviewPageViewController : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! SummaryViewController).pageIndex
         index -= 1
-        print("New Before Index: " + index.description)
+        
         return contentViewController(at: index)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! SummaryViewController).pageIndex
         index += 1
-        print("New After Index: " + index.description)
+        
         return contentViewController(at: index)
     }
 }

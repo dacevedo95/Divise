@@ -2,13 +2,23 @@
 //  Overview.swift
 //  Pingd
 //
+//  Created by David Acevedo on 8/27/20.
+//  Copyright © 2020 David Acevedo. All rights reserved.
+//
+
+import Foundation
+
+//
+//  Overview.swift
+//  Pingd
+//
 //  Created by David Acevedo on 8/23/20.
 //  Copyright © 2020 David Acevedo. All rights reserved.
 //
 
 import Foundation
 
-struct Overview {
+struct OverviewResponse {
     let header: String
     let amountSpent: Float
     let monthlyIncome: Float
@@ -16,10 +26,10 @@ struct Overview {
     let daysLeft: Int
     let showInfo: Bool
     let showTransactions: Bool
-    let settings: Settings
+    let settings: SettingsResponse
 }
 
-extension Overview: Decodable {
+extension OverviewResponse: Decodable {
     
     private enum OverviewCodingKeys: String, CodingKey {
         case header
@@ -42,19 +52,19 @@ extension Overview: Decodable {
         daysLeft = try container.decode(Int.self, forKey: .daysLeft)
         showInfo = try container.decode(Bool.self, forKey: .showInfo)
         showTransactions = try container.decode(Bool.self, forKey: .showTransactions)
-        settings = try container.decode(Settings.self, forKey: .settings)
+        settings = try container.decode(SettingsResponse.self, forKey: .settings)
     }
     
 }
 
 
-struct Settings {
-    let needs: Setting
-    let wants: Setting
-    let savings: Setting
+struct SettingsResponse {
+    let needs: SettingResponse
+    let wants: SettingResponse
+    let savings: SettingResponse
 }
 
-extension Settings: Decodable {
+extension SettingsResponse: Decodable {
     
     public enum SettingsCodingKeys: String, CodingKey {
         case needs
@@ -65,19 +75,19 @@ extension Settings: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SettingsCodingKeys.self)
         
-        needs = try container.decode(Setting.self, forKey: .needs)
-        wants = try container.decode(Setting.self, forKey: .wants)
-        savings = try container.decode(Setting.self, forKey: .savings)
+        needs = try container.decode(SettingResponse.self, forKey: .needs)
+        wants = try container.decode(SettingResponse.self, forKey: .wants)
+        savings = try container.decode(SettingResponse.self, forKey: .savings)
     }
 }
 
-struct Setting {
+struct SettingResponse {
     let spent: Float
     let allowed: Float
     let percentage: Int
 }
 
-extension Setting: Decodable {
+extension SettingResponse: Decodable {
     
     public enum SettingCodingKeys: String, CodingKey {
         case spent

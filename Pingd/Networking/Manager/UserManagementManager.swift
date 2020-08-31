@@ -204,7 +204,7 @@ struct UserManagementManager {
         }
     }
     
-    func getOverview(completion: @escaping (_ overview: Overview?, _ error: String?)  -> ()) {
+    func getOverview(completion: @escaping (_ overview: OverviewResponse?, _ error: String?)  -> ()) {
         router.request(.getOverview) { (data, response, error) in
             if error != nil {
                 completion(nil, "An error occured. Please try again later")
@@ -223,7 +223,7 @@ struct UserManagementManager {
                         print(responseData)
                         let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                         print(jsonData)
-                        let apiResponse = try JSONDecoder().decode(Overview.self, from: responseData)
+                        let apiResponse = try JSONDecoder().decode(OverviewResponse.self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
                         print(error)

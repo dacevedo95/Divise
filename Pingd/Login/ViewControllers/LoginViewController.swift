@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     var phoneNumberKit = PhoneNumberKit()
     var userMgmtManager = UserManagementManager()
     
-    var overview: Overview?
+    var overview: OverviewResponse?
     
     
     // MARK: - Lifecycle Methods
@@ -110,7 +110,8 @@ class LoginViewController: UIViewController, UITextViewDelegate {
             let destinationVC = segue.destination as! MainTabBarController
             // Sets the value of the createUser value
             destinationVC.overview = self.overview
-            print("Overview: " + destinationVC.overview!.header)
+            // Logs the creation
+            os_log("Value createUser sent to PhoneInputViewController with value: %{public}s", log: Log.view, type: .info, false.description)
         }
         
         errorLabel.text = ""
@@ -205,24 +206,34 @@ extension LoginViewController {
             let login = Login(countryCode: String(countryCode), phoneNumber: String(nationalNumber), password: passwordTextField.text!)
             
             userMgmtManager.logIn(countryCode: login.countryCode, phoneNumber: login.phoneNumber, password: login.password) { (error) in
-                if let error = error {
-                    self.errorLabel.text = error
-                    return
-                } else {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
+                    
+                    if let error = error {
+                        self.errorLabel.text = error
+                        return
+                    }
+                    
                     self.userMgmtManager.getOverview { (overview, error) in
+                        if let error = error {
+                            self.errorLabel.text = error
+                            return
+                        }
+                        
                         DispatchQueue.main.async {
-                            guard overview != nil else {
-                                self.errorLabel.text = error
-                                return
-                            }
+                            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                            guard let overview = overview else { return }
                             
                             self.overview = overview
+                            appDelegate.persistentContainer.saveOverview(overview)
                             self.performSegue(withIdentifier: "toMainSegue", sender: self)
                         }
                     }
+                    
                 }
             }
-    
         } catch {
             // Signals the end of the error
             os_log("Error while signing in: %{public}s", error.localizedDescription)

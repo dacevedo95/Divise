@@ -34,11 +34,14 @@ class OverviewViewController: UIViewController, SummaryPageViewControllerDelegat
     
     var userMgmtManager = UserManagementManager()
     
-    var overview: Overview?
+    var overview: OverviewResponse?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print((parent as! MainTabBarController).overview == nil)
+        overview = (parent as! MainTabBarController).overview
     }
     
     func didUpdatePageIndex(currentIndex: Int) {
@@ -62,8 +65,7 @@ class OverviewViewController: UIViewController, SummaryPageViewControllerDelegat
         
         if let pageViewController = destination as? OverviewPageViewController {
             overviewPageViewController = pageViewController
-            overviewPageViewController?.amountSpent = overview?.amountSpent
-            overviewPageViewController?.totalAmount = overview?.monthlyIncome
+            overviewPageViewController?.overview = (parent as! MainTabBarController).overview
             overviewPageViewController?.summaryDelegate = self
         }
     }
@@ -71,15 +73,5 @@ class OverviewViewController: UIViewController, SummaryPageViewControllerDelegat
 }
 
 extension OverviewViewController {
-    func getOverview() {
-        userMgmtManager.getOverview { (overview, error) in
-            DispatchQueue.main.async {
-                if let _ = error {
-                    return
-                } else {
-                    self.overview = overview
-                }
-            }
-        }
-    }
+    
 }

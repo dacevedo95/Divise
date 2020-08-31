@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Overview" representedClassName="Overview" syncable="YES" codeGenerationType="class">
+        <attribute name="amountSpent" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="daysLeft" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="header" optional="YES" attributeType="String"/>
+        <attribute name="monthlyIncome" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="showInfo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="showTransactions" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="totalPercentage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="settings" optional="YES" toMany="YES" maxCount="3" deletionRule="Nullify" destinationEntity="Setting" inverseName="overview" inverseEntity="Setting"/>
+    </entity>
+    <entity name="Setting" representedClassName="Setting" syncable="YES" codeGenerationType="class">
+        <attribute name="allowed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="spent" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="overview" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Overview" inverseName="settings" inverseEntity="Overview"/>
+    </entity>
+    <elements>
+        <element name="Overview" positionX="-319.90625" positionY="-141.3046875" width="128" height="163"/>
+        <element name="Setting" positionX="-55.93359375" positionY="-69.375" width="128" height="118"/>
+    </elements>
+</model>

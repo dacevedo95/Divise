@@ -78,6 +78,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0N-GS-IXp">
                                         <rect key="frame" x="351" y="37" width="39" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                         <state key="normal" image="Menu"/>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-6S-XIL">
@@ -524,9 +525,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’ve spent $1,864.97 this month out of $2,694.23" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5Z-ve-tQf">
-                                <rect key="frame" x="25" y="22" width="364" height="97.5"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have spent $9999.00 this month out of $2,694.23" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5Z-ve-tQf">
+                                <rect key="frame" x="25" y="18.5" width="364" height="104.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -536,6 +537,7 @@
                             <constraint firstItem="E5Z-ve-tQf" firstAttribute="centerY" secondItem="Yr2-fc-abE" secondAttribute="centerY" id="Grg-LG-eKq"/>
                             <constraint firstItem="E5Z-ve-tQf" firstAttribute="leading" secondItem="Yr2-fc-abE" secondAttribute="leading" constant="25" id="jTi-TG-RQf"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="TOK-Li-pyC"/>
                     </view>
                     <size key="freeformSize" width="414" height="141"/>
                     <connections>
@@ -604,6 +606,7 @@
                             <constraint firstItem="RAs-EB-7vb" firstAttribute="centerX" secondItem="POj-n0-u5I" secondAttribute="centerX" id="hFF-5B-8KM"/>
                             <constraint firstItem="RAs-EB-7vb" firstAttribute="centerY" secondItem="POj-n0-u5I" secondAttribute="centerY" id="hVj-uf-7lF"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="xt6-YN-q4J"/>
                     </view>
                     <size key="freeformSize" width="414" height="141"/>
                 </viewController>

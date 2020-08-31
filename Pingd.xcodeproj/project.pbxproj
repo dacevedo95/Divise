@@ -37,8 +37,10 @@
 		5D4689AB24F1E7D200716D89 /* OverviewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689AA24F1E7D200716D89 /* OverviewPageViewController.swift */; };
 		5D4689AD24F22EED00716D89 /* SummaryTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689AC24F22EED00716D89 /* SummaryTextViewController.swift */; };
 		5D4689AF24F22F3E00716D89 /* SummaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689AE24F22F3E00716D89 /* SummaryDetailViewController.swift */; };
-		5D4F7C1C24F30FB700671EEC /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F7C1B24F30FB700671EEC /* Overview.swift */; };
+		5D57BD3624FAEEEB00A5A592 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BD3524FAEEEB00A5A592 /* Error.swift */; };
 		5D5C4A8724F5D179005048C3 /* Divise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C4A8524F5D179005048C3 /* Divise.xcdatamodeld */; };
+		5D5C4A8A24F6F052005048C3 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C4A8924F6F052005048C3 /* PersistentContainer.swift */; };
+		5D5C4A8F24F8702D005048C3 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C4A8E24F8702D005048C3 /* Overview.swift */; };
 		5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D644B7C23E76822005F0720 /* Verify.storyboard */; };
 		5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D644B7E23E770F2005F0720 /* VerifyViewController.swift */; };
 		5D6486782427AE0F00826503 /* BudgetSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6486772427AE0F00826503 /* BudgetSelector.storyboard */; };
@@ -118,8 +120,10 @@
 		5D4689AA24F1E7D200716D89 /* OverviewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPageViewController.swift; sourceTree = "<group>"; };
 		5D4689AC24F22EED00716D89 /* SummaryTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTextViewController.swift; sourceTree = "<group>"; };
 		5D4689AE24F22F3E00716D89 /* SummaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailViewController.swift; sourceTree = "<group>"; };
-		5D4F7C1B24F30FB700671EEC /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		5D57BD3524FAEEEB00A5A592 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5D5C4A8624F5D179005048C3 /* Divise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Divise.xcdatamodel; sourceTree = "<group>"; };
+		5D5C4A8924F6F052005048C3 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		5D5C4A8E24F8702D005048C3 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		5D644B7C23E76822005F0720 /* Verify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Verify.storyboard; sourceTree = "<group>"; };
 		5D644B7E23E770F2005F0720 /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		5D6486772427AE0F00826503 /* BudgetSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetSelector.storyboard; sourceTree = "<group>"; };
@@ -243,6 +247,69 @@
 				5D39EE0423CC144800043218 /* unicode.arialr.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5D5C4A8824F6EFFE005048C3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5D5C4A8524F5D179005048C3 /* Divise.xcdatamodeld */,
+				5D5C4A8924F6F052005048C3 /* PersistentContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5D5C4A8B24F86E0F005048C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D5C4A8E24F8702D005048C3 /* Overview.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D5C4A8C24F86E17005048C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D39EDF223CC03FA00043218 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D5C4A8D24F86E1E005048C3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D4689A624F174C000716D89 /* MainTabBarController.swift */,
+				5D5C4A9024F8731C005048C3 /* Overview */,
+				5D5C4A9124F87334005048C3 /* Transactions */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D5C4A9024F8731C005048C3 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				5D39EE1023D0172000043218 /* OverviewViewController.swift */,
+				5D4689AA24F1E7D200716D89 /* OverviewPageViewController.swift */,
+				5D5C4A9224F8739F005048C3 /* Summary */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		5D5C4A9124F87334005048C3 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				5D4689A824F176D600716D89 /* TransactionViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		5D5C4A9224F8739F005048C3 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				5D45F74A24F29CC8008E4B79 /* SummaryViewController.swift */,
+				5D4689AC24F22EED00716D89 /* SummaryTextViewController.swift */,
+				5D4689AE24F22F3E00716D89 /* SummaryDetailViewController.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		5D6486AE242C1FBC00826503 /* Random */ = {
@@ -465,6 +532,7 @@
 		5D9F24AC23D1904A0045E325 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5D5C4A8824F6EFFE005048C3 /* CoreData */,
 				5D753F442417222D00B558D7 /* Helpers */,
 				5D753F202404CB8F00B558D7 /* Supporting Files */,
 				5D9F24D423D9237D0045E325 /* Transitions */,
@@ -477,7 +545,7 @@
 				5D39EDF523CC03FC00043218 /* Assets.xcassets */,
 				5D39EDF723CC03FC00043218 /* LaunchScreen.storyboard */,
 				5D3E270823FA43540041F8FE /* Log.swift */,
-				5D5C4A8524F5D179005048C3 /* Divise.xcdatamodeld */,
+				5D57BD3524FAEEEB00A5A592 /* Error.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -485,15 +553,9 @@
 		5D9F24AE23D1905F0045E325 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				5D39EDF223CC03FA00043218 /* Main.storyboard */,
-				5D39EE1023D0172000043218 /* OverviewViewController.swift */,
-				5D4689AA24F1E7D200716D89 /* OverviewPageViewController.swift */,
-				5D4689A624F174C000716D89 /* MainTabBarController.swift */,
-				5D4689A824F176D600716D89 /* TransactionViewController.swift */,
-				5D4689AC24F22EED00716D89 /* SummaryTextViewController.swift */,
-				5D4689AE24F22F3E00716D89 /* SummaryDetailViewController.swift */,
-				5D45F74A24F29CC8008E4B79 /* SummaryViewController.swift */,
-				5D4F7C1B24F30FB700671EEC /* Overview.swift */,
+				5D5C4A8B24F86E0F005048C3 /* Models */,
+				5D5C4A8C24F86E17005048C3 /* Views */,
+				5D5C4A8D24F86E1E005048C3 /* ViewControllers */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -692,7 +754,6 @@
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D45F74B24F29CC8008E4B79 /* SummaryViewController.swift in Sources */,
 				5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */,
-				5D4F7C1C24F30FB700671EEC /* Overview.swift in Sources */,
 				5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */,
 				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
 				5D39EE1123D0172000043218 /* OverviewViewController.swift in Sources */,
@@ -700,12 +761,14 @@
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */,
 				5D753F462417225900B558D7 /* KeychainHelper.swift in Sources */,
+				5D57BD3624FAEEEB00A5A592 /* Error.swift in Sources */,
 				5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D6486DE24366D7000826503 /* CVSelector.swift in Sources */,
 				5D4689AF24F22F3E00716D89 /* SummaryDetailViewController.swift in Sources */,
 				5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */,
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
+				5D5C4A8A24F6F052005048C3 /* PersistentContainer.swift in Sources */,
 				5D2D0BEF2443C28500E807EC /* ScrollerCell.swift in Sources */,
 				5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */,
 				5DB279F224AFCE9800254D29 /* IncomeILabel.swift in Sources */,
@@ -718,6 +781,7 @@
 				5D4689AD24F22EED00716D89 /* SummaryTextViewController.swift in Sources */,
 				5D3E270023F63CBB0041F8FE /* PasswordViewController.swift in Sources */,
 				5D6486D924310C7600826503 /* InsetLabel.swift in Sources */,
+				5D5C4A8F24F8702D005048C3 /* Overview.swift in Sources */,
 				5D753F37240A266000B558D7 /* UserManagementEndpoint.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
 				5D753F2E2406186B00B558D7 /* JSONParameterEncoder.swift in Sources */,

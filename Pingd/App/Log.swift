@@ -13,4 +13,5 @@ private let subsystem = "com.davidacevedo.Pingd"
 struct Log {
     static let view = OSLog(subsystem: subsystem, category: "view")
     static let networking = OSLog(subsystem: subsystem, category: "networking")
+    static let data = OSLog(subsystem: subsystem, category: "data")
 }
