@@ -49,6 +49,10 @@ class OverviewPageViewController: UIPageViewController {
         } else if index == 1 {
             if let summaryDetailViewController = storyboard.instantiateViewController(identifier: "SummaryDetailViewController") as? SummaryDetailViewController {
                 summaryDetailViewController.pageIndex = index
+                summaryDetailViewController.amountSpent = overview?.amountSpent
+                summaryDetailViewController.totalAmount = overview?.monthlyIncome
+                summaryDetailViewController.totalPercentage = overview?.totalPercentage
+                summaryDetailViewController.daysLeft = overview?.daysLeft
                 return summaryDetailViewController
             }
         } else {
