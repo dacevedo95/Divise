@@ -29,6 +29,8 @@ class OverviewViewController: UIViewController, SummaryPageViewControllerDelegat
         }
     }
     
+    @IBOutlet weak var headerLabel: UILabel!
+    
     // MARK: - Properties
     var overviewPageViewController: OverviewPageViewController?
     
@@ -40,8 +42,15 @@ class OverviewViewController: UIViewController, SummaryPageViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print((parent as! MainTabBarController).overview == nil)
+        // Assign the overview
         overview = (parent as! MainTabBarController).overview
+        
+        // Assign the header
+        if let headerText = overview?.header {
+            headerLabel.text = headerText
+        } else {
+            headerLabel.text = "Welcome Back"
+        }
     }
     
     func didUpdatePageIndex(currentIndex: Int) {

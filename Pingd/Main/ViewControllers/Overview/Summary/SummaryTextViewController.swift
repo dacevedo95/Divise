@@ -49,7 +49,7 @@ class SummaryTextViewController: SummaryViewController {
         
         // Sets the line spacing
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 7.0
+        paragraphStyle.lineSpacing = 6.0
         
         // Adds the line spacing
         combination.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, combination.length))
