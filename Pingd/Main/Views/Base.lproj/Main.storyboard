@@ -79,13 +79,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="49" id="Uje-dK-P8J"/>
                                                         </constraints>
-                                                        <inset key="contentEdgeInsets" minX="10" minY="6" maxX="0.0" maxY="6"/>
+                                                        <inset key="contentEdgeInsets" minX="14" minY="9" maxX="0.0" maxY="9"/>
                                                         <state key="normal" image="Menu"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-6S-XIL">
-                                                <rect key="frame" x="0.0" y="56" width="371" height="148"/>
+                                                <rect key="frame" x="0.0" y="56" width="370" height="148.5"/>
                                                 <connections>
                                                     <segue destination="8mk-CG-EF9" kind="embed" id="fqZ-lG-Qj7"/>
                                                 </connections>

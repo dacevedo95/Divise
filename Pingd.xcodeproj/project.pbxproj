@@ -31,6 +31,7 @@
 		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
 		5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */; };
 		5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446FA24B13CC9009EED14 /* UIDevice.swift */; };
+		5D455DAD24FDD8F4001ADB49 /* MoreInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D455DAC24FDD8F3001ADB49 /* MoreInfo.storyboard */; };
 		5D45F74B24F29CC8008E4B79 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45F74A24F29CC8008E4B79 /* SummaryViewController.swift */; };
 		5D4689A724F174C000716D89 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689A624F174C000716D89 /* MainTabBarController.swift */; };
 		5D4689A924F176D600716D89 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4689A824F176D600716D89 /* TransactionViewController.swift */; };
@@ -114,6 +115,7 @@
 		5D3E270823FA43540041F8FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryModel.swift; sourceTree = "<group>"; };
 		5D4446FA24B13CC9009EED14 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		5D455DAC24FDD8F3001ADB49 /* MoreInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreInfo.storyboard; sourceTree = "<group>"; };
 		5D45F74A24F29CC8008E4B79 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		5D4689A624F174C000716D89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5D4689A824F176D600716D89 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5D455DAE24FDF3C4001ADB49 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5D4689A624F174C000716D89 /* MainTabBarController.swift */,
+				5D5C4A9024F8731C005048C3 /* Overview */,
+				5D5C4A9124F87334005048C3 /* Transactions */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5D455DAF24FDF3F2001ADB49 /* MoreInfo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoreInfo;
+			sourceTree = "<group>";
+		};
 		5D5C4A8824F6EFFE005048C3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				5D39EDF223CC03FA00043218 /* Main.storyboard */,
+				5D455DAC24FDD8F3001ADB49 /* MoreInfo.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,9 +297,8 @@
 		5D5C4A8D24F86E1E005048C3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D4689A624F174C000716D89 /* MainTabBarController.swift */,
-				5D5C4A9024F8731C005048C3 /* Overview */,
-				5D5C4A9124F87334005048C3 /* Transactions */,
+				5D455DAF24FDF3F2001ADB49 /* MoreInfo */,
+				5D455DAE24FDF3C4001ADB49 /* Dashboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -677,6 +696,7 @@
 				5D39EDF623CC03FC00043218 /* Assets.xcassets in Resources */,
 				5D644B7D23E76822005F0720 /* Verify.storyboard in Resources */,
 				5D39EE0523CC144800043218 /* unicode.arialr.ttf in Resources */,
+				5D455DAD24FDD8F4001ADB49 /* MoreInfo.storyboard in Resources */,
 				5DB279EB24AC103600254D29 /* CategorySelector.storyboard in Resources */,
 				5D3E270723F8F44E0041F8FE /* Password.storyboard in Resources */,
 				5D39EDF423CC03FA00043218 /* Main.storyboard in Resources */,
