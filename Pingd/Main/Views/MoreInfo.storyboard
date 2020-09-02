@@ -148,15 +148,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dn-p0-4e4" userLabel="First Example">
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="71.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rent or House Payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-3L-far">
-                                                                <rect key="frame" x="92" y="11" width="190" height="19"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent or House Payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-3L-far">
+                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="71.5"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.74509803921568629" green="0.72549019607843135" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="1ez-3L-far" firstAttribute="leading" secondItem="2dn-p0-4e4" secondAttribute="leading" id="4bT-fT-2km"/>
+                                                            <constraint firstItem="1ez-3L-far" firstAttribute="top" secondItem="2dn-p0-4e4" secondAttribute="top" id="itc-za-ulv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="1ez-3L-far" secondAttribute="bottom" id="o70-tK-Ws4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1ez-3L-far" secondAttribute="trailing" id="ptt-YV-a7A"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -166,15 +171,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wku-LU-KBG" userLabel="Second Example">
                                                         <rect key="frame" x="0.0" y="71.5" width="373" height="71"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Groceries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kK-BV-mP0">
-                                                                <rect key="frame" x="148" y="11" width="78" height="19"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groceries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kK-BV-mP0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="71"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="8kK-BV-mP0" firstAttribute="leading" secondItem="Wku-LU-KBG" secondAttribute="leading" id="2Ky-hi-Jee"/>
+                                                            <constraint firstAttribute="bottom" secondItem="8kK-BV-mP0" secondAttribute="bottom" id="8Om-wn-xE3"/>
+                                                            <constraint firstItem="8kK-BV-mP0" firstAttribute="top" secondItem="Wku-LU-KBG" secondAttribute="top" id="e2H-Ln-x5j"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8kK-BV-mP0" secondAttribute="trailing" id="hDe-4d-3SA"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -184,15 +194,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyK-MD-zWd" userLabel="Third Example">
                                                         <rect key="frame" x="0.0" y="142.5" width="373" height="71.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utility Bills" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukF-jP-JFW">
-                                                                <rect key="frame" x="146" y="11" width="83" height="19"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utility Bills" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukF-jP-JFW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="71.5"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="ukF-jP-JFW" firstAttribute="top" secondItem="HyK-MD-zWd" secondAttribute="top" id="LKt-TN-Vc6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ukF-jP-JFW" secondAttribute="trailing" id="UE1-zy-OWC"/>
+                                                            <constraint firstItem="ukF-jP-JFW" firstAttribute="leading" secondItem="HyK-MD-zWd" secondAttribute="leading" id="gsV-oO-Wah"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ukF-jP-JFW" secondAttribute="bottom" id="mad-R4-IQo"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -227,15 +242,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcB-Dx-vha" userLabel="First Ask This Info">
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="107"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Will my life change significantly if I don’t pay this? Yes? Then it’s a need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5J-B6-TFx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will my life change significantly if I don’t pay this? Yes? Then it’s a need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5J-B6-TFx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="107"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="T5J-B6-TFx" secondAttribute="trailing" id="2op-Xx-g9b"/>
+                                                            <constraint firstAttribute="bottom" secondItem="T5J-B6-TFx" secondAttribute="bottom" id="4RY-2b-V38"/>
+                                                            <constraint firstItem="T5J-B6-TFx" firstAttribute="top" secondItem="dcB-Dx-vha" secondAttribute="top" id="FDm-cY-aQa"/>
+                                                            <constraint firstItem="T5J-B6-TFx" firstAttribute="leading" secondItem="dcB-Dx-vha" secondAttribute="leading" id="Fhu-LA-RF5"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -245,15 +265,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-V6-u91" userLabel="Second Ask This Info">
                                                         <rect key="frame" x="0.0" y="107" width="373" height="107"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Will my life change significantly if I don’t pay this? Yes? Then it’s a need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhS-Tb-Kh0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will my life change significantly if I don’t pay this? Yes? Then it’s a need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhS-Tb-Kh0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="107"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="GhS-Tb-Kh0" firstAttribute="top" secondItem="fQM-V6-u91" secondAttribute="top" id="4jv-cE-Oey"/>
+                                                            <constraint firstAttribute="trailing" secondItem="GhS-Tb-Kh0" secondAttribute="trailing" id="v2c-uB-QMp"/>
+                                                            <constraint firstItem="GhS-Tb-Kh0" firstAttribute="leading" secondItem="fQM-V6-u91" secondAttribute="leading" id="xSp-p7-tGE"/>
+                                                            <constraint firstAttribute="bottom" secondItem="GhS-Tb-Kh0" secondAttribute="bottom" id="zTR-7l-riE"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <integer key="value" value="20"/>
