@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWM-8j-tKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026" y="80"/>
+            <point key="canvasLocation" x="1025" y="40"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2ud-kc-HYX">
@@ -297,8 +297,10 @@
                                 <constraints>
                                     <constraint firstItem="uC0-ok-a3g" firstAttribute="width" secondItem="lBE-zf-2K2" secondAttribute="width" id="2GR-lN-cyT"/>
                                     <constraint firstItem="lQN-Xx-GZH" firstAttribute="height" relation="lessThanOrEqual" secondItem="lBE-zf-2K2" secondAttribute="height" multiplier="0.36" id="3Qj-YL-0be"/>
+                                    <constraint firstItem="aFV-kr-oMz" firstAttribute="width" secondItem="lBE-zf-2K2" secondAttribute="width" id="4W0-t8-h42"/>
                                     <constraint firstItem="7O3-xH-5vm" firstAttribute="height" secondItem="lBE-zf-2K2" secondAttribute="height" multiplier="0.14" id="Mr3-Lu-qZv"/>
                                     <constraint firstItem="aFV-kr-oMz" firstAttribute="height" secondItem="lBE-zf-2K2" secondAttribute="height" multiplier="0.3" id="hDY-Gx-VpH"/>
+                                    <constraint firstItem="lQN-Xx-GZH" firstAttribute="width" secondItem="lBE-zf-2K2" secondAttribute="width" id="ypu-IO-nYe"/>
                                     <constraint firstItem="uC0-ok-a3g" firstAttribute="height" secondItem="lBE-zf-2K2" secondAttribute="height" multiplier="0.14" id="zUI-Vq-jij"/>
                                     <constraint firstItem="7O3-xH-5vm" firstAttribute="width" secondItem="lBE-zf-2K2" secondAttribute="width" id="zlF-PN-5Ok"/>
                                 </constraints>
