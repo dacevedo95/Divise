@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3166E15354AEF7EFE3138478 /* Pods_Pingd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C186E51211920017A893D995 /* Pods_Pingd.framework */; };
+		5D0BBE4F25007B9500E43C14 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0BBE4E25007B9500E43C14 /* NSLayoutConstraint.swift */; };
 		5D2D0BED2443BE7E00E807EC /* CVNumberScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2D0BEC2443BE7E00E807EC /* CVNumberScroller.swift */; };
 		5D2D0BEF2443C28500E807EC /* ScrollerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2D0BEE2443C28500E807EC /* ScrollerCell.swift */; };
 		5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39EDEC23CC03FA00043218 /* AppDelegate.swift */; };
@@ -29,6 +30,9 @@
 		5D3E270523F7C27C0041F8FE /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270423F7C27C0041F8FE /* ResetPasswordViewController.swift */; };
 		5D3E270723F8F44E0041F8FE /* Password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D3E270623F8F44E0041F8FE /* Password.storyboard */; };
 		5D3E270923FA43540041F8FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E270823FA43540041F8FE /* Log.swift */; };
+		5D3FB67E25001D00006F0B28 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FB67D25001D00006F0B28 /* MoreInfoViewController.swift */; };
+		5D3FB68025001D21006F0B28 /* MoreInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FB67F25001D21006F0B28 /* MoreInfoPageViewController.swift */; };
+		5D3FB682250022EF006F0B28 /* MoreInfoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FB681250022EF006F0B28 /* MoreInfoContentViewController.swift */; };
 		5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */; };
 		5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446FA24B13CC9009EED14 /* UIDevice.swift */; };
 		5D455DAD24FDD8F4001ADB49 /* MoreInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D455DAC24FDD8F3001ADB49 /* MoreInfo.storyboard */; };
@@ -89,6 +93,7 @@
 		552B8A74E272015D7237BAFC /* Pods-Pingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release.xcconfig"; sourceTree = "<group>"; };
 		591D840A2E362053F3CA51C1 /* Pods-Pingd.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (development).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (development).xcconfig"; sourceTree = "<group>"; };
 		5C3A4C9F2424D9E4FE7F4A2F /* Pods-Pingd.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (production).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (production).xcconfig"; sourceTree = "<group>"; };
+		5D0BBE4E25007B9500E43C14 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		5D2D0BEC2443BE7E00E807EC /* CVNumberScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVNumberScroller.swift; sourceTree = "<group>"; };
 		5D2D0BEE2443C28500E807EC /* ScrollerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollerCell.swift; sourceTree = "<group>"; };
 		5D39EDE923CC03FA00043218 /* Divise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Divise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +118,9 @@
 		5D3E270423F7C27C0041F8FE /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		5D3E270623F8F44E0041F8FE /* Password.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Password.storyboard; sourceTree = "<group>"; };
 		5D3E270823FA43540041F8FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		5D3FB67D25001D00006F0B28 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		5D3FB67F25001D21006F0B28 /* MoreInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoPageViewController.swift; sourceTree = "<group>"; };
+		5D3FB681250022EF006F0B28 /* MoreInfoContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoContentViewController.swift; sourceTree = "<group>"; };
 		5D4446F824B0F9B3009EED14 /* EditCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryModel.swift; sourceTree = "<group>"; };
 		5D4446FA24B13CC9009EED14 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		5D455DAC24FDD8F3001ADB49 /* MoreInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreInfo.storyboard; sourceTree = "<group>"; };
@@ -264,6 +272,9 @@
 		5D455DAF24FDF3F2001ADB49 /* MoreInfo */ = {
 			isa = PBXGroup;
 			children = (
+				5D3FB67D25001D00006F0B28 /* MoreInfoViewController.swift */,
+				5D3FB67F25001D21006F0B28 /* MoreInfoPageViewController.swift */,
+				5D3FB681250022EF006F0B28 /* MoreInfoContentViewController.swift */,
 			);
 			path = MoreInfo;
 			sourceTree = "<group>";
@@ -598,6 +609,7 @@
 				5D9F24D223D800040045E325 /* String.swift */,
 				5DB279EE24AE1C6700254D29 /* CALayer.swift */,
 				5D4446FA24B13CC9009EED14 /* UIDevice.swift */,
+				5D0BBE4E25007B9500E43C14 /* NSLayoutConstraint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -774,9 +786,11 @@
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D45F74B24F29CC8008E4B79 /* SummaryViewController.swift in Sources */,
 				5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */,
+				5D3FB682250022EF006F0B28 /* MoreInfoContentViewController.swift in Sources */,
 				5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */,
 				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
 				5D39EE1123D0172000043218 /* OverviewViewController.swift in Sources */,
+				5D3FB68025001D21006F0B28 /* MoreInfoPageViewController.swift in Sources */,
 				5D5C4A8724F5D179005048C3 /* Divise.xcdatamodeld in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */,
@@ -785,6 +799,7 @@
 				5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D6486DE24366D7000826503 /* CVSelector.swift in Sources */,
+				5D3FB67E25001D00006F0B28 /* MoreInfoViewController.swift in Sources */,
 				5D4689AF24F22F3E00716D89 /* SummaryDetailViewController.swift in Sources */,
 				5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */,
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
@@ -805,6 +820,7 @@
 				5D753F37240A266000B558D7 /* UserManagementEndpoint.swift in Sources */,
 				5D39EDEF23CC03FA00043218 /* SceneDelegate.swift in Sources */,
 				5D753F2E2406186B00B558D7 /* JSONParameterEncoder.swift in Sources */,
+				5D0BBE4F25007B9500E43C14 /* NSLayoutConstraint.swift in Sources */,
 				5D4689AB24F1E7D200716D89 /* OverviewPageViewController.swift in Sources */,
 				5D753F252404E67A00B558D7 /* HTTPMethod.swift in Sources */,
 				5D6486DC24366ADD00826503 /* SelectorCell.swift in Sources */,
