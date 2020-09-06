@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--More Info View Controller-->
         <scene sceneID="3vy-6q-CdM">
             <objects>
-                <viewController id="xn8-5t-HpW" sceneMemberID="viewController">
+                <viewController id="xn8-5t-HpW" customClass="MoreInfoViewController" customModule="Divise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NCx-KX-dI8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="182.60869565217394" y="80.357142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--More Info Page View Controller-->
         <scene sceneID="D5g-96-mjj">
             <objects>
-                <viewController id="r2A-QI-sDb" sceneMemberID="viewController">
+                <viewController id="r2A-QI-sDb" customClass="MoreInfoPageViewController" customModule="Divise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bm4-hL-0fS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="776"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="1025" y="40"/>
         </scene>
-        <!--View Controller-->
+        <!--More Info Content View Controller-->
         <scene sceneID="2ud-kc-HYX">
             <objects>
-                <viewController id="vhb-xk-CwO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreInfoContentViewController" id="vhb-xk-CwO" customClass="MoreInfoContentViewController" customModule="Divise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nep-Qu-VB8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="776"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,11 +162,6 @@
                                                             <constraint firstAttribute="bottom" secondItem="1ez-3L-far" secondAttribute="bottom" id="o70-tK-Ws4"/>
                                                             <constraint firstAttribute="trailing" secondItem="1ez-3L-far" secondAttribute="trailing" id="ptt-YV-a7A"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wku-LU-KBG" userLabel="Second Example">
                                                         <rect key="frame" x="0.0" y="61" width="373" height="46"/>
@@ -185,11 +180,6 @@
                                                             <constraint firstItem="8kK-BV-mP0" firstAttribute="top" secondItem="Wku-LU-KBG" secondAttribute="top" id="e2H-Ln-x5j"/>
                                                             <constraint firstAttribute="trailing" secondItem="8kK-BV-mP0" secondAttribute="trailing" id="hDe-4d-3SA"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyK-MD-zWd" userLabel="Third Example">
                                                         <rect key="frame" x="0.0" y="122" width="373" height="46.5"/>
@@ -208,11 +198,6 @@
                                                             <constraint firstItem="ukF-jP-JFW" firstAttribute="leading" secondItem="HyK-MD-zWd" secondAttribute="leading" id="gsV-oO-Wah"/>
                                                             <constraint firstAttribute="bottom" secondItem="ukF-jP-JFW" secondAttribute="bottom" id="mad-R4-IQo"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -238,7 +223,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="89.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will my life change significantly if I don’t pay this? Yes? Then it’s a need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5J-B6-TFx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="89.5"/>
+                                                                <rect key="frame" x="19" y="0.0" width="335" height="89.5"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -246,22 +231,17 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="T5J-B6-TFx" secondAttribute="trailing" id="2op-Xx-g9b"/>
                                                             <constraint firstAttribute="bottom" secondItem="T5J-B6-TFx" secondAttribute="bottom" id="4RY-2b-V38"/>
                                                             <constraint firstItem="T5J-B6-TFx" firstAttribute="top" secondItem="dcB-Dx-vha" secondAttribute="top" id="FDm-cY-aQa"/>
-                                                            <constraint firstItem="T5J-B6-TFx" firstAttribute="leading" secondItem="dcB-Dx-vha" secondAttribute="leading" id="Fhu-LA-RF5"/>
+                                                            <constraint firstItem="T5J-B6-TFx" firstAttribute="centerX" secondItem="dcB-Dx-vha" secondAttribute="centerX" id="Gff-2G-Txj"/>
+                                                            <constraint firstItem="T5J-B6-TFx" firstAttribute="width" secondItem="dcB-Dx-vha" secondAttribute="width" multiplier="0.9" id="IbH-vc-YuH"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-V6-u91" userLabel="Second Ask This Info">
                                                         <rect key="frame" x="0.0" y="109.5" width="373" height="89.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will my life change significantly if I don’t pay this? Yes? Then it’s a need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhS-Tb-Kh0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="89.5"/>
+                                                                <rect key="frame" x="19" y="0.0" width="335" height="89.5"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -270,15 +250,10 @@
                                                         <color key="backgroundColor" red="0.74509803919999995" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="GhS-Tb-Kh0" firstAttribute="top" secondItem="fQM-V6-u91" secondAttribute="top" id="4jv-cE-Oey"/>
-                                                            <constraint firstAttribute="trailing" secondItem="GhS-Tb-Kh0" secondAttribute="trailing" id="v2c-uB-QMp"/>
-                                                            <constraint firstItem="GhS-Tb-Kh0" firstAttribute="leading" secondItem="fQM-V6-u91" secondAttribute="leading" id="xSp-p7-tGE"/>
+                                                            <constraint firstItem="GhS-Tb-Kh0" firstAttribute="centerX" secondItem="fQM-V6-u91" secondAttribute="centerX" id="8s2-4H-INm"/>
+                                                            <constraint firstItem="GhS-Tb-Kh0" firstAttribute="width" secondItem="fQM-V6-u91" secondAttribute="width" multiplier="0.9" id="xgW-Db-V26"/>
                                                             <constraint firstAttribute="bottom" secondItem="GhS-Tb-Kh0" secondAttribute="bottom" id="zTR-7l-riE"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -289,8 +264,10 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="3v4-gU-aYr" firstAttribute="width" secondItem="lQN-Xx-GZH" secondAttribute="width" id="CdE-ha-VRR"/>
                                             <constraint firstItem="BsF-f7-cry" firstAttribute="height" secondItem="lQN-Xx-GZH" secondAttribute="height" multiplier="0.1" id="CgZ-Yb-QbC"/>
                                             <constraint firstItem="3v4-gU-aYr" firstAttribute="height" relation="lessThanOrEqual" secondItem="lQN-Xx-GZH" secondAttribute="height" multiplier="0.9" id="EwD-6w-2VD"/>
+                                            <constraint firstItem="BsF-f7-cry" firstAttribute="width" secondItem="lQN-Xx-GZH" secondAttribute="width" id="Y4G-0p-ngX"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -316,10 +293,17 @@
                         <viewLayoutGuide key="safeArea" id="816-aA-bH3"/>
                     </view>
                     <size key="freeformSize" width="414" height="776"/>
+                    <connections>
+                        <outlet property="firstAskMoreView" destination="dcB-Dx-vha" id="L4T-Dm-DU3"/>
+                        <outlet property="firstExampleView" destination="2dn-p0-4e4" id="JFh-7B-4EG"/>
+                        <outlet property="secondAskMoreView" destination="fQM-V6-u91" id="bXp-r7-Oao"/>
+                        <outlet property="secondExampleView" destination="Wku-LU-KBG" id="Hex-bT-cWi"/>
+                        <outlet property="thirdExampleView" destination="HyK-MD-zWd" id="a53-5S-5xt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3X-nv-o9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895.6521739130437" y="79.6875"/>
+            <point key="canvasLocation" x="1814" y="40"/>
         </scene>
     </scenes>
     <resources>

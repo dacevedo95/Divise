@@ -82,6 +82,9 @@
 		5DB279EF24AE1C6700254D29 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279EE24AE1C6700254D29 /* CALayer.swift */; };
 		5DB279F224AFCE9800254D29 /* IncomeILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279F124AFCE9800254D29 /* IncomeILabel.swift */; };
 		5DB279F424AFD83000254D29 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB279F324AFD82F00254D29 /* EditCategoryViewController.swift */; };
+		5DE4ACD025044E96002217E2 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE4ACCF25044E96002217E2 /* MoreInfoViewController.swift */; };
+		5DE4ACD225044ED3002217E2 /* MoreInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE4ACD125044ED3002217E2 /* MoreInfoPageViewController.swift */; };
+		5DE4ACD425044F01002217E2 /* MoreInfoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE4ACD325044F01002217E2 /* MoreInfoContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +172,9 @@
 		5DB279EE24AE1C6700254D29 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		5DB279F124AFCE9800254D29 /* IncomeILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeILabel.swift; sourceTree = "<group>"; };
 		5DB279F324AFD82F00254D29 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
+		5DE4ACCF25044E96002217E2 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		5DE4ACD125044ED3002217E2 /* MoreInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		5DE4ACD325044F01002217E2 /* MoreInfoContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoContentViewController.swift; sourceTree = SOURCE_ROOT; };
 		A0A79F1ED3CABC0BBAA60029 /* Pods-Pingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.debug.xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.debug.xcconfig"; sourceTree = "<group>"; };
 		A62FFE42862A620360489166 /* Pods-Pingd.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pingd.release (staging).xcconfig"; path = "Target Support Files/Pods-Pingd/Pods-Pingd.release (staging).xcconfig"; sourceTree = "<group>"; };
 		C186E51211920017A893D995 /* Pods_Pingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +270,9 @@
 		5D455DAF24FDF3F2001ADB49 /* MoreInfo */ = {
 			isa = PBXGroup;
 			children = (
+				5DE4ACCF25044E96002217E2 /* MoreInfoViewController.swift */,
+				5DE4ACD125044ED3002217E2 /* MoreInfoPageViewController.swift */,
+				5DE4ACD325044F01002217E2 /* MoreInfoContentViewController.swift */,
 			);
 			path = MoreInfo;
 			sourceTree = "<group>";
@@ -774,9 +783,11 @@
 				5D644B7F23E770F2005F0720 /* VerifyViewController.swift in Sources */,
 				5D45F74B24F29CC8008E4B79 /* SummaryViewController.swift in Sources */,
 				5D753F3024061AB200B558D7 /* NetworkRouter.swift in Sources */,
+				5DE4ACD425044F01002217E2 /* MoreInfoContentViewController.swift in Sources */,
 				5D4446F924B0F9B3009EED14 /* EditCategoryModel.swift in Sources */,
 				5D753F272406119A00B558D7 /* HTTPTask.swift in Sources */,
 				5D39EE1123D0172000043218 /* OverviewViewController.swift in Sources */,
+				5DE4ACD225044ED3002217E2 /* MoreInfoPageViewController.swift in Sources */,
 				5D5C4A8724F5D179005048C3 /* Divise.xcdatamodeld in Sources */,
 				5D39EDED23CC03FA00043218 /* AppDelegate.swift in Sources */,
 				5D6486B0242C1FFA00826503 /* RoundedView.swift in Sources */,
@@ -785,6 +796,7 @@
 				5D4446FB24B13CC9009EED14 /* UIDevice.swift in Sources */,
 				5D3E26FC23F4CC120041F8FE /* CodeTextField.swift in Sources */,
 				5D6486DE24366D7000826503 /* CVSelector.swift in Sources */,
+				5DE4ACD025044E96002217E2 /* MoreInfoViewController.swift in Sources */,
 				5D4689AF24F22F3E00716D89 /* SummaryDetailViewController.swift in Sources */,
 				5D753F50241D733F00B558D7 /* IncomeViewController.swift in Sources */,
 				5D753F3A240B5FB400B558D7 /* UserManagementManager.swift in Sources */,
