@@ -26,6 +26,11 @@ class MoreInfoContentViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var firstExampleLabel: UILabel!
+    @IBOutlet weak var secondExampleLabel: UILabel!
+    @IBOutlet weak var thirdExampleLabel: UILabel!
+    
+    @IBOutlet weak var askMoreTitleLabel: UILabel!
     @IBOutlet weak var firstAskMoreView: UIView! {
         didSet {
             self.firstAskMoreView.layer.cornerRadius = self.firstAskMoreView.frame.height / 2
@@ -37,6 +42,12 @@ class MoreInfoContentViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var firstAskMoreLabel: UILabel!
+    @IBOutlet weak var secondAskMoreLabel: UILabel!
+    
+    @IBOutlet weak var categoryImageView: UIImageView!
+    @IBOutlet weak var categoryTitleLabel: UILabel!
+    @IBOutlet weak var subcategoryTitleLabel: UILabel!
     
     // MARK: - Properties
     var pageIndex = 0
@@ -46,17 +57,51 @@ class MoreInfoContentViewController: UIViewController {
     
     var stackView: UIStackView?
     
-    var backgroundColor: UIColor? = #colorLiteral(red: 0.6588235294, green: 0.6352941176, blue: 0.9294117647, alpha: 1)
-    var categoryTitle: String? = "Needs"
-    var subcategoryTitle: String? = "The things in your life that are absolutely neccesary"
+    var backgroundColor: UIColor?
+    var categoryIcon: UIImage?
+    var categoryTitle: String?
+    var subcategoryTitle: String?
     
-    var itemColorBackground: UIColor? = #colorLiteral(red: 0.7450980392, green: 0.7254901961, blue: 0.9568627451, alpha: 1)
+    var itemColorBackground: UIColor?
     
-    var askMoreTitle: String? = "Not sure? Ask this:"
+    var examples: [String]?
+    
+    var askMoreTitle: String?
+    var askMoreLabels: [String?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Sets all the base stuff
+        self.view.backgroundColor = backgroundColor
+        self.categoryImageView.image = categoryIcon
+        self.categoryTitleLabel.text = categoryTitle
+        self.subcategoryTitleLabel.text = subcategoryTitle
+        
+        self.firstExampleView.backgroundColor = itemColorBackground
+        self.secondExampleView.backgroundColor = itemColorBackground
+        self.thirdExampleView.backgroundColor = itemColorBackground
+        
+        if let examples = examples {
+            self.firstExampleLabel.text = examples[0]
+            self.secondExampleLabel.text = examples[1]
+            self.thirdExampleLabel.text = examples[2]
+        }
+        
+        self.askMoreTitleLabel.text = askMoreTitle
+        
+        self.firstAskMoreView.backgroundColor = itemColorBackground
+        if let askMore = askMoreLabels {
+            if askMore[1] == nil {
+                secondAskMoreView.alpha = 0.0
+            } else {
+                secondAskMoreView.alpha = 1.0
+                self.secondAskMoreView.backgroundColor = itemColorBackground
+            }
+            
+            firstAskMoreLabel.text = askMore[0] ?? ""
+            secondAskMoreLabel.text = askMore[1] ?? ""
+        }
     }
     
 
