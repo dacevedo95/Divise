@@ -7,6 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main-->
+        <scene sceneID="eec-7X-jAv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Zpj-uN-KZa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7FV-vb-ziC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWp-uY-MHc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="300"/>
+        </scene>
         <!--More Info View Controller-->
         <scene sceneID="3vy-6q-CdM">
             <objects>
@@ -33,6 +43,9 @@
                                                 <state key="normal" title="Close">
                                                     <color key="titleColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Zpj-uN-KZa" kind="custom" identifier="backToMain" customClass="SlideDownSegue" customModule="Divise" customModuleProvider="target" id="mNE-Uk-y3L"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

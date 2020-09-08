@@ -9,6 +9,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
   - PhoneNumberKit/UIKit (3.2.0):
     - PhoneNumberKit/PhoneNumberKitCore
+  - SideMenu (6.4.9)
   - SnapKit (5.0.1)
   - SwiftyJSON (4.3.0)
 
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Hero
   - MSCircularSlider
   - PhoneNumberKit (~> 3.2)
+  - SideMenu
   - SnapKit (~> 5.0.0)
   - SwiftyJSON (~> 4.0)
 
@@ -28,6 +30,7 @@ SPEC REPOS:
     - Hero
     - MSCircularSlider
     - PhoneNumberKit
+    - SideMenu
     - SnapKit
     - SwiftyJSON
 
@@ -37,9 +40,10 @@ SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
   PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 10d460fce5f9194a62286465ad0ae76601e93562
+PODFILE CHECKSUM: ea52b01804265ed77f455a717961f77e5b5425e3
 
 COCOAPODS: 1.8.4

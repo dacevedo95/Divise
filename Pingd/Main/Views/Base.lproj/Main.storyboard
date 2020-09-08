@@ -71,31 +71,35 @@
                                 <rect key="frame" x="0.0" y="363.5" width="414" height="449.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zfv-vt-fPO">
-                                        <rect key="frame" x="23" y="16" width="368" height="368"/>
+                                        <rect key="frame" x="23" y="15.5" width="368" height="369"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92f-FC-Hlv" userLabel="Label Group">
-                                                <rect key="frame" x="0.0" y="0.0" width="368" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf0-Kh-lge">
-                                                        <rect key="frame" x="0.0" y="0.0" width="184" height="28"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="184" height="29"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is this?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKE-Pc-bgl">
-                                                        <rect key="frame" x="184" y="0.0" width="184" height="28"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXD-bU-gc6">
+                                                        <rect key="frame" x="184" y="0.0" width="184" height="29"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                                        <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <state key="normal" title="What is this?">
+                                                            <color key="titleColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="ndk-vl-m2a" kind="custom" identifier="toMoreInfo" customClass="SlideUpSegue" customModule="Divise" customModuleProvider="target" id="GlX-wm-zau"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="Lf0-Kh-lge" firstAttribute="width" secondItem="92f-FC-Hlv" secondAttribute="width" multiplier="0.5" id="9D9-Ew-bZ2"/>
-                                                    <constraint firstItem="kKE-Pc-bgl" firstAttribute="width" secondItem="92f-FC-Hlv" secondAttribute="width" multiplier="0.5" id="nzt-z9-Icz"/>
+                                                    <constraint firstItem="tXD-bU-gc6" firstAttribute="width" secondItem="92f-FC-Hlv" secondAttribute="width" multiplier="0.5" id="K9D-Yy-rYo"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Q4R-Tr-Ycf" userLabel="Overview Group">
-                                                <rect key="frame" x="0.0" y="68" width="368" height="300"/>
+                                                <rect key="frame" x="0.0" y="69" width="368" height="300"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs3-3z-dFx" userLabel="Needs">
                                                         <rect key="frame" x="0.0" y="0.0" width="368" height="80"/>
@@ -517,12 +521,21 @@
                         <outlet property="wantsImageBackground" destination="UU3-Fk-zzP" id="f8e-NW-GZN"/>
                         <outlet property="wantsPercentageLabel" destination="Xoc-Z5-Xuk" id="m4H-MB-Mlg"/>
                         <outlet property="wantsProgressBar" destination="djT-hh-WP6" id="NzP-kv-sPz"/>
-                        <outlet property="whatIsThisButton" destination="kKE-Pc-bgl" id="beK-E1-gGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKf-4E-6Sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3937.68115942029" y="-400.44642857142856"/>
+        </scene>
+        <!--MoreInfo-->
+        <scene sceneID="TH7-Wx-cns">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MoreInfo" id="ndk-vl-m2a" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yz0-V6-ET4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p86-aj-gX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4811" y="-824"/>
         </scene>
         <!--Overview Page View Controller-->
         <scene sceneID="23W-YI-4k5">

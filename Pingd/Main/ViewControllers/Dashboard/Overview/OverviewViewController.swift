@@ -127,11 +127,18 @@ class OverviewViewController: UIViewController, SummaryPageViewControllerDelegat
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination
+        let segueIdentifier = segue.identifier
         
-        if let pageViewController = destination as? OverviewPageViewController {
-            overviewPageViewController = pageViewController
-            overviewPageViewController?.overview = (parent as! MainTabBarController).overview
-            overviewPageViewController?.summaryDelegate = self
+        if segueIdentifier == "toMoreInfo" {
+            if let moreInfoViewController = destination as? MoreInfoViewController {
+                moreInfoViewController.overview = overview
+            }
+        } else {
+            if let pageViewController = destination as? OverviewPageViewController {
+                overviewPageViewController = pageViewController
+                overviewPageViewController?.overview = (parent as! MainTabBarController).overview
+                overviewPageViewController?.summaryDelegate = self
+            }
         }
     }
 

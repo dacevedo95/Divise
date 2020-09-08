@@ -15,6 +15,8 @@ class MoreInfoViewController: UIViewController, MoreInfoPageViewControllerDelega
     var pageControl = UIPageControl()
     
     var moreInfoPageViewController: MoreInfoPageViewController?
+    
+    var overview: OverviewResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +53,17 @@ class MoreInfoViewController: UIViewController, MoreInfoPageViewControllerDelega
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination
+        let segueIdentifier = segue.identifier
         
-        if let pageViewController = destination as? MoreInfoPageViewController {
-            moreInfoPageViewController = pageViewController
-            moreInfoPageViewController?.moreInfoDelegate = self
+        if segueIdentifier == "backToMain" {
+            if let mainTabBarController = destination as? MainTabBarController {
+                mainTabBarController.overview = overview
+            }
+        } else {
+            if let pageViewController = destination as? MoreInfoPageViewController {
+                moreInfoPageViewController = pageViewController
+                moreInfoPageViewController?.moreInfoDelegate = self
+            }
         }
     }
 

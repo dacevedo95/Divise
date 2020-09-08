@@ -54,3 +54,48 @@ extension BackslideSegue: UIViewControllerTransitioningDelegate {
         return SlideAnimator(animationDuration: 0.35, animationType: .present)
     }
 }
+
+class SlideUpSegue: UIStoryboardSegue {
+    
+    private var selfSlideUpRetainer: SlideUpSegue? = nil
+    
+    override func perform() {
+        destination.transitioningDelegate = self
+        selfSlideUpRetainer = self
+        destination.modalPresentationStyle = .overFullScreen
+        source.present(destination, animated: true, completion: nil)
+    }
+}
+
+extension SlideUpSegue: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideAnimator(animationDuration: 0.35, animationType: .slideUp)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideAnimator(animationDuration: 0.35, animationType: .slideDown)
+    }
+}
+
+class SlideDownSegue: UIStoryboardSegue {
+    
+    private var selfSlideDownRetainer: SlideDownSegue? = nil
+    
+    override func perform() {
+        destination.transitioningDelegate = self
+        selfSlideDownRetainer = self
+        destination.modalPresentationStyle = .overFullScreen
+        source.present(destination, animated: true, completion: nil)
+    }
+    
+}
+
+extension SlideDownSegue: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideAnimator(animationDuration: 0.35, animationType: .slideDown)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideAnimator(animationDuration: 0.35, animationType: .slideUp)
+    }
+}

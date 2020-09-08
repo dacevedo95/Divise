@@ -16,6 +16,8 @@ class SlideAnimator: NSObject {
     internal enum AnimationType {
         case present
         case dismiss
+        case slideUp
+        case slideDown
     }
     
     // MARK: - Init
@@ -45,6 +47,12 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
         case .dismiss:
             transitionContext.containerView.addSubview(toViewController.view)
             dismissAnimation(with: transitionContext, viewToAnimate: toViewController.view, viewToDismiss: fromViewController.view)
+        case .slideUp:
+            transitionContext.containerView.addSubview(toViewController.view)
+            slideUpAnimation(with: transitionContext, viewToAnimate: toViewController.view, viewToDismiss: fromViewController.view)
+        case .slideDown:
+            transitionContext.containerView.addSubview(toViewController.view)
+            slideDownAnimation(with: transitionContext, viewToAnimate: toViewController.view, viewToDismiss: fromViewController.view)
         }
     }
     
@@ -74,6 +82,36 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
         UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
             viewToAnimate.frame.origin.x = 0
             viewToDismiss.frame.origin.x = viewToAnimate.frame.width
+        }) { _ in
+            transitionContext.completeTransition(true)
+        }
+    }
+    
+    func slideUpAnimation(with transitionContext: UIViewControllerContextTransitioning, viewToAnimate: UIView, viewToDismiss: UIView) {
+        viewToAnimate.clipsToBounds = true
+        viewToDismiss.clipsToBounds = true
+        viewToAnimate.frame.origin.y = viewToAnimate.frame.height
+        
+        let duration = transitionDuration(using: transitionContext)
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
+            viewToAnimate.frame.origin.y = 0
+            viewToDismiss.frame.origin.y = -1 * viewToAnimate.frame.height
+        }) { _ in
+            transitionContext.completeTransition(true)
+        }
+    }
+    
+    func slideDownAnimation(with transitionContext: UIViewControllerContextTransitioning, viewToAnimate: UIView, viewToDismiss: UIView) {
+        viewToAnimate.clipsToBounds = true
+        viewToDismiss.clipsToBounds = true
+        viewToAnimate.frame.origin.y = -1 * viewToAnimate.frame.height
+        
+        let duration = transitionDuration(using: transitionContext)
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
+            viewToAnimate.frame.origin.y = 0
+            viewToDismiss.frame.origin.y = viewToAnimate.frame.height
         }) { _ in
             transitionContext.completeTransition(true)
         }
