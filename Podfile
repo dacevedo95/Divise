@@ -13,5 +13,4 @@ target 'Pingd' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'MSCircularSlider'
   pod 'GTProgressBar'
-  pod 'SideMenu'
 end
