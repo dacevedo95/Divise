@@ -26,11 +26,13 @@ class AddTransactionViewController: UIViewController {
             self.addPaymentsButton.layer.cornerRadius = self.addPaymentsButton.frame.height / 2
         }
     }
+    @IBOutlet weak var middleView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        createCarousel()
     }
     
 
@@ -43,5 +45,17 @@ class AddTransactionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Privte Functions
+    func createCarousel() {
+        let carousel = TransactionCarousel()
+        
+        middleView.addSubview(carousel)
+        carousel.backgroundColor = .clear
+        carousel.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 0.0).isActive = true
+        carousel.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 0.0).isActive = true
+        carousel.trailingAnchor.constraint(equalTo: middleView.trailingAnchor, constant: 0.0).isActive = true
+        carousel.bottomAnchor.constraint(equalTo: middleView.bottomAnchor, constant: 0.0).isActive = true
+    }
 
 }

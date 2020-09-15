@@ -49,10 +49,10 @@
                                         <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VoL-4Q-THj">
-                                                <rect key="frame" x="62" y="24.5" width="290" height="114.5"/>
+                                                <rect key="frame" x="41.5" y="24.5" width="331" height="114.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQo-8t-t1p">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="53"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="331" height="53"/>
                                                         <color key="backgroundColor" red="0.43137254901960786" green="0.19215686274509802" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                         <state key="normal" title="Select">
@@ -63,7 +63,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5g-uH-4Ub">
-                                                        <rect key="frame" x="0.0" y="61" width="290" height="53.5"/>
+                                                        <rect key="frame" x="0.0" y="61" width="331" height="53.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <state key="normal" title="Close">
                                                             <color key="titleColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,6 +75,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="CQo-8t-t1p" firstAttribute="width" secondItem="VoL-4Q-THj" secondAttribute="width" id="F5W-zG-KE1"/>
+                                                    <constraint firstItem="I5g-uH-4Ub" firstAttribute="width" secondItem="VoL-4Q-THj" secondAttribute="width" id="ad7-cx-fPv"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -82,7 +86,7 @@
                                             <constraint firstItem="VoL-4Q-THj" firstAttribute="centerX" secondItem="auy-0r-zel" secondAttribute="centerX" id="ESu-C1-tnF"/>
                                             <constraint firstItem="VoL-4Q-THj" firstAttribute="centerY" secondItem="auy-0r-zel" secondAttribute="centerY" id="HMC-X8-XN6"/>
                                             <constraint firstItem="VoL-4Q-THj" firstAttribute="height" secondItem="auy-0r-zel" secondAttribute="height" multiplier="0.7" id="Ttz-tp-ztO"/>
-                                            <constraint firstItem="VoL-4Q-THj" firstAttribute="width" secondItem="auy-0r-zel" secondAttribute="width" multiplier="0.7" id="q7X-f0-czh"/>
+                                            <constraint firstItem="VoL-4Q-THj" firstAttribute="width" secondItem="auy-0r-zel" secondAttribute="width" multiplier="0.8" id="q7X-f0-czh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -132,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-Yl-dpn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40n-XK-89v">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
@@ -141,18 +145,22 @@
                                                 <rect key="frame" x="41.5" y="48" width="331" height="68"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Recurring Payment(s)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R99-St-q7m">
-                                                        <rect key="frame" x="0.0" y="0.0" width="255.5" height="23.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="331" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record and submit payments so you can track your spending" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBS-Gg-FGr">
-                                                        <rect key="frame" x="0.0" y="35.5" width="315.5" height="32.5"/>
+                                                        <rect key="frame" x="0.0" y="35.5" width="331" height="32.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                         <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="R99-St-q7m" firstAttribute="width" secondItem="DE6-bb-diI" secondAttribute="width" id="JLF-S6-0km"/>
+                                                    <constraint firstItem="iBS-Gg-FGr" firstAttribute="width" secondItem="DE6-bb-diI" secondAttribute="width" id="WD4-rb-7Qg"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -163,17 +171,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-ni-DyJ">
-                                        <rect key="frame" x="0.0" y="163.5" width="414" height="491"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="414" height="491.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSM-BF-1E1">
-                                        <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="655" width="414" height="163.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-6a-Z3C">
-                                                <rect key="frame" x="62" y="24.5" width="290" height="114.5"/>
+                                                <rect key="frame" x="41.5" y="24.5" width="331" height="114.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dj8-bq-bap">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="53"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="331" height="53"/>
                                                         <color key="backgroundColor" red="0.43137254899999999" green="0.19215686269999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                         <state key="normal" title="Add Payment(s)">
@@ -181,7 +189,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSa-VL-PDX">
-                                                        <rect key="frame" x="0.0" y="61" width="290" height="53.5"/>
+                                                        <rect key="frame" x="0.0" y="61" width="331" height="53.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <state key="normal" title="Back">
                                                             <color key="titleColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,11 +204,15 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="SSa-VL-PDX" firstAttribute="width" secondItem="RPq-6a-Z3C" secondAttribute="width" id="Dgf-bW-7Ld"/>
+                                                    <constraint firstItem="dj8-bq-bap" firstAttribute="width" secondItem="RPq-6a-Z3C" secondAttribute="width" id="Y2u-2w-XnK"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="RPq-6a-Z3C" firstAttribute="width" secondItem="oSM-BF-1E1" secondAttribute="width" multiplier="0.7" id="H7f-81-URW"/>
+                                            <constraint firstItem="RPq-6a-Z3C" firstAttribute="width" secondItem="oSM-BF-1E1" secondAttribute="width" multiplier="0.8" id="H7f-81-URW"/>
                                             <constraint firstItem="RPq-6a-Z3C" firstAttribute="centerX" secondItem="oSM-BF-1E1" secondAttribute="centerX" id="TBO-DC-kOQ"/>
                                             <constraint firstItem="RPq-6a-Z3C" firstAttribute="height" secondItem="oSM-BF-1E1" secondAttribute="height" multiplier="0.7" id="Ttb-hO-6Jj"/>
                                             <constraint firstItem="RPq-6a-Z3C" firstAttribute="centerY" secondItem="oSM-BF-1E1" secondAttribute="centerY" id="aYJ-9k-038"/>
@@ -216,7 +228,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RMr-wZ-0oX" firstAttribute="top" secondItem="e8q-Yl-dpn" secondAttribute="bottom" id="1Rb-tW-4me"/>
+                            <constraint firstItem="RMr-wZ-0oX" firstAttribute="top" secondItem="e8q-Yl-dpn" secondAttribute="bottom" constant="-0.5" id="Bdk-C4-63i"/>
                             <constraint firstAttribute="trailing" secondItem="e8q-Yl-dpn" secondAttribute="trailing" id="Hs9-JO-gZN"/>
                             <constraint firstItem="e8q-Yl-dpn" firstAttribute="top" secondItem="Wzo-IZ-5V2" secondAttribute="bottom" id="Tyb-aD-Zbw"/>
                             <constraint firstItem="e8q-Yl-dpn" firstAttribute="leading" secondItem="t3g-3H-Xkj" secondAttribute="leading" id="t42-qk-U06"/>
@@ -224,12 +236,13 @@
                     </view>
                     <connections>
                         <outlet property="addPaymentsButton" destination="dj8-bq-bap" id="Qbw-7G-jhG"/>
+                        <outlet property="middleView" destination="R2h-ni-DyJ" id="BDK-Yt-F2h"/>
                         <outlet property="subtitle" destination="iBS-Gg-FGr" id="8fh-bY-hsK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5Y-1I-qqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109" y="891"/>
+            <point key="canvasLocation" x="108.69565217391305" y="890.625"/>
         </scene>
         <!--New Transaction Content View Controller-->
         <scene sceneID="mAV-NZ-b8j">
